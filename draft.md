@@ -11,14 +11,17 @@
       </div></div><br>
       Corey Lynch, Mohi Khansari, Ted Xiao, Vikash Kumar, Jonathan Tompson, Sergey Levine, Pierre Sermanet
       <br><br>
-      FIXME In this work, we explore a new approach for robots to teach themselves about the world simply by observing it.
-      In particular,  representations for continuous control tasks.
+      How to scale-up multi-task learning?<br>
+      Self-supervise plan representations from lots of cheap unlabeled play data (no RL was used).
     </td>
   </tr>
   <!-- project block -->
   <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/misc/cheetah.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
+    <td class="project-fig"><div class="figure">
+      <video class="b-lazy" data-src="assets/mftcn/cheetah.mp4"
+        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
+      <img class='project-img' src='assets/mftcn/model.png'>
+    </div></td>
     <td class="project-cell">
       <div class="project-title">Self-Supervised Actionable Representations</div>
       <dt-byline><div class="byline">
@@ -30,8 +33,9 @@
       </div></div><br>
       Debidatta Dwibedi, Jonathan Tompson, Corey Lynch, Pierre Sermanet @ IROS 2018
       <br><br>
-      FIXME In this work, we explore a new approach for robots to teach themselves about the world simply by observing it.
-      In particular,  representations for continuous control tasks.
+      We learn continuous control entirely from raw pixels.<br>
+      We use a multi-frame TCN to self-supervise task-agnostic representations from vision only, using 2 slightly different views of the cheetah.<br>
+      Then using RL on top of our embeddings we learn the cheetah task almost as well as if we were using the true proprioceptive states of the cheetah.
     </td>
   </tr>
   <!-- project block -->
@@ -39,6 +43,7 @@
     <td class="project-fig"><div class="figure">
       <video class="b-lazy" data-src="assets/tcn/kuka_pouring_cropped960x540.mp4"
         type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
+        <br>
       <video class="b-lazy" data-src="assets/tcn/pose_all_cropped960x540.mp4"
         type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
     </div></td>
@@ -52,16 +57,27 @@
       <a class="project-link" href=https://sites.google.com/site/brainrobotdata/home/multiview-pouring>Dataset</a>
       <a class="project-link" href=https://github.com/tensorflow/models/tree/master/research/tcn>Code</a>
       <a class="project-link" href=https://docs.google.com/presentation/d/1EvWSbsFfnceBpN7yG1wnqM2LxySQ0Gi-wTx6QaoVekY/edit?usp=sharing>Slides</a>
+      <a class="project-link" href=https://ai.googleblog.com/2017/07/teaching-robots-to-understand-semantic.html>Blogpost</a>
       </div></div><br>
       Pierre Sermanet, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine @ ICRA 2018
       <br><br>
-      Description.
+      We propose a general self-supervised method for learning representations from raw unlabeled videos.<br>
+      We show that the self-supervised representations are rich enough to perform robotic tasks.<br>
+      <br>
+      We use the distance in our learned embedding space to a video demonstration as a reward. An RL algorithm can learn to perform a pouring task using this reward.
+      The robot has learned to pour in only 9 iterations using a single video demonstration, while never receiving any labels.<br>
+      <br>
+      We also show that a robot can teach itself how to imitate people: by training a single TCN on videos of both humans and robots peforming random motions, the TCN model is able to find correspondences between humans and robots, despite never being given any label correspondences.
     </td>
   </tr>
   <!-- project block -->
   <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/rewards/doors.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
+    <td class="project-fig"><div class="figure">
+      <video class="b-lazy" data-src="assets/rewards/doors.mp4"
+        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
+        <br>
+      <img class='project-img' src='assets/rewards/rewards.png'>
+    </div></td>
     <td class="project-cell">
       <div class="project-title">Unsupervised Perceptual Rewards</div>
       <dt-byline><div class="byline">
@@ -70,10 +86,11 @@
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2017Rewards.bib>BibTex</a>
       <a class="project-link" href=https://youtu.be/7f7sdLMCItg>Video</a>
       <a class="project-link" href=https://sites.google.com/site/brainrobotdata/home/pouring-dataset>Dataset</a>
+      <a class="project-link" href=https://ai.googleblog.com/2017/07/teaching-robots-to-understand-semantic.html>Blogpost</a>
       </div></div><br>
       Pierre Sermanet, Kelvin Xu, Sergey Levine @ RSS 2017
       <br><br>
-      Description.
+      We propose learning unsupervised perceptual rewards that can be fed to an RL system and show it is able to learn a robotic task such as door opening from a few human demonstrations.
     </td>
   </tr>
   <!-- project block -->
@@ -88,13 +105,15 @@
       </div></div><br>
       Pierre Sermanet, Andrea Frome, Esteban Real @ ICLR 2015 (workshop)
       <br><br>
-      Description.
+      We demonstrate a foveated attention RNN that is able to perform fine-grained classification.<br>
+      Tracking naturally emerges from our fovated model when ran on videos, even though it was only trained on still images.
     </td>
   </tr>
   <!-- project block -->
   <tr>
     <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/misc/googlenet_diagram.png'>
+      <img class='project-img' src='assets/inception/googlenet_diagram.png'>
+      <img class='project-img' src='assets/inception/ILSVRC2012_val_00021791.PNG'>
     </div></td>
     <td class="project-cell">
       <div class="project-title">Inception / GoogLeNet</div>
@@ -103,6 +122,7 @@
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Szegedy2015Inception.bib>BibTex</a>
       <a class="project-link" href=https://github.com/tensorflow/models/tree/master/research/inception>Code</a>
       <a class="project-link" href=http://www.image-net.org/challenges/LSVRC/2014/results>ImageNet Results</a>
+      <a class="project-link" href=https://ai.googleblog.com/2014/09/building-deeper-understanding-of-images.html>Blogpost</a>
       </div></div><br>
       Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich @ CVPR 2015
       <br><br>
@@ -127,7 +147,8 @@
   <!-- project block -->
   <tr>
     <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/misc/ms_nofine_clean.png'>
+      <img class='project-img' src='assets/overfeat/ms_nofine_clean.png'>
+      <img class='project-img' src='assets/overfeat/bear.png'>
     </div></td>
     <td class="project-cell">
       <div class="project-title">OverFeat</div>
@@ -250,15 +271,14 @@
         type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
     </div></td>
     <td class="project-cell">
-      <div class="project-title">LAGR Challenge: Learning Applied to Ground Robots</div>
+      <div class="project-title">LAGR: Learning Applied to Ground Robots</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=https://cs.nyu.edu/~yann/research/lagr/index.html>Project Page</a>
       <a class="project-link" href=https://www.youtube.com/watch?v=lowcgokiRG8>Video</a>
       </div></div><br>
       Yann LeCun, Urs Muller, Pierre Sermanet, Marco Scoffier, Chris Crudelle, Beat Flepp, Ayse Erkan, Matt Grimes, Raia Hadsell, Koray Kavakcuoglu, Marc'Aurelio Ranzato, Jan Ben, Sumit Chopra, Jeff Han, Marc Peyote, Marc'Aurelio Ranzato, Ilya Rosenberg, Yury Sulsky<br>
-      2004 - 2008
-      <br><br>
-      Description.
+      <br>
+      A DARPA challenge where the NYU-NetScale team developed ConvNets for long-range off-road navigation from 2004 to 2008.
     </td>
   </tr>
   <!-- project block -->
@@ -371,7 +391,7 @@
       <dt-byline><div class="byline">
       <a class="project-link" href=https://sermanet.github.io/eurobot>Project Page</a>
       </div></div><br>
-      Computer vision, navigation and behaviors by Pierre Sermanet, Philippe Rambert, Jean-Baptiste Mouret
+      Computer vision, navigation and behaviors by Pierre Sermanet, Philippe Rambert, Jean-Baptiste Mouret<br>
       Entire team: <a href=http://www.evolutek.org/>Evolutek</a>
       <br><br>
       Description.
