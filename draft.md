@@ -312,8 +312,12 @@
   </tr>
   <!-- project block -->
   <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/lagr/lagr_mapping480x360.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
+    <td class="project-fig"><div class="figure">
+      <video class="b-lazy" data-src="assets/lagr/lagr_mapping480x360.mp4"
+        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
+      <video class="b-lazy" data-src="assets/lagr/lagr_mapping2_hyperbolic_540x320.mp4"
+        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
+    </div></td>
     <td class="project-cell">
       <div class="project-title">Mapping and Planning under Uncertainty in Mobile Robots with Long-Range Perception</div>
       <dt-byline><div class="byline">
