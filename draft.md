@@ -9,6 +9,8 @@
       <a class="project-link" href=https://arxiv.org/pdf/1903.01973.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Lynch2019Play.bib>BibTex</a>
       </div></div><br>
+      Corey Lynch, Mohi Khansari, Ted Xiao, Vikash Kumar, Jonathan Tompson, Sergey Levine, Pierre Sermanet
+      <br><br>
       FIXME In this work, we explore a new approach for robots to teach themselves about the world simply by observing it.
       In particular,  representations for continuous control tasks.
     </td>
@@ -26,6 +28,8 @@
       <a class="project-link" href=https://drive.google.com/file/d/1QkEnqApB7U7XvRBupfnysgdFMarhnwlP/view?usp=sharing>Video</a>
       <a class="project-link" href=https://docs.google.com/presentation/d/1okTa2eWg-BbjA7l1dHL8R_UWOmF5wSQ0HHm7A8NpvfM/edit?usp=sharing>Slides</a>
       </div></div><br>
+      Debidatta Dwibedi, Jonathan Tompson, Corey Lynch, Pierre Sermanet @ IROS 2018
+      <br><br>
       FIXME In this work, we explore a new approach for robots to teach themselves about the world simply by observing it.
       In particular,  representations for continuous control tasks.
     </td>
@@ -49,6 +53,8 @@
       <a class="project-link" href=https://github.com/tensorflow/models/tree/master/research/tcn>Code</a>
       <a class="project-link" href=https://docs.google.com/presentation/d/1EvWSbsFfnceBpN7yG1wnqM2LxySQ0Gi-wTx6QaoVekY/edit?usp=sharing>Slides</a>
       </div></div><br>
+      Pierre Sermanet, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine @ ICRA 2018
+      <br><br>
       Description.
     </td>
   </tr>
@@ -61,10 +67,12 @@
       <dt-byline><div class="byline">
       <a class="project-link" href=https://sermanet.github.io/rewards>Project Page</a>
       <a class="project-link" href=https://arxiv.org/abs/1612.06699>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2017Rewards>BibTex</a>
+      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2017Rewards.bib>BibTex</a>
       <a class="project-link" href=https://youtu.be/7f7sdLMCItg>Video</a>
       <a class="project-link" href=https://sites.google.com/site/brainrobotdata/home/pouring-dataset>Dataset</a>
       </div></div><br>
+      Pierre Sermanet, Kelvin Xu, Sergey Levine @ RSS 2017
+      <br><br>
       Description.
     </td>
   </tr>
@@ -76,8 +84,10 @@
       <div class="project-title">Visual Attention</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=https://arxiv.org/abs/1412.7054>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2015Attention>BibTex</a>
+      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2015Attention.bib>BibTex</a>
       </div></div><br>
+      Pierre Sermanet, Andrea Frome, Esteban Real @ ICLR 2015 (workshop)
+      <br><br>
       Description.
     </td>
   </tr>
@@ -94,6 +104,8 @@
       <a class="project-link" href=https://github.com/tensorflow/models/tree/master/research/inception>Code</a>
       <a class="project-link" href=http://www.image-net.org/challenges/LSVRC/2014/results>ImageNet Results</a>
       </div></div><br>
+      Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich @ CVPR 2015
+      <br><br>
       Description.
     </td>
   </tr>
@@ -107,6 +119,8 @@
       <dt-byline><div class="byline">
       <a class="project-link" href=https://www.kaggle.com/c/dogs-vs-cats/leaderboard>Leaderboard</a>
       </div></div><br>
+      Pierre Sermanet (2014)
+      <br><br>
       Description.
     </td>
   </tr>
@@ -125,6 +139,8 @@
       <a class="project-link" href=http://www.image-net.org/challenges/LSVRC/2013/slides/overfeat_ilsvrc2013.pdf>Slides</a>
       <a class="project-link" href=https://machinelearning.apple.com/2017/11/16/face-detection.html>Press</a>
       </div></div><br>
+      Pierre Sermanet, David Eigen, Xiang Zhang, Michael Mathieu, Rob Fergus, Yann LeCun @ ICLR 2014
+      <br><br>
       Description.
     </td>
   </tr>
@@ -139,6 +155,8 @@
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2013Pedestrian.bib>BibTex</a>
       <a class="project-link" href=https://www.youtube.com/watch?v=uKU2pzpGUlM>Video</a>
       </div></div><br>
+      Pierre Sermanet, Koray Kavukcuoglu, Soumith Chintala, Yann Lecun @ CVPR 2013
+      <br><br>
       Description.
     </td>
   </tr>
@@ -153,6 +171,8 @@
       <a class="project-link" href=https://arxiv.org/pdf/1204.3968.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2012Convolutional.bib>BibTex</a>
       </div></div><br>
+      Pierre Sermanet, Soumith Chintala, Yann LeCun @ ICPR 2012
+      <br><br>
       Description.
     </td>
   </tr>
@@ -168,6 +188,8 @@
       <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2011Traffic.bib>BibTex</a>
       </div></div><br>
+      Pierre Sermanet, Yann LeCun @ IJCNN 2011
+      <br><br>
       Description.
     </td>
   </tr>
@@ -182,6 +204,8 @@
       <a class="project-link" href=http://papers.nips.cc/paper/4133-learning-convolutional-feature-hierarchies-for-visual-recognition.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Kavukcuoglu2010Unsupervised.bib>BibTex</a>
       </div></div><br>
+      Koray Kavukcuoglu, Pierre Sermanet, Y-Lan Boureau, Karol Gregor, Michael Mathieu, Yann LeCun @ NIPS 2010
+      <br><br>
       Description.
     </td>
   </tr>
@@ -197,9 +221,9 @@
       <a class="project-link" href=http://eblearn.sourceforge.net/>Code</a>
       <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/sermanet-ictai-09.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2009EBLearn.bib>BibTex</a>
-      <a class="project-link" href=>Video</a>
-      <a class="project-link" href=>Slides</a>
       </div></div><br>
+      Pierre Sermanet, Koray Kavukcuoglu, Yann LeCun @ ICTAI 2009
+      <br><br>
       Description.
     </td>
   </tr>
@@ -216,6 +240,7 @@
       <dt-byline><div class="byline">
       <a class="project-link" href=https://cs.nyu.edu/~yann/2009s-V22-0480-001/index.html>Class Page</a>
       </div></div><br>
+      Pierre Sermanet, Yann LeCun<br><br>
       Description.
     </td>
   </tr>
@@ -230,6 +255,9 @@
       <a class="project-link" href=https://cs.nyu.edu/~yann/research/lagr/index.html>Project Page</a>
       <a class="project-link" href=https://www.youtube.com/watch?v=lowcgokiRG8>Video</a>
       </div></div><br>
+      Yann LeCun, Urs Muller, Pierre Sermanet, Marco Scoffier, Chris Crudelle, Beat Flepp, Ayse Erkan, Matt Grimes, Raia Hadsell, Koray Kavakcuoglu, Marc'Aurelio Ranzato, Jan Ben, Sumit Chopra, Jeff Han, Marc Peyote, Marc'Aurelio Ranzato, Ilya Rosenberg, Yury Sulsky<br>
+      2004 - 2008
+      <br><br>
       Description.
     </td>
   </tr>
@@ -240,9 +268,11 @@
     <td class="project-cell">
       <div class="project-title">Learning Long-Range Vision for Autonomous Off-Road Driving</div>
       <dt-byline><div class="byline">
-      <a class="project-link" href=http://www.cs.nyu.edu/~sermanet/lagr/papers/hadsell-jfr-09_wiley.pdf>Paper</a>
+      <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/hadsell-jfr-09.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2009Learning.bib>BibTex</a>
       </div></div><br>
+      Raia Hadsell, Pierre Sermanet, Jan Ben, Ayse Erkan, Marco Scoffier, Koray Kavukcuoglu, Urs Muller, Yann LeCun @ JFR 2009
+      <br><br>
       Description.
     </td>
   </tr>
@@ -253,9 +283,11 @@
     <td class="project-cell">
       <div class="project-title">Collision-Free Off-Road Robot Navigation</div>
       <dt-byline><div class="byline">
-      <a class="project-link" href=https://cs.nyu.edu/~sermanet/lagr/papers/sermanet-jfr-09_wiley.pdf>Paper</a>
+      <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/sermanet-jfr-09.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2009Multirange.bib>BibTex</a>
       </div></div><br>
+      Pierre Sermanet, Raia Hadsell, Marco Scoffier, Matt Grimes, Jan Ben, Ayse Erkan, Chris Crudele, Urs Muller, Yann LeCun @ JFR 2009
+      <br><br>
       Description.
     </td>
   </tr>
@@ -270,9 +302,11 @@
       <div class="project-title">Learning Maneuver Dictionaries for Ground Robot Planning</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/sermanet-isr-08.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Learning>BibTex</a>
+      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Learning.bib>BibTex</a>
       <a class="project-link" href=https://www.youtube.com/watch?v=kCF7Uo5vwJY>Video</a>
       </div></div><br>
+      Pierre Sermanet, Marco Scoffier, Chris Crudele, Urs Muller, Yann LeCun @ ISR 2008
+      <br><br>
       Description.
     </td>
   </tr>
@@ -287,6 +321,8 @@
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Mapping.bib>BibTex</a>
       <a class="project-link" href=https://www.youtube.com/watch?v=ByToYYTOhmk>Video</a>
       </div></div><br>
+      Pierre Sermanet, Raia Hadsell, Marco Scoffier, Urs Muller, Yann LeCun @ IROS 2008
+      <br><br>
       Description.
     </td>
   </tr>
@@ -298,9 +334,11 @@
     <td class="project-cell">
       <div class="project-title">Deep Belief Net Learning in a Long-Range Vision System</div>
       <dt-byline><div class="byline">
-      <a class="project-link" href=https://cs.nyu.edu/~naz/docs/iros08.pdf>Paper</a>
+      <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/hadsell-iros-08.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2008Deep.bib>BibTex</a>
       </div></div><br>
+      Raia Hadsell, Ayse Erkan, Pierre Sermanet, Marco Scoffier, Urs Muller, Yann LeCun @ IROS 2008
+      <br><br>
       Description.
     </td>
   </tr>
@@ -315,6 +353,8 @@
       <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/hadsell-rss-07.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2007Online.bib>BibTex</a>
       </div></div><br>
+      Raia Hadsell, Pierre Sermanet, Ayse Naz Erkan, Jan Ben, Jefferson Han, Beat Flepp, Urs Muller, Yann LeCun @ RSS 2007
+      <br><br>
       Description.
     </td>
   </tr>
@@ -327,6 +367,9 @@
       <dt-byline><div class="byline">
       <a class="project-link" href=https://sermanet.github.io/eurobot>Project Page</a>
       </div></div><br>
+      Computer vision, navigation and behaviors by Pierre Sermanet, Philippe Rambert, Jean-Baptiste Mouret
+      Entire team: <a href=http://www.evolutek.org/>Evolutek</a>
+      <br><br>
       Description.
     </td>
   </tr>
@@ -343,6 +386,7 @@
   <!--     <a class="project-link" href=>Video</a> -->
   <!--     <a class="project-link" href=>Slides</a> -->
   <!--     </div></div><br> -->
+  <!--     <br><br> -->
   <!--     Description. -->
   <!--   </td> -->
   <!-- </tr> -->
