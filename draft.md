@@ -126,7 +126,7 @@
       </div></div><br>
       Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich @ CVPR 2015
       <br><br>
-      Description.
+      A deep architecture for computer vision. Our model obtained 1st place for the classification and detection tasks in the 2014 ImageNet Challenge.
     </td>
   </tr>
   <!-- project block -->
@@ -141,7 +141,7 @@
       </div></div><br>
       Pierre Sermanet (2014)
       <br><br>
-      Description.
+      1st place in an image classification Kaggle challenge between dog and cat images. Most of the top entries are based on our OverFeat model.
     </td>
   </tr>
   <!-- project block -->
@@ -162,7 +162,9 @@
       </div></div><br>
       Pierre Sermanet, David Eigen, Xiang Zhang, Michael Mathieu, Rob Fergus, Yann LeCun @ ICLR 2014
       <br><br>
-      Description.
+      This model obtained 1st place in the 2013 ImageNet object localization challenge. The model and pre-trained features were later released to the public.
+      <br><br>
+      Overfeat has been used by Apple for on-device face detection in iPhones: <a class="project-link" href=https://machinelearning.apple.com/2017/11/16/face-detection.html>blogpost</a>
     </td>
   </tr>
   <!-- project block -->
@@ -178,7 +180,7 @@
       </div></div><br>
       Pierre Sermanet, Koray Kavukcuoglu, Soumith Chintala, Yann Lecun @ CVPR 2013
       <br><br>
-      Description.
+      State of the art results on pedestrian detection datasets using deep ConvNets in the EBLearn framework.
     </td>
   </tr>
   <!-- project block -->
@@ -194,7 +196,7 @@
       </div></div><br>
       Pierre Sermanet, Soumith Chintala, Yann LeCun @ ICPR 2012
       <br><br>
-      Description.
+      State of the art results in house numbers classification using deep ConvNets.
     </td>
   </tr>
   <!-- project block -->
@@ -211,7 +213,7 @@
       </div></div><br>
       Pierre Sermanet, Yann LeCun @ IJCNN 2011
       <br><br>
-      Description.
+      This deep model obtained 2nd place in a traffic sign recognition challenge using the EBLearn framework. It uses skip connections in deep ConvNets to better combine low-lvel and high-level learned features.
     </td>
   </tr>
   <!-- project block -->
@@ -227,7 +229,7 @@
       </div></div><br>
       Koray Kavukcuoglu, Pierre Sermanet, Y-Lan Boureau, Karol Gregor, Michael Mathieu, Yann LeCun @ NIPS 2010
       <br><br>
-      Description.
+      An unsupervised method for learning multi-stage hierarchies of sparse convolutional features. One of the few instances of this period where unsupervised pretraining improved results in a supervised task.
     </td>
   </tr>
   <!-- project block -->
@@ -243,9 +245,10 @@
       <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/sermanet-ictai-09.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2009EBLearn.bib>BibTex</a>
       </div></div><br>
-      Pierre Sermanet, Koray Kavukcuoglu, Yann LeCun @ ICTAI 2009
+      Pierre Sermanet, Koray Kavukcuoglu, Yann LeCun @ ICTAI 2009<br>
+      Additional help from Soumith Chintala.
       <br><br>
-      Description.
+      A C++ deep learning framework similar to Torch and used for multiple state of the art results in computer vision.
     </td>
   </tr>
   <!-- project block -->
@@ -257,12 +260,11 @@
         type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
     </div></td>
     <td class="project-cell">
-      <div class="project-title">TA for NYU Robotics class</div>
+      <div class="project-title">Teaching Assitant for NYU Robotics class</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=https://cs.nyu.edu/~yann/2009s-V22-0480-001/index.html>Class Page</a>
       </div></div><br>
-      Pierre Sermanet, Yann LeCun<br><br>
-      Description.
+      Pierre Sermanet, Yann LeCun (2009)<br><br>
     </td>
   </tr>
   <!-- project block -->
@@ -293,7 +295,7 @@
       </div></div><br>
       Raia Hadsell, Pierre Sermanet, Jan Ben, Ayse Erkan, Marco Scoffier, Koray Kavukcuoglu, Urs Muller, Yann LeCun @ JFR 2009
       <br><br>
-      Description.
+      An overview paper of our self-supervised deep learning vision model.
     </td>
   </tr>
   <!-- project block -->
@@ -308,7 +310,7 @@
       </div></div><br>
       Pierre Sermanet, Raia Hadsell, Marco Scoffier, Matt Grimes, Jan Ben, Ayse Erkan, Chris Crudele, Urs Muller, Yann LeCun @ JFR 2009
       <br><br>
-      Description.
+      An overview paper of our navigation system designed to naturally handle errors and outputs coming out of a deep vision model. This model decouples the fast and short-range navigation from the slow and long-range navigation to achieve robustness. 
     </td>
   </tr>
   <!-- project block -->
@@ -319,7 +321,7 @@
         type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
     </div></td>
     <td class="project-cell">
-      <div class="project-title">Learning Maneuver Dictionaries for Ground Robot Planning</div>
+      <div class="project-title" id="man">Learning Maneuver Dictionaries for Ground Robot Planning</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/sermanet-isr-08.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Learning.bib>BibTex</a>
@@ -327,7 +329,7 @@
       </div></div><br>
       Pierre Sermanet, Marco Scoffier, Chris Crudele, Urs Muller, Yann LeCun @ ISR 2008
       <br><br>
-      Description.
+      Instead of computing the theoretical dynamics of a vehicle, we propose to simply record the observed dynamics while a human operator "plays" with the robot, essentially trying all possible moves. At test time, the model has a bank of observed possible trajectories for every state of the motors. Trajectories leading to collisions are discarded, while the fastest available trajectory is selected. While we observed many collisions using the baseline system, we did not observe collisions after introducing this model.
     </td>
   </tr>
   <!-- project block -->
