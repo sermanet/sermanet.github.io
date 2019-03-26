@@ -3,7 +3,7 @@
     <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/lmp/mp4/8tasks_cropped_640x180.mp4"
         type="video/mp4" autoplay muted playsinline loop style="display: block; width:100%;"></video></div></td>
     <td class="project-cell">
-      <div class="project-title">Learning Latent Plans from Play</div>
+      <div class="project-title" id="play">Learning Latent Plans from Play</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=https://learning-from-play.github.io>Project Page</a>
       <a class="project-link" href=https://arxiv.org/pdf/1903.01973.pdf>Paper</a>
@@ -48,7 +48,7 @@
         type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
     </div></td>
     <td class="project-cell">
-      <div class="project-title">Time-Contrastive Networks (TCN)</div>
+      <div class="project-title" id="tcn">Time-Contrastive Networks (TCN)</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=https://sermanet.github.io/imitate>Project Page</a>
       <a class="project-link" href=https://arxiv.org/abs/1704.06888>Paper</a>
@@ -151,7 +151,7 @@
       <img class='project-img' src='assets/overfeat/bear.png'>
     </div></td>
     <td class="project-cell">
-      <div class="project-title">OverFeat</div>
+      <div class="project-title" id="overfeat">OverFeat</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=https://github.com/sermanet/OverFeat>Code</a>
       <a class="project-link" href=https://arxiv.org/abs/1312.6229>Paper</a>
@@ -321,7 +321,7 @@
         type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
     </div></td>
     <td class="project-cell">
-      <div class="project-title" id="man">Learning Maneuver Dictionaries for Ground Robot Planning</div>
+      <div class="project-title" id="maneuvers">Learning Maneuver Dictionaries for Ground Robot Planning</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=http://yann.lecun.com/exdb/publis/pdf/sermanet-isr-08.pdf>Paper</a>
       <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Learning.bib>BibTex</a>
@@ -349,7 +349,7 @@
       </div></div><br>
       Pierre Sermanet, Raia Hadsell, Marco Scoffier, Urs Muller, Yann LeCun @ IROS 2008
       <br><br>
-      Description.
+      A hyperbolic-polar coordinate mapping system that is naturally suited to handle imprecisions in long-range visual navigation.
     </td>
   </tr>
   <!-- project block -->
@@ -365,7 +365,7 @@
       </div></div><br>
       Raia Hadsell, Ayse Erkan, Pierre Sermanet, Marco Scoffier, Urs Muller, Yann LeCun @ IROS 2008
       <br><br>
-      Description.
+      Self-supervised long-range visual navigation with deep ConvNets.
     </td>
   </tr>
   <!-- project block -->
@@ -381,7 +381,7 @@
       </div></div><br>
       Raia Hadsell, Pierre Sermanet, Ayse Naz Erkan, Jan Ben, Jefferson Han, Beat Flepp, Urs Muller, Yann LeCun @ RSS 2007
       <br><br>
-      Description.
+      Online adaptation of long-range vision by self-supervising with short-range stereo vision.
     </td>
   </tr>
   <!-- project block -->
@@ -389,14 +389,14 @@
     <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/eurobot/robot_hangs_out2.mp4"
         type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
     <td class="project-cell">
-      <div class="project-title">EUROBOT Competition</div>
+      <div class="project-title">EUROBOT 2004 Competition</div>
       <dt-byline><div class="byline">
       <a class="project-link" href=https://sermanet.github.io/eurobot>Project Page</a>
       </div></div><br>
       Computer vision, navigation and behaviors by Pierre Sermanet, Philippe Rambert, Jean-Baptiste Mouret<br>
       Entire team: <a href=http://www.evolutek.org/>Evolutek</a>
       <br><br>
-      Description.
+      Vision-based behaviors in a robot-rugby challenge.
     </td>
   </tr>
   <!-- <\!-- project block -\-> -->
