@@ -93,9 +93,9 @@ readFile(options.file, 'utf8', function (err, input) {
   });
 
   // additional 4 lines:
-  var mk = require('markdown-it-katex');
+  var tm = require('markdown-it-texmath');
   var md_center = require('markdown-it-center-text');
-  md.use(mk);
+  md.use(tm, { engine: require('katex'), delimiters: 'dollars' });
   md.use(md_center);
 
   try {

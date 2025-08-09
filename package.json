@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "dependencies": {
     "argparse": "^1.0.10",
+    "katex": "^0.16.22",
     "markdown-it": "*",
     "markdown-it-center-text": "*",
-    "markdown-it-katex": "*"
+    "markdown-it-texmath": "^1.0.0"
   },
   "repository": {
     "type": "git",
