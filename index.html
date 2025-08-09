@@ -4415,15 +4415,37 @@ year = {2018}
 
 </script>
 <script src="lib/blazy.js"></script>
+<script src="lib/video-optimizer.js"></script>
 <script>
+  // Initialize Blazy for images (non-video elements)
   var bLazy = new Blazy({
+    selector: 'img.b-lazy, .b-lazy:not(video)', // Exclude videos from basic lazy loading
     success: function(){
       updateCounter();
     }
   });
+  
   var imageLoaded = 0;
   function updateCounter() {
     imageLoaded++;
     console.log("blazy image loaded: "+imageLoaded);
   }
+  
+  // Video optimization settings
+  var videoOptimizer = new VideoOptimizer({
+    rootMargin: '50px', // Start loading videos 50px before they come into view
+    enablePlaceholder: false, // Disable placeholders to show videos immediately  
+    preferredFormats: ['webm', 'mp4'], // Try WebM first for better compression
+    fadeInDuration: 200,
+    retryAttempts: 2,
+    autoplay: true // Ensure autoplay is enabled by default
+  });
+  
+  // Optional: Add performance monitoring
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var stats = videoOptimizer.getStats();
+      console.log('Video loading stats:', stats);
+    }, 2000);
+  });
 </script>
