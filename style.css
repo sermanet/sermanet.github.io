@@ -199,12 +199,28 @@ dt-article figcaption b {
 /* Remove bullet points from highlights list */
 .highlights-list {
     list-style: none !important;
+    list-style-type: none !important;
     padding-left: 0 !important;
     font-size: 0.9em !important;
+    font-family: HoeflerText-Regular, Cochin, Georgia, serif !important;
 }
 
 .highlights-list li {
     margin-bottom: 0.3em !important;
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+.highlights-list div {
+    margin-bottom: 0.3em !important;
+    font-family: HoeflerText-Regular, Cochin, Georgia, serif !important;
+    padding-left: 0 !important;
+}
+
+/* Add indentation for content after br tags */
+.highlights-list div br + * {
+    margin-left: 2em !important;
+    display: inline-block !important;
 }
 
 /* Add colored styling for links - more specific selectors */
@@ -234,4 +250,95 @@ a:hover {
 
 .project-link:hover {
     text-decoration: underline !important;
+}
+
+/* Table-based highlights styling */
+.highlights-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: HoeflerText-Regular, Cochin, Georgia, serif !important;
+    font-size: inherit !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.highlights-table td {
+    border: none !important;
+    outline: none !important;
+    vertical-align: top !important;
+    padding: 0.3em 0 !important;
+}
+
+.highlights-table tr {
+    border: none !important;
+    outline: none !important;
+}
+
+.highlights-table tr {
+    margin-bottom: 0.3em !important;
+}
+
+.highlights-table .highlight-date {
+    vertical-align: top !important;
+    padding-right: 1em !important;
+    padding-bottom: 0.3em !important;
+    white-space: nowrap !important;
+    font-weight: bold !important;
+    padding-top: 0 !important;
+    border: none !important;
+    width: 120px !important;
+    min-width: 120px !important;
+}
+
+.highlights-table .highlight-content {
+    vertical-align: top !important;
+    padding-bottom: 0.3em !important;
+    padding-top: 0 !important;
+    border: none !important;
+    line-height: 1.2em !important;
+}
+
+/* Apply link styling to table content */
+.highlights-table a {
+    color: #0066cc !important;
+    text-decoration: none !important;
+}
+
+.highlights-table a:hover {
+    text-decoration: underline !important;
+}
+
+/* Override Distill template table styles for highlights */
+dt-article .highlights-table {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+dt-article .highlights-table td {
+    border: none !important;
+    outline: none !important;
+    vertical-align: top !important;
+    padding: 0.3em 0 !important;
+    font-size: inherit !important;
+}
+
+dt-article .highlights-table tr {
+    border: none !important;
+    outline: none !important;
+}
+
+dt-article .highlights-table .highlight-date {
+    vertical-align: top !important;
+    padding-right: 1em !important;
+    white-space: nowrap !important;
+    font-weight: bold !important;
+    width: 120px !important;
+    min-width: 120px !important;
+}
+
+dt-article .highlights-table .highlight-content {
+    vertical-align: top !important;
+    line-height: 1.2em !important;
 }
