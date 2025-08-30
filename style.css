@@ -195,3 +195,43 @@ dt-article figcaption b {
     user-select: none;
     background: none;
 }
+
+/* Remove bullet points from highlights list */
+.highlights-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    font-size: 0.9em !important;
+}
+
+.highlights-list li {
+    margin-bottom: 0.3em !important;
+}
+
+/* Add colored styling for links - more specific selectors */
+.highlights-list a {
+    color: #0066cc !important;
+    text-decoration: none !important;
+}
+
+.highlights-list a:hover {
+    text-decoration: underline !important;
+}
+
+/* General link styling */
+a {
+    color: #0066cc !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+.project-link {
+    color: #0066cc !important;
+    text-decoration: none !important;
+}
+
+.project-link:hover {
+    text-decoration: underline !important;
+}
