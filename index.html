@@ -1,872 +1,1505 @@
 <!doctype html>
+<html lang="en">
 <head>
-  <title>Pierre Sermanet Homepage</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
-  <meta name="theme-color" content="#1a4067" />
-  <!-- SEO -->
-  <meta property="og:title" content="Pierre Sermanet Homepage" />
-  <meta property="og:type" content="article" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="https://sermanet.github.io/assets/img/lmp_logo_rect.png" />
-  <meta property="og:url" content="https://sermanet.github.io/" />
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Pierre Sermanet Homepage" />
-  <meta name="twitter:description" content="" />
-  <meta property="og:site_name" content="" />
-  <meta name="twitter:image" content="https://sermanet.github.io/assets/img/lmp_logo_square.png" />
+  <title>Pierre Sermanet</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Pierre Sermanet — Co-founder &amp; Chief Scientist at UMA, formerly Google DeepMind. Machine learning for robotics, vision, language, actions and safety.">
+  <meta name="theme-color" content="#FAFAF9">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Pierre Sermanet">
+  <meta property="og:type" content="profile">
+  <meta property="og:description" content="Pierre Sermanet — Co-founder &amp; Chief Scientist at UMA, formerly Google DeepMind. Machine learning for robotics, vision, language, actions and safety.">
+  <meta property="og:url" content="https://sermanet.github.io/">
+  <meta property="og:image" content="https://sermanet.github.io/assets/scifi/scifi_teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pierre Sermanet">
+  <meta name="twitter:description" content="Pierre Sermanet — Co-founder &amp; Chief Scientist at UMA, formerly Google DeepMind. Machine learning for robotics, vision, language, actions and safety.">
+  <meta name="twitter:image" content="https://sermanet.github.io/assets/scifi/scifi_teaser.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/designs/signal/style.css?v=b20cbf64">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
 
-<script src="lib/jquery-1.12.4.min.js"></script>
-<!--<script src="lib/mobile-detect.min.js"></script>-->
-<script src="lib/template.v1.js"></script>
+<div class="shell">
 
-<!-- <div class="cover"> -->
-<!--   <h1 class="unselectable">Learning Latent Plans<br>from Play</h1> -->
-<!--   <video src="assets/mp4/8tasks1920x540.mp4" autoplay loop playsinline muted></video> -->
-<!--   <div class="hint unselectable">scroll down</div> -->
-<!-- </div> -->
+  <div class="topnav">
+    <span class="brand">Pierre Sermanet</span>
+    <nav aria-label="Profiles">
+      <a href="#feed">Research</a>
+      <a href="https://uma.bot" target="_blank" rel="noopener">UMA</a>
+      <a href="https://scholar.google.com/citations?user=0nPi5YYAAAAJ" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://github.com/sermanet" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://twitter.com/psermanet" target="_blank" rel="noopener">X</a>
+      <a href="https://www.linkedin.com/in/sermanet/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.youtube.com/user/nyulagr" target="_blank" rel="noopener">YouTube</a>
+    </nav>
+      <button class="theme" type="button" id="theme" data-mode="auto" aria-label="Theme: follow system" title="Theme: follow system">
+        <svg class="i-auto" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        <svg class="i-light" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-dark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+  </div>
 
-<dt-article id="dtbody">
-<dt-byline class="l-page transparent"></dt-byline>
-<h1>Pierre Sermanet</h1>
-<h2>Co-founder & Chief Scientist @ <a href="https://uma.bot" target="_blank">UMA</a><br>
-<h2>Formerly Research Scientist @ <a class="project-link" href="https://deepmind.google/" target="_blank">Google DeepMind</a><br>
-  Machine Learning for Robotics / Vision / Language / Actions / Safety
-</h2>
-<dt-byline class="l-page" id="authors_section">
-<div class="byline">
-  <div class="authors">
-    <div class="author"><a class="project-link" href="https://scholar.google.com/citations?user=0nPi5YYAAAAJ" target="_blank">Scholar</a></div>
-    <div class="author"><a class="project-link" href="https://twitter.com/psermanet" target="_blank">Twitter</a></div>
-    <div class="author"><a class="project-link" href="https://www.youtube.com/user/nyulagr" target="_blank">Youtube</a></div>
-    <div class="author"><a class="project-link" href="https://github.com/sermanet" target="_blank">GitHub</a></div>
-    <div class="author"><a class="project-link" href="https://www.kaggle.com/pierresermanet" target="_blank">Kaggle</a></div>
-    <div class="author"><a class="project-link" href="https://www.linkedin.com/in/sermanet/" target="_blank">LinkedIn</a></div>
-    <div class="author"><a class="project-link" href="">Email: first dot last at gmail</a></div>
-    <br>
-    <hr style="margin: 1em 0; border: none; border-top: 1px solid #ccc;">
-
-<h3>Selected highlights</h3>
-<table class="highlights-table">
-  <tr>
-    <td class="highlight-date"><strong>2025</strong></td>
-    <td class="highlight-content">100k <a href="https://scholar.google.com/citations?user=0nPi5YYAAAAJ" target="_blank">citations</a> across machine learning, computer vision, and robotics<br>+ <a href="https://sermanet.github.io/#asimov" target="_blank">Laws of robotics</a> generated from images and <a href="https://sermanet.github.io/#scifi" target="_blank">sci-fi</a><br>+ <a href="https://www.linkedin.com/feed/update/urn:li:activity:7339333351452925952/">CVPR Prize</a> for 10-year significant impact on computer vision by <a href="https://arxiv.org/pdf/1409.4842" target="_blank">GoogLeNet</a> paper</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2023</strong></td>
-    <td class="highlight-content">Open-sourced large-scale <a href="https://sermanet.github.io/#robovqa" target="_blank">VQA benchmark</a> for robotics and developped embodied long-horizon reasoning</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2020</strong></td>
-    <td class="highlight-content"><a href="https://sermanet.github.io/#language-play" target="_blank">First manipulation VLA</a>: end-to-end Vision-Language-Action models for robotic manipulation and learned from unstructured play videos and very few labels</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2017</strong></td>
-    <td class="highlight-content">Fully <a href="https://sermanet.github.io/imitate/" target="_blank">self-supervised imitation from video</a> → robot policy learned without any labels</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2016</strong></td>
-    <td class="highlight-content">Founding member of Google Brain Robotics team<br>+ <a href="https://sermanet.github.io/#perceptual" target="_blank">Unsupervised rewards</a> from vision</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2014</strong></td>
-    <td class="highlight-content">Winner of <a href="http://www.kaggle.com/c/dogs-vs-cats/leaderboard" target="_blank">Dogs vs Cats</a> and <a href="https://image-net.org/challenges/LSVRC/2014/" target="_blank">2014 ImageNet</a> competitions<br>+ Joined Google Brain</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2013</strong></td>
-    <td class="highlight-content">PhD graduation with Yann LeCun @ New York University<br>+ <a href="https://sermanet.github.io/#overfeat" target="_blank">Open-sourced</a> one of the first deep vision models (OverFeat)<br>+ <a class="link" href="https://image-net.org/challenges/LSVRC/2013/results.php" target="_blank">Winner</a> of 2013 ImageNet competition</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2010 - 2012</strong></td>
-    <td class="highlight-content">ConvNets for <a href="#pedestrian-detection" target="_blank">detection</a>, <a href="#traffic-sign-recognition" target="_blank">classification</a> and <a href="#unsupervised-hierarchies" target="_blank">unsupervised representations</a></td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2009</strong></td>
-    <td class="highlight-content">Designed and released an early open-source deep learning framework (<a href="https://sermanet.github.io/#eblearn" target="_blank">EBLearn</a>)</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2006</strong></td>
-    <td class="highlight-content">Proposed a <a href="https://sermanet.github.io/#fast-slow" target="_blank">fast & slow thinking</a> architecture for robotics (system 1 / system 2)</td>
-  </tr>
-  <tr>
-    <td class="highlight-date"><strong>2005</strong></td>
-    <td class="highlight-content"><a href="https://sermanet.github.io/#lagr-deep-learning" target="_blank">Deep learning for robotics</a> in DARPA’s LAGR program</td>
-  </tr>
-</table>
-</div>
-      
-    <!-- I am a Research Scientist at Google DeepMind, working at the intersection of language, vision and actions with applications to robotics and embodied AI.
-    My research interests span from multimodal learning, computer vision, self-supervised learning, learning from play, scalable data acquisition
-    to embodied reasoning and AGI.
-    <br>
-    <br>
-    I obtained a PhD at New York University under the supervision of Yann LeCun in 2013 during which I published on various topics in computer vision (object detection, the “Overfeat” algorithm, pedestrian detection, visual attention, etc) and machine learning, e.g on unsupervised feature learning.
-    <br>
-    <br>
-    Research: After joining Google Brain in 2014 (now Google DeepMind),
-    I continued working on self-supervised learning, computer vision, robotics, visual language models (VLM) and embodied AI.
-    Because data is expensive to acquire for robotics and arguably its biggest bottleneck, I have developed self-supervision
-    and contrastive learning techniques to learn from cheap, abundant and embodiment-agnostic (robot, human) unstructured video data
-    (<a class="link" href="https://sermanet.github.io/#tcn" target="_blank">Time-Contrastive networks</a>, 
-    <a class="link" href="https://sermanet.github.io/#perceptual" target="_blank">Unsupervised Perceptual Rewards</a>),
-    as well as natural and information-rich multimodal data acquisition techniques for embodied AI 
-    (<a class="link" href="https://sermanet.github.io/#play" target="_blank">Learning from Play</a>, 
-    <a class="link" href="https://sermanet.github.io/#robovqa" target="_blank">RoboVQA</a>)
-    and training integrated Vision-Language-Action models 
-    (<a class="link" href="https://sermanet.github.io/#language-play" target="_blank">Grounding Language in Play</a>,
-    <a class="link" href="https://sermanet.github.io/#rt2" target="_blank">Robotics Transformers 2</a>).
-    <br>
-    <br>    
-    Competitions: <a class="link" href="https://sermanet.github.io/#overfeat" target="_blank">OverFeat</a> ranked 1st place in both the
-    <a class="link" href="https://image-net.org/challenges/LSVRC/2013/results.php" target="_blank">2013 ImageNet</a> object localization challenge 
-    and the 2014 <a class="link" href="http://www.kaggle.com/c/dogs-vs-cats/leaderboard" target="_blank">Dogs vs Cats</a> Kaggle competition 
-    (<a class="link" href="https://www.kaggle.com/pierresermanet" target="_blank">profile</a>),
-    <a class="link" href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Szegedy_Going_Deeper_With_2015_CVPR_paper.pdf" target="_blank">GoogLeNet</a> ranked 1st in the 
-    <a class="link" href="https://image-net.org/challenges/LSVRC/2014/" target="_blank">2014 ImageNet</a> challenge for both Image Classification and Object detection challenges and 2nd in the Object Localization challenge. In 2011, the deep learning framework I developed “EBLearn” ranked 2nd in the 
-    <a class="link" href="https://benchmark.ini.rub.de/gtsrb_results.html" target="_blank">traffic sign</a> recognition challenge.
-  </div> -->
-  <!-- <div class="date"> -->
-  <!--   <div class="month">March 5</div> -->
-  <!--   <div class="year">2019</div> -->
-  <!-- </div> -->
-  <!-- <div class="date"> -->
-  <!--   <div class="month">Download</div> -->
-  <!--   <div class="year" style="color: #0000FF;"><a href="https://arxiv.org/" target="_blank">PDF</a></div> -->
-  <!-- </div> -->
-</div>
-</dt-byline>
-<!-- </dt-byline> -->
-<dt-byline class="l-page" id="authors_section">
-  Selected Projects and Publications (<a class="link" href="https://scholar.google.com/citations?user=0nPi5YYAAAAJ" target="_blank">Full List</a>)
-<div class="byline">
-<table valign="top">
-
-  <tr>    
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/scifi/scifi_teaser.png'>
-    </td>
-    <td class="project-cell">
-      <div class="project-title" id="scifi">SciFi-Benchmark: Leveraging Science Fiction To Improve Robot Behavior
+  <header class="hero">
+    <div>
+      <h1>Pierre Sermanet</h1>
+      <p class="lede">Co-founder &amp; Chief Scientist at <a href="https://uma.bot" target="_blank" rel="noopener"><strong>UMA</strong></a>. Formerly Research Scientist at <a href="https://deepmind.google/">Google DeepMind</a> and a founding member of Google Brain Robotics. PhD with Yann LeCun at New York University.</p>
+      <div class="cta">
+        <a class="pri" href="https://uma.bot" target="_blank" rel="noopener">What we're building at UMA</a>
+        <a href="#feed">Browse 33 projects</a>
       </div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://scifi-benchmark.github.io/ target="_blank">Project Page</a>
-      <a class="project-link" href=https://arxiv.org/abs/2503.10706 target="_blank">Paper</a>
-      Data: 
-      <a class="project-link" href=https://www.tensorflow.org/datasets/catalog/asimov_dilemmas_scifi_val target="_blank">val</a>|
-      <a class="project-link" href=https://www.tensorflow.org/datasets/catalog/asimov_dilemmas_scifi_train target="_blank">train</a>
-      <a class="project-link" href=https://github.com/scifi-benchmark/safety_cards target="_blank">Safety Cards</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2025SciFi.bib target="_blank">BibTex</a>
-      <a class="project-link" href=https://x.com/psermanet/status/1902014690164903955 target="_blank">Twitter</a>
-      </div></div><br>
-      Pierre Sermanet, Anirudha Majumdar, Vikas Sindhwani
-      <br><br>
-      Q: How would AI-powered robots behave if dropped into Science Fiction literature?<br>
-      A: 95.8% aligned with humans (Sci-Fi decisions are only 21.2% aligned).
-      <br>
-      <br>
-      Q: Can we generate useful robot constitutions 📜 from Sci-Fi?<br>
-      A: Sci-Fi inspired constitutions yield some of the strongest alignment on realistic safety benchmarks.
-    </td>
-  </tr>
+    </div>
+    <aside class="now">
+      <div class="k">Currently</div>
+      <div class="h">UMA</div>
+      <p class="d">Humanoids and the embodied AI that drives them.</p>
+      <div class="stats">
+        <div><div class="v"><a href="https://scholar.google.com/citations?user=0nPi5YYAAAAJ" target="_blank" rel="noopener">&gt;100k</a></div><div class="l">Citations</div></div>
+        <div><div class="v">33</div><div class="l">Projects</div></div>
+        <div><div class="v">2004–2026</div><div class="l">Span</div></div>
+      </div>
+    </aside>
+  </header>
 
-  <tr>    
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/asimov/asimov_generation.png'>
-      <!-- <img class='project-img' src='assets/asimov/robot_constitutions.png'> -->
-    </td>
-    <td class="project-cell">
-      <div class="project-title" id="asimov">Generating Robot Constitutions<br>& Benchmarks for Semantic Safety</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://asimov-benchmark.github.io/ target="_blank">Project Page</a>
-      <a class="project-link" href=https://arxiv.org/pdf/2503.08663 target="_blank">Paper</a>
-      <a class="project-link" href=https://github.com/asimov-benchmark/code/blob/main/ASIMOV_Datasets.ipynb target="_blank">Data</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2025SciFi.bib target="_blank">BibTex</a>
-      <a class="project-link" href=https://x.com/psermanet/status/1900203328526766429 target="_blank">Twitter</a>
-      </div></div><br>
-      Pierre Sermanet, Anirudha Majumdar, Alex Irpan, Dmitry Kalashnikov, Vikas Sindhwani
-      <br><br>
-      Q: How can we ensure robots behave properly at scale?<br>A: Robot constitutions 📜!<br>
-      Q: How do we verify behavior in undesirable situations at scale?<br>A: Generation!<br>
-      <br>
-      We release the ASIMOV Benchmark for Semantic Safety of robots. We generate difficult-to-capture undesirable situations using image generation.<br>
-      We also generate robot constitutions straight from images.
+  <section class="strip">
+    <details>
+      <summary><span class="caret"></span>Selected highlights</summary>
+      <div class="rows">
+        <div class="row"><div class="yr">2026</div><div class="bd">Co-founded <a href="https://uma.bot">UMA</a></div></div>
+        <div class="row"><div class="yr">2025</div><div class="bd">&gt;100k <a href="https://scholar.google.com/citations?user=0nPi5YYAAAAJ">citations</a> across machine learning, computer vision and robotics. <a href="#asimov">Laws of robotics</a> generated from images and <a href="#scifi">sci-fi</a>. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7339333351452925952/">CVPR Prize</a> for 10-year significant impact on computer vision by the <a href="https://arxiv.org/pdf/1409.4842">GoogLeNet</a> paper.</div></div>
+        <div class="row"><div class="yr">2023</div><div class="bd">Open-sourced a large-scale <a href="#robovqa">VQA benchmark</a> for robotics and developed embodied long-horizon reasoning.</div></div>
+        <div class="row"><div class="yr">2020</div><div class="bd"><a href="#language-play">First manipulation VLA</a>: end-to-end vision-language-action models for robotic manipulation, learned from unstructured play videos and very few labels.</div></div>
+        <div class="row"><div class="yr">2017</div><div class="bd">Fully <a href="#tcn">self-supervised latent imitation from video</a> — a robot policy learned without any labels.</div></div>
+        <div class="row"><div class="yr">2016</div><div class="bd">Founding member of the Google Brain Robotics team. <a href="#perceptual">Unsupervised rewards</a> from vision.</div></div>
+        <div class="row"><div class="yr">2014</div><div class="bd">Winner of the <a href="http://www.kaggle.com/c/dogs-vs-cats/leaderboard">Dogs vs Cats</a> and <a href="https://image-net.org/challenges/LSVRC/2014/">2014 ImageNet</a> competitions. Joined Google Brain.</div></div>
+        <div class="row"><div class="yr">2013</div><div class="bd">PhD graduation with Yann LeCun at New York University. <a href="#overfeat">Open-sourced</a> one of the first deep vision models (OverFeat). <a href="https://image-net.org/challenges/LSVRC/2013/results.php">Winner</a> of the 2013 ImageNet competition.</div></div>
+        <div class="row"><div class="yr">2010–2012</div><div class="bd">ConvNets for <a href="#pedestrian-detection">detection</a>, <a href="#traffic-sign-recognition">classification</a> and <a href="#unsupervised-hierarchies">unsupervised representations</a>.</div></div>
+        <div class="row"><div class="yr">2009</div><div class="bd">Designed and released an early open-source deep learning framework (<a href="#eblearn">EBLearn</a>).</div></div>
+        <div class="row"><div class="yr">2006</div><div class="bd">Proposed a <a href="#fast-slow">fast &amp; slow thinking</a> architecture for robotics (system 1 / system 2).</div></div>
+        <div class="row"><div class="yr">2005</div><div class="bd"><a href="#lagr-deep-learning">Deep learning for robotics</a> in DARPA's LAGR program.</div></div>
+        <div class="row"><div class="yr">2004</div><div class="bd"><a href="#eurobot">Eurobot competition</a>: wrote the vision and control stack of our custom robot.</div></div>
+      </div>
+    </details>
+  </section>
 
-    </td>
-  </tr>
-  
-  <tr>    
-    <td class="project-fig"><div class="figure">
-      <video class="b-lazy" data-src="assets/robovqa/meet_human.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width:100%;"></video></div>
-      <br>
-      <video class="b-lazy" data-src="assets/robovqa/meet_robot.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width:100%;"></video></div>
-    </td>
-    <td class="project-cell">
-      <div class="project-title" id="robovqa">RoboVQA: Multimodal Long-Horizon Reasoning for Robotics</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://robovqa.github.io/>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/pdf/2311.00899.pdf>Paper</a>
-      <a class="project-link" href=https://robovqa.github.io/>Data</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2024RoboVQA.bib>BibTex</a>
-      <a class="project-link" href=https://twitter.com/psermanet/status/1722610200430190784>Twitter</a>
-      </div></div><br>
-      Pierre Sermanet, Tianli Ding, Jeffrey Zhao, Fei Xia, Yuan Cao <a class="link" href="https://arxiv.org/pdf/2311.00899.pdf">et al.</a> @ <a href="https://2024.ieee-icra.org/">ICRA 2024</a>, 2023 <a class="link" href="https://sites.google.com/view/langrob-corl23/home">CoRL</a> and <a class="link" href="https://sites.google.com/corp/view/fmdm-neurips23/?pli=1">NeurIPS</a> workshops
-      <br><br>
-      Need help in the real world? RoboVQA can guide robots and humans through long-horizon tasks on a phone via Google Meet.
-      <br><br>We propose scalable real-world data acquisition and augmentation strategies and release a <a class="link"  href="http://robovqa.github.io">dataset</a> of 800k (video, question/answer) with robots & humans doing various long-horizon tasks.
-      <br><br>We train a small video model (380M) that outperforms large state of the art zero-shot models by ~2x and demonstrate that scalable strategies for acquiring new data remains criticial.
-      <br><br>We use a speech intervention mechanism that automatically quantifies progress (intervention rate), provides corrections to retrain on, and allows performing tasks to completion in supervised real-world deployment.
-    </td>
-  </tr>
+  <div class="chips" id="feed">
+    <span class="lbl">Filter</span>
+    <button type="button" data-theme="all" aria-pressed="true">All</button>
+    <button type="button" data-theme="safety" aria-pressed="false">Safety</button>
+    <button type="button" data-theme="reasoning" aria-pressed="false">Reasoning</button>
+    <button type="button" data-theme="action" aria-pressed="false">Action</button>
+    <button type="button" data-theme="ssl" aria-pressed="false">Latent Self-Supervision</button>
+    <button type="button" data-theme="vision" aria-pressed="false">Vision</button>
+    <button type="button" data-theme="deeplearning" aria-pressed="false">Deep Learning</button>
+    <button type="button" data-theme="robotics" aria-pressed="false">Robotics</button>
+    <span class="count" id="count">33 projects</span>
+  </div>
 
-  <!-- 2-column project block -->
-  <tr>    
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='https://robotics-transformer-x.github.io/img/overview.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="rtx">Open X-Embodiment: Robotic Learning Datasets and RT-X Models</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://robotics-transformer-x.github.io/>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/abs/2310.08864>Paper</a>
-      <a class="project-link" href=https://robotics-transformer-x.github.io/citation.txt>BibTex</a>
-      </div></div><br>A. Padalkar, et al.
-        <br>@ CoRL 2023 
-    </td>
-  </tr>
-  <!-- 2-column project block -->
-  <tr>    
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/rt2/RT2_fig2.png'>
-      <!-- <img class='project-img' src='assets/rt2/RT2_CoT5.png'> -->
-    </div></td>    
-    <td class="project-cell" colspan="2">
-      <div class="project-title" id="rt2">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://robotics-transformer2.github.io/>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/pdf/2307.15818.pdf>Paper</a>
-      <a class="project-link" href=https://karolhausman.github.io/bibtex/rt2-2023arxiv.bib>BibTex</a>
-      </div></div><br>  
-        A. Brohan, N. Brown, J. Carbajal, Y. Chebotar, X. Chen, K. Choromanski, T. Ding, D. Driess, A. Dubey, C. Finn, P. Florence, C. Fu, M. Gonzalez Arenas, K. Gopalakrishnan, K. Han, K. Hausman, A. Herzog, J. Hsu, B. Ichter, A. Irpan, N. Joshi, R. Julian, D. Kalashnikov, Y. Kuang, I. Leal, L. Lee, T. E. Lee, S. Levine, Y. Lu, H. Michalewski, I. Mordatch, K. Pertsch, K. Rao, K. Reymann, M. Ryoo, G. Salazar, P. Sanketi, P. Sermanet, J. Singh, A. Singh, R. Soricut, H. Tran, V. Vanhoucke, Q. Vuong, A. Wahid, S. Welker, P. Wohlhart, J. Wu, F. Xia, T. Xiao, P. Xu, S. Xu, T. Yu, B. Zitkovich
-        <br>@ CoRL 2023 
-    </td>
-  </tr>
-  <!-- 2-column project block -->
-  <tr>    
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/palme/palme.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="palme">PaLM-E: An Embodied Multimodal Language Model</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://palm-e.github.io/>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/abs/2303.03378>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/driess2023palme.bib>BibTex</a>
-      </div></div><br>  
-        Danny Driess, Fei Xia, Mehdi S. M. Sajjadi, Corey Lynch, Aakanksha Chowdhery, Brian Ichter, Ayzaan Wahid, Jonathan Tompson, Quan Vuong, Tianhe Yu, Wenlong Huang, Yevgen Chebotar, Pierre Sermanet, Daniel Duckworth, Sergey Levine, Vincent Vanhoucke, Karol Hausman, Marc Toussaint, Klaus Greff, Andy Zeng, Igor Mordatch, Pete Florence
-        <br>@ ICML 2023
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/inner-monologue/inner_monologue.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="innermonologue">Inner Monologue: Embodied Reasoning through Planning with Language Models</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://innermonologue.github.io/>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/abs/2207.05608>Paper</a>
-      <a class="project-link" href=https://www.youtube.com/watch?v=0sJjdxn5kcI>Video</a>
-      <a class="project-link" href=https://karolhausman.github.io/bibtex/huang22inner.bib>BibTex</a>
-      </div></div><br>  
-        Wenlong Huang*, Fei Xia*, Ted Xiao*, Harris Chan, Jacky Liang, Pete Florence, Andy Zeng, Jonathan Tompson, Igor Mordatch, Yevgen Chebotar, Pierre Sermanet, Noah Brown, Tomas Jackson, Linda Luu, Sergey Levine, Karol Hausman, Brian Ichter. 
-        <br>@ CoRL 2022
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/saycan/saycan.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="saycan">(SayCan) Do As I Can, Not As I Say: Grounding Language in Robotic Affordances</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://say-can.github.io/>Project Page</a>
-      <a class="project-link" href=https://say-can.github.io/assets/palm_saycan.pdf>Paper</a>
-      <a class="project-link" href=https://www.youtube.com/watch?v=ysFav0b472w>Video</a>
-      <a class="project-link" href=https://karolhausman.github.io/bibtex/saycan22arxiv.bib>BibTex</a>
-      </div></div><br>
-        M. Ahn, A. Brohan, N. Brown, Y. Chebotar, O. Cortes, B. David, C. Fu, Ch. Finn, K. Gopalakrishnan, K. Hausman, A. Herzog, D. Ho, J. Hsu, J. Ibarz, B. Ichter, A. Irpan, E. Jang, R. Jauregui Ruano, K. Jeffrey, S. Jesmonth, N. J Joshi, R. Julian, D. Kalashnikov, Y. Kuang, K.-H. Lee, S. Levine, Y. Lu, L. Luu, C. Parada, P. Pastor, J. Quiambao, K. Rao, J. Rettinghouse, D. Reyes, P. Sermanet, N. Sievers, Cl. Tan, A. Toshev, V. Vanhoucke, F. Xia (co-corresponding author), T. Xiao, P. Xu, S. Xu, M. Yan, A. Zeng (alphebatically listed)
-        <br>@ CoRL 2022
-    </td>
-  </tr>  
-  <!-- project block -->
-  <tr>    
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/langlfp/playlang_20200326-193259_13tasks_bt300k.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width:100%;"></video></div></td>
-    <td class="project-cell">
-      <div class="project-title" id="language-play">Grounding Language in Play</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://sermanet.github.io/language-play>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/pdf/2005.07648.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Lynch2020Language.bib>BibTex</a>
-      </div></div><br>
-      Corey Lynch and Pierre Sermanet @ <a href="http://www.roboticsproceedings.org/rss17/p047.pdf">RSS 2021</a>
-      <br><br>
-      We present a simple and scalable approach for controlling robots with natural language: play through teleoperation, then answer “how do I go from start to finish?” for random episodes. We can then type in commands in real time.
-      <br><br>By hooking up our English-trained model with a pre-trained language embedding trained on lots of text and different languages, it not only improves control but also allows commanding the model in 16 languages.
-      <br><br>Combining natural language with play provides a breadth of skills while having no tasks determined in advance. This yields flexible specification of tasks, for example we can compose tasks on the fly: “pick up the object”, then “put the object in the trash”.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/lmp/mp4/8tasks_cropped_640x180.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width:100%;"></video></div></td>
-    <td class="project-cell">
-      <div class="project-title" id="play">Learning Latent Plans from Play</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://sermanet.github.io/learning-from-play>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/pdf/1903.01973.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Lynch2019Play.bib>BibTex</a>
-      </div></div><br>
-      Corey Lynch, Mohi Khansari, Ted Xiao, Vikash Kumar, Jonathan Tompson, Sergey Levine, Pierre Sermanet @ CoRL 2019
-      <br><br>
-      How to scale-up multi-task learning?<br>
-      Self-supervise plan representations from lots of cheap unlabeled play data (no RL was used).
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <video class="b-lazy" data-src="assets/mftcn/cheetah.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-      <img class='project-img' src='assets/mftcn/model.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title">Self-Supervised Actionable Representations</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://sites.google.com/view/actionablerepresentations/>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/abs/1808.00928>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Dwibedi2018Learning.bib>BibTex</a>
-      <a class="project-link" href=https://drive.google.com/file/d/1QkEnqApB7U7XvRBupfnysgdFMarhnwlP/view?usp=sharing>Video</a>
-      <a class="project-link" href=https://docs.google.com/presentation/d/1okTa2eWg-BbjA7l1dHL8R_UWOmF5wSQ0HHm7A8NpvfM/edit?usp=sharing>Slides</a>
-      </div></div><br>
-      Debidatta Dwibedi, Jonathan Tompson, Corey Lynch, Pierre Sermanet @ IROS 2018
-      <br><br>
-      We learn continuous control entirely from raw pixels.<br>
-      We use a multi-frame TCN to self-supervise task-agnostic representations from vision only, using 2 slightly different views of the cheetah.<br>
-      Then using RL on top of our embeddings we learn the cheetah task almost as well as if we were using the true proprioceptive states of the cheetah.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <video class="b-lazy" data-src="assets/tcn/kuka_pouring_cropped960x540.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-        <br>
-      <video class="b-lazy" data-src="assets/tcn/pose_all_cropped960x540.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="tcn">Time-Contrastive Networks (TCN)</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://sermanet.github.io/imitate>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/abs/1704.06888>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2017TCN.bib>BibTex</a>
-      <a class="project-link" href=https://www.youtube.com/watch?v=b1UTUQpxPSY>Video</a>
-      <a class="project-link" href=https://sites.google.com/site/brainrobotdata/home/multiview-pouring>Dataset</a>
-      <a class="project-link" href=https://github.com/tensorflow/models/tree/master/research/tcn>Code</a>
-      <a class="project-link" href=https://docs.google.com/presentation/d/1EvWSbsFfnceBpN7yG1wnqM2LxySQ0Gi-wTx6QaoVekY/edit?usp=sharing>Slides</a>
-      <a class="project-link" href=https://ai.googleblog.com/2017/07/teaching-robots-to-understand-semantic.html>Blogpost</a>
-      </div></div><br>
-      Pierre Sermanet, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine @ ICRA 2018
-      <br><br>
-      We propose a general self-supervised method for learning representations from raw unlabeled videos.<br>
-      We show that the self-supervised representations are rich enough to perform robotic tasks.<br>
-      <br>
-      We use the distance in our learned embedding space to a video demonstration as a reward. An RL algorithm can learn to perform a pouring task using this reward.
-      The robot has learned to pour in only 9 iterations using a single video demonstration, while never receiving any labels.<br>
-      <br>
-      We also show that a robot can teach itself how to imitate people: by training a single TCN on videos of both humans and robots peforming random motions, the TCN model is able to find correspondences between humans and robots, despite never being given any label correspondences.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <video class="b-lazy" data-src="assets/rewards/doors.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-        <br>
-      <img class='project-img' src='assets/rewards/rewards.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="perceptual">Unsupervised Perceptual Rewards</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://sermanet.github.io/rewards>Project Page</a>
-      <a class="project-link" href=https://arxiv.org/abs/1612.06699>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2017Rewards.bib>BibTex</a>
-      <a class="project-link" href=https://youtu.be/7f7sdLMCItg>Video</a>
-      <a class="project-link" href=https://sites.google.com/site/brainrobotdata/home/pouring-dataset>Dataset</a>
-      <a class="project-link" href=https://ai.googleblog.com/2017/07/teaching-robots-to-understand-semantic.html>Blogpost</a>
-      </div></div><br>
-      Pierre Sermanet, Kelvin Xu, Sergey Levine @ RSS 2017
-      <br><br>
-      We propose learning unsupervised perceptual rewards that can be fed to an RL system and show it is able to learn a robotic task such as door opening from a few human demonstrations.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/misc/attention.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
-    <td class="project-cell">
-      <div class="project-title">Visual Attention</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://arxiv.org/abs/1412.7054>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2015Attention.bib>BibTex</a>
-      </div></div><br>
-      Pierre Sermanet, Andrea Frome, Esteban Real @ ICLR 2015 (workshop)
-      <br><br>
-      We demonstrate a foveated attention RNN that is able to perform fine-grained classification.<br>
-      Tracking naturally emerges from our fovated model when ran on videos, even though it was only trained on still images.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/inception/googlenet_diagram.png'>
-      <img class='project-img' src='assets/inception/ILSVRC2012_val_00021791.PNG'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title">Inception / GoogLeNet</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Szegedy_Going_Deeper_With_2015_CVPR_paper.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Szegedy2015Inception.bib>BibTex</a>
-      <a class="project-link" href=https://github.com/tensorflow/models/tree/master/research/inception>Code</a>
-      <a class="project-link" href=http://www.image-net.org/challenges/LSVRC/2014/results>ImageNet Results</a>
-      <a class="project-link" href=https://ai.googleblog.com/2014/09/building-deeper-understanding-of-images.html>Blogpost</a>
-      </div></div><br>
-      Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich @ CVPR 2015
-      <br><br>
-      A deep architecture for computer vision. Our model obtained 1st place for the classification and detection tasks in the 2014 ImageNet Challenge.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/nyu/cat_dogs.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title">Dogs vs. Cats Kaggle challenge</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://www.kaggle.com/c/dogs-vs-cats/leaderboard>Leaderboard</a>
-      </div></div><br>
-      Pierre Sermanet (2014)
-      <br><br>
-      1st place in an image classification Kaggle challenge between dog and cat images. Most of the top entries are based on our OverFeat model.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/overfeat/ms_nofine_clean.png'>
-      <img class='project-img' src='assets/overfeat/bear.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="overfeat">OverFeat</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://github.com/sermanet/OverFeat>Code</a>
-      <a class="project-link" href=https://arxiv.org/abs/1312.6229>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2014OverFeat.bib>BibTex</a>
-      <a class="project-link" href=http://www.image-net.org/challenges/LSVRC/2013/results.php>ImageNet Results</a>
-      <a class="project-link" href=http://www.image-net.org/challenges/LSVRC/2013/slides/overfeat_ilsvrc2013.pdf>Slides</a>
-      <a class="project-link" href=https://machinelearning.apple.com/2017/11/16/face-detection.html>Press</a>
-      </div></div><br>
-      Pierre Sermanet, David Eigen, Xiang Zhang, Michael Mathieu, Rob Fergus, Yann LeCun @ ICLR 2014
-      <br><br>
-      This model obtained 1st place in the 2013 ImageNet object localization challenge. The model and pre-trained features were later released to the public.
-      <br><br>
-      Overfeat has been used by Apple for on-device face detection in iPhones: <a class="project-link" href=https://machinelearning.apple.com/2017/11/16/face-detection.html>blogpost</a>
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/pedestrians/pedestrians_broadway480x360.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
-    <td class="project-cell">
-      <div class="project-title" id="pedestrian-detection">Pedestrian Detection</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://www.cv-foundation.org/openaccess/content_cvpr_2013/html/Sermanet_Pedestrian_Detection_with_2013_CVPR_paper.html>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2013Pedestrian.bib>BibTex</a>
-      <a class="project-link" href=https://www.youtube.com/watch?v=uKU2pzpGUlM>Video</a>
-      </div></div><br>
-      Pierre Sermanet, Koray Kavukcuoglu, Soumith Chintala, Yann Lecun @ CVPR 2013
-      <br><br>
-      State of the art results on pedestrian detection datasets using deep ConvNets in the EBLearn framework.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/misc/house.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title">Convolutional Neural Networks Applied to House Numbers Digit Classification</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://arxiv.org/pdf/1204.3968.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2012Convolutional.bib>BibTex</a>
-      </div></div><br>
-      Pierre Sermanet, Soumith Chintala, Yann LeCun @ ICPR 2012
-      <br><br>
-      State of the art results in house numbers classification using deep ConvNets.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src="assets/misc/traffic_signs.png"><br>
-      <img class='project-img' src='assets/misc/convnet_skip_connections.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="traffic-sign-recognition">Traffic Sign Recognition</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=papers/sermanet-ijcnn-11.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2011Traffic.bib>BibTex</a>
-      </div></div><br>
-      Pierre Sermanet, Yann LeCun @ IJCNN 2011
-      <br><br>
-      This deep model obtained 2nd place in a traffic sign recognition challenge using the EBLearn framework. It uses skip connections in deep ConvNets to better combine low-lvel and high-level learned features.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/misc/unsupervised_filters.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="unsupervised-hierarchies">Unsupervised Convolutional Feature Hierarchies</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=http://papers.nips.cc/paper/4133-learning-convolutional-feature-hierarchies-for-visual-recognition.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Kavukcuoglu2010Unsupervised.bib>BibTex</a>
-      </div></div><br>
-      Koray Kavukcuoglu, Pierre Sermanet, Y-Lan Boureau, Karol Gregor, Michael Mathieu, Yann LeCun @ NIPS 2010
-      <br><br>
-      An unsupervised method for learning multi-stage hierarchies of sparse convolutional features. One of the few instances of this period where unsupervised pretraining improved results in a supervised task.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/nyu/faces.png'>
-      <img class='project-img' src='assets/nyu/eblearn.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="eblearn">EBLearn</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=http://eblearn.sourceforge.net/>Code</a>
-      <a class="project-link" href=papers/sermanet-ictai-09.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2009EBLearn.bib>BibTex</a>
-      </div></div><br>
-      Pierre Sermanet, Koray Kavukcuoglu, Yann LeCun @ ICTAI 2009<br>
-      Additional help from Soumith Chintala.
-      <br><br>
-      A C++ deep learning framework similar to Torch and used for multiple state of the art results in computer vision.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <video class="b-lazy" data-src="assets/nyu/rovio.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-      <video class="b-lazy" data-src="assets/nyu/3pi.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title">Teaching Assitant for NYU Robotics class</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://cs.nyu.edu/~yann/2009s-V22-0480-001/index.html>Class Page</a>
-      </div></div><br>
-      Pierre Sermanet, Yann LeCun (2009)<br><br>
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/lagr/lagr_run_490x360.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title">LAGR: Learning Applied to Ground Robots</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://cs.nyu.edu/~yann/research/lagr/index.html>Project Page</a>
-      <a class="project-link" href=https://www.youtube.com/watch?v=lowcgokiRG8>Video</a>
-      </div></div><br>
-      Yann LeCun, Urs Muller, Pierre Sermanet, Marco Scoffier, Chris Crudelle, Beat Flepp, Ayse Erkan, Matt Grimes, Raia Hadsell, Koray Kavakcuoglu, Marc'Aurelio Ranzato, Jan Ben, Sumit Chopra, Jeff Han, Marc Peyote, Marc'Aurelio Ranzato, Ilya Rosenberg, Yury Sulsky<br>
-      <br>
-      A DARPA challenge where the NYU-NetScale team developed ConvNets for long-range off-road navigation from 2004 to 2008.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/lagr/lagr_naviguation480x360.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
-    <td class="project-cell">
-      <div class="project-title">Learning Long-Range Vision for Autonomous Off-Road Driving</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=papers/hadsell-jfr-09.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2009Learning.bib>BibTex</a>
-      </div></div><br>
-      Raia Hadsell, Pierre Sermanet, Jan Ben, Ayse Erkan, Marco Scoffier, Koray Kavukcuoglu, Urs Muller, Yann LeCun @ JFR 2009
-      <br><br>
-      An overview paper of our self-supervised deep learning vision model.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/lagr/lagr_dynamics3_490x360.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
-    <td class="project-cell">
-      <div class="project-title" id="fast-slow">Collision-Free Off-Road Robot Navigation</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=papers/sermanet-jfr-09.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2009Multirange.bib>BibTex</a>
-      </div></div><br>
-      Pierre Sermanet, Raia Hadsell, Marco Scoffier, Matt Grimes, Jan Ben, Ayse Erkan, Chris Crudele, Urs Muller, Yann LeCun @ JFR 2009
-      <br><br>
-      An overview paper of our navigation system designed to naturally handle errors and outputs coming out of a deep vision model. This model decouples the fast and short-range navigation from the slow and long-range navigation to achieve robustness. 
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img src='assets/lagr/maneuvers.png' width='300'>
-      <video class="b-lazy" data-src="assets/lagr/lagr_dynamics480x360.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="maneuvers">Learning Maneuver Dictionaries for Ground Robot Planning</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=papers/sermanet-isr-08.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Learning.bib>BibTex</a>
-      <a class="project-link" href=https://www.youtube.com/watch?v=kCF7Uo5vwJY>Video</a>
-      </div></div><br>
-      Pierre Sermanet, Marco Scoffier, Chris Crudele, Urs Muller, Yann LeCun @ ISR 2008
-      <br><br>
-      Instead of computing the theoretical dynamics of a vehicle, we propose to simply record the observed dynamics while a human operator "plays" with the robot, essentially trying all possible moves. At test time, the model has a bank of observed possible trajectories for every state of the motors. Trajectories leading to collisions are discarded, while the fastest available trajectory is selected. While we observed many collisions using the baseline system, we did not observe collisions after introducing this model.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <video class="b-lazy" data-src="assets/lagr/lagr_mapping480x360.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-      <video class="b-lazy" data-src="assets/lagr/lagr_mapping2_hyperbolic_540x320.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title">Mapping and Planning under Uncertainty in Mobile Robots with Long-Range Perception</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=papers/sermanet-iros-08.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Mapping.bib>BibTex</a>
-      <a class="project-link" href=https://www.youtube.com/watch?v=ByToYYTOhmk>Video</a>
-      </div></div><br>
-      Pierre Sermanet, Raia Hadsell, Marco Scoffier, Urs Muller, Yann LeCun @ IROS 2008
-      <br><br>
-      A hyperbolic-polar coordinate mapping system that is naturally suited to handle imprecisions in long-range visual navigation.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/lagr/long_range.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title" id="lagr-deep-learning">Deep Belief Net Learning in a Long-Range Vision System</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=papers/hadsell-iros-08.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2008Deep.bib>BibTex</a>
-      </div></div><br>
-      Raia Hadsell, Ayse Erkan, Pierre Sermanet, Marco Scoffier, Urs Muller, Yann LeCun @ IROS 2008
-      <br><br>
-      Self-supervised long-range visual navigation with deep ConvNets.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure">
-      <img class='project-img' src='assets/lagr/online_learning.png'>
-    </div></td>
-    <td class="project-cell">
-      <div class="project-title">Online Learning for Offroad Robots</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=papers/hadsell-rss-07.pdf>Paper</a>
-      <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2007Online.bib>BibTex</a>
-      </div></div><br>
-      Raia Hadsell, Pierre Sermanet, Ayse Naz Erkan, Jan Ben, Jefferson Han, Beat Flepp, Urs Muller, Yann LeCun @ RSS 2007
-      <br><br>
-      Online adaptation of long-range vision by self-supervising with short-range stereo vision.
-    </td>
-  </tr>
-  <!-- project block -->
-  <tr>
-    <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/eurobot/robot_hangs_out2.mp4"
-        type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td>
-    <td class="project-cell">
-      <div class="project-title">EUROBOT 2004 Competition</div>
-      <dt-byline><div class="byline">
-      <a class="project-link" href=https://sermanet.github.io/eurobot>Project Page</a>
-      </div></div><br>
-      Computer vision, navigation and behaviors by Pierre Sermanet, Philippe Rambert, Jean-Baptiste Mouret<br>
-      Entire team: <a class="link" href=http://www.evolutek.org/>Evolutek</a>
-      <br><br>
-      Vision-based behaviors in a robot-rugby challenge.
-    </td>
-  </tr>
-  <!-- <\!-- project block -\-> -->
-  <!-- <tr> -->
-  <!--   <td class="project-fig"><div class="figure"><video class="b-lazy" data-src="assets/" -->
-  <!--       type="video/mp4" autoplay muted playsinline loop style="display: block; width: 100%;"></video></div></td> -->
-  <!--   <td class="project-cell"> -->
-  <!--     <div class="project-title"></div> -->
-  <!--     <dt-byline><div class="byline"> -->
-  <!--     <a class="project-link" href=>Project Page</a> -->
-  <!--     <a class="project-link" href=>Paper</a> -->
-  <!--     <a class="project-link" href=https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/>BibTex</a> -->
-  <!--     <a class="project-link" href=>Video</a> -->
-  <!--     <a class="project-link" href=>Slides</a> -->
-  <!--     </div></div><br> -->
-  <!--     <br><br> -->
-  <!--     Description. -->
-  <!--   </td> -->
-  <!-- </tr> -->
-</table>
+  <main class="feed">
+      <a class="card" href="#uma-chapter-2" data-themes="action robotics" aria-label="UMA — Chapter 2: Embodied Latent World Models, 2026">
+        <span class="th"><img src="assets/uma/hello-uma.png" alt="UMA — Chapter 2" loading="lazy" decoding="async"></span>
+        <span class="in">
+          <span class="tg">Action</span>
+          <span class="nm">UMA — Chapter 2</span>
+          <span class="ds">Planning in latent space, so a robot can simulate trajectories before it moves.</span>
+          <span class="ft">2026</span>
+        </span>
+      </a>
+      <a class="card" href="#uma-chapter-1" data-themes="action robotics" aria-label="UMA — Chapter 1: A full humanoid and embodied AI in nine months, 2026">
+        <span class="th"><video data-src="assets/uma/astro-waving-loop.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="UMA — Chapter 1"></video><span class="n-media">3</span></span>
+        <span class="in">
+          <span class="tg">Action</span>
+          <span class="nm">UMA — Chapter 1</span>
+          <span class="ds">A full humanoid and the embodied AI to drive it, built in nine months by a small team in Paris.</span>
+          <span class="ft">2026</span>
+        </span>
+      </a>
+      <a class="card" href="#scifi" data-themes="safety" aria-label="SciFi-Benchmark: Leveraging Science Fiction To Improve Robot Behavior, 2025">
+        <span class="th"><img src="assets/scifi/scifi_teaser.png" alt="SciFi-Benchmark" loading="lazy" decoding="async"><span class="n-media">8</span></span>
+        <span class="in">
+          <span class="tg">Safety</span>
+          <span class="nm">SciFi-Benchmark</span>
+          <span class="ds">Robot behaviour measured against science fiction, and constitutions derived from it.</span>
+          <span class="ft">2025 · 2025</span>
+        </span>
+      </a>
+      <a class="card" href="#asimov" data-themes="safety" aria-label="Generating Robot Constitutions &amp; Benchmarks for Semantic Safety, 2025">
+        <span class="th"><img src="assets/asimov/asimov_generation.png" alt="ASIMOV Constitutions" loading="lazy" decoding="async"><span class="n-media">11</span></span>
+        <span class="in">
+          <span class="tg">Safety</span>
+          <span class="nm">ASIMOV Constitutions</span>
+          <span class="ds">A benchmark for semantic safety, with robot constitutions generated from images.</span>
+          <span class="ft">2025 · 2025</span>
+        </span>
+      </a>
+      <a class="card" href="#robovqa" data-themes="reasoning" aria-label="RoboVQA: Multimodal Long-Horizon Reasoning for Robotics, 2023">
+        <span class="th"><video data-src="assets/robovqa/meet_robot.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="RoboVQA"></video><span class="n-media">9</span></span>
+        <span class="in">
+          <span class="tg">Reasoning</span>
+          <span class="nm">RoboVQA</span>
+          <span class="ds">800k video question-answer pairs for long-horizon robot and human tasks.</span>
+          <span class="ft">2023 · ICRA 2024 · CoRL and NeurIPS 2023 workshops</span>
+        </span>
+      </a>
+      <a class="card" href="#rtx" data-themes="action robotics" aria-label="Open X-Embodiment: Robotic Learning Datasets and RT-X Models, 2023">
+        <span class="th"><img src="https://robotics-transformer-x.github.io/img/overview.png" alt="Open X-Embodiment" loading="lazy" decoding="async"><span class="n-media">6</span></span>
+        <span class="in">
+          <span class="tg">Action</span>
+          <span class="nm">Open X-Embodiment</span>
+          <span class="ds">Robot learning datasets pooled across many embodiments, and the RT-X models trained on them.</span>
+          <span class="ft">2023 · CoRL 2023</span>
+        </span>
+      </a>
+      <a class="card" href="#rt2" data-themes="action" aria-label="RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control, 2023">
+        <span class="th"><img src="assets/rt2/RT2_fig2.png" alt="RT-2" loading="lazy" decoding="async"><span class="n-media">9</span></span>
+        <span class="in">
+          <span class="tg">Action</span>
+          <span class="nm">RT-2</span>
+          <span class="ds">Web knowledge carried into closed-loop robot control by co-fine-tuning a vision-language model.</span>
+          <span class="ft">2023 · CoRL 2023</span>
+        </span>
+      </a>
+      <a class="card" href="#palme" data-themes="action reasoning" aria-label="PaLM-E: An Embodied Multimodal Language Model, 2023">
+        <span class="th"><img src="assets/palme/palme.png" alt="PaLM-E" loading="lazy" decoding="async"><span class="n-media">5</span></span>
+        <span class="in">
+          <span class="tg">Action</span>
+          <span class="nm">PaLM-E</span>
+          <span class="ds">A language model with continuous sensor observations injected into its embedding space.</span>
+          <span class="ft">2023 · ICML 2023</span>
+        </span>
+      </a>
+      <a class="card" href="#innermonologue" data-themes="reasoning" aria-label="Inner Monologue: Embodied Reasoning through Planning with Language Models, 2022">
+        <span class="th"><img src="assets/inner-monologue/inner_monologue.png" alt="Inner Monologue" loading="lazy" decoding="async"><span class="n-media">7</span></span>
+        <span class="in">
+          <span class="tg">Reasoning</span>
+          <span class="nm">Inner Monologue</span>
+          <span class="ds">Language-model planning that replans as grounded feedback arrives from the world.</span>
+          <span class="ft">2022 · CoRL 2022</span>
+        </span>
+      </a>
+      <a class="card" href="#saycan" data-themes="reasoning action" aria-label="SayCan: Do As I Can, Not As I Say — Grounding Language in Robotic Affordances, 2022">
+        <span class="th"><img src="assets/saycan/saycan.png" alt="SayCan" loading="lazy" decoding="async"><span class="n-media">7</span></span>
+        <span class="in">
+          <span class="tg">Reasoning</span>
+          <span class="nm">SayCan</span>
+          <span class="ds">The language model proposes; learned affordances decide what the robot can actually do.</span>
+          <span class="ft">2022 · CoRL 2022</span>
+        </span>
+      </a>
+      <a class="card" href="#language-play" data-themes="action" aria-label="Grounding Language in Play, 2020">
+        <span class="th"><video data-src="assets/langlfp/playlang_20200326-193259_13tasks_bt300k.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Grounding Language in Play"></video><span class="n-media">9</span></span>
+        <span class="in">
+          <span class="tg">Action</span>
+          <span class="nm">Grounding Language in Play</span>
+          <span class="ds">Robots commanded in real time by typed natural language, learned from teleoperated play.</span>
+          <span class="ft">2020 · RSS 2021</span>
+        </span>
+      </a>
+      <a class="card" href="#play" data-themes="action ssl" aria-label="Learning Latent Plans from Play, 2019">
+        <span class="th"><video data-src="assets/lmp/mp4/8tasks_cropped_640x180.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Latent Plans from Play"></video><span class="n-media">10</span></span>
+        <span class="in">
+          <span class="tg">Action</span>
+          <span class="nm">Latent Plans from Play</span>
+          <span class="ds">Multi-task manipulation self-supervised from cheap unlabelled play data, with no RL.</span>
+          <span class="ft">2019 · CoRL 2019</span>
+        </span>
+      </a>
+      <a class="card" href="#actionable-representations" data-themes="ssl" aria-label="Self-Supervised Actionable Representations, 2018">
+        <span class="th"><video data-src="assets/mftcn/cheetah.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Actionable Representations"></video><span class="n-media">4</span></span>
+        <span class="in">
+          <span class="tg">Latent Self-Supervision</span>
+          <span class="nm">Actionable Representations</span>
+          <span class="ds">Continuous control learned from raw pixels via multi-frame time-contrastive embeddings.</span>
+          <span class="ft">2018 · IROS 2018</span>
+        </span>
+      </a>
+      <a class="card" href="#tcn" data-themes="ssl robotics" aria-label="Time-Contrastive Networks (TCN), 2017">
+        <span class="th"><video data-src="assets/tcn/kuka_pouring_cropped960x540.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Time-Contrastive Networks"></video><span class="n-media">10</span></span>
+        <span class="in">
+          <span class="tg">Latent Self-Supervision</span>
+          <span class="nm">Time-Contrastive Networks</span>
+          <span class="ds">Self-supervised representations from unlabelled video, rich enough to drive robot imitation.</span>
+          <span class="ft">2017 · ICRA 2018</span>
+        </span>
+      </a>
+      <a class="card" href="#perceptual" data-themes="ssl robotics" aria-label="Unsupervised Perceptual Rewards, 2017">
+        <span class="th"><video data-src="assets/rewards/doors.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Perceptual Rewards"></video><span class="n-media">7</span></span>
+        <span class="in">
+          <span class="tg">Latent Self-Supervision</span>
+          <span class="nm">Perceptual Rewards</span>
+          <span class="ds">Reward functions learned without supervision from a handful of human demonstrations.</span>
+          <span class="ft">2017 · RSS 2017</span>
+        </span>
+      </a>
+      <a class="card" href="#attention" data-themes="vision deeplearning" aria-label="Visual Attention, 2015">
+        <span class="th"><video data-src="assets/misc/attention.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Visual Attention"></video><span class="n-media">6</span></span>
+        <span class="in">
+          <span class="tg">Vision</span>
+          <span class="nm">Visual Attention</span>
+          <span class="ds">A foveated attention RNN whose tracking behaviour emerges from still-image training.</span>
+          <span class="ft">2015 · ICLR 2015 (workshop)</span>
+        </span>
+      </a>
+      <a class="card" href="#inception" data-themes="vision deeplearning" aria-label="Inception / GoogLeNet, 2014">
+        <span class="th"><img src="assets/inception/googlenet_diagram.png" alt="Inception / GoogLeNet" loading="lazy" decoding="async"><span class="n-media">5</span></span>
+        <span class="in">
+          <span class="tg">Vision</span>
+          <span class="nm">Inception / GoogLeNet</span>
+          <span class="ds">The deep architecture that took first place in ImageNet 2014 classification and detection.</span>
+          <span class="ft">2014 · CVPR 2015 · CVPR 2025 ten-year impact prize</span>
+        </span>
+      </a>
+      <a class="card" href="#dogs-vs-cats" data-themes="vision deeplearning" aria-label="Dogs vs. Cats Kaggle challenge, 2014">
+        <span class="th"><img src="assets/nyu/cat_dogs.png" alt="Dogs vs. Cats" loading="lazy" decoding="async"></span>
+        <span class="in">
+          <span class="tg">Vision</span>
+          <span class="nm">Dogs vs. Cats</span>
+          <span class="ds">First place in the Kaggle dog-versus-cat image classification challenge.</span>
+          <span class="ft">2014 · 2014</span>
+        </span>
+      </a>
+      <a class="card" href="#overfeat" data-themes="vision deeplearning" aria-label="OverFeat, 2013">
+        <span class="th"><img src="assets/overfeat/ms_nofine_clean.png" alt="OverFeat" loading="lazy" decoding="async"><span class="n-media">10</span></span>
+        <span class="in">
+          <span class="tg">Vision</span>
+          <span class="nm">OverFeat</span>
+          <span class="ds">One of the first open deep vision models, and winner of ImageNet 2013 localization.</span>
+          <span class="ft">2013 · ICLR 2014</span>
+        </span>
+      </a>
+      <a class="card" href="#pedestrian-detection" data-themes="vision deeplearning" aria-label="Pedestrian Detection, 2013">
+        <span class="th"><video data-src="assets/pedestrians/pedestrians_broadway480x360.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Pedestrian Detection"></video><span class="n-media">5</span></span>
+        <span class="in">
+          <span class="tg">Vision</span>
+          <span class="nm">Pedestrian Detection</span>
+          <span class="ds">State-of-the-art pedestrian detection using deep ConvNets in EBLearn.</span>
+          <span class="ft">2013 · CVPR 2013</span>
+        </span>
+      </a>
+      <a class="card" href="#house-numbers" data-themes="vision deeplearning" aria-label="Convolutional Neural Networks Applied to House Numbers Digit Classification, 2012">
+        <span class="th"><img src="assets/misc/house.png" alt="House Numbers" loading="lazy" decoding="async"><span class="n-media">6</span></span>
+        <span class="in">
+          <span class="tg">Vision</span>
+          <span class="nm">House Numbers</span>
+          <span class="ds">State-of-the-art house-number classification using deep ConvNets.</span>
+          <span class="ft">2012 · ICPR 2012</span>
+        </span>
+      </a>
+      <a class="card" href="#traffic-sign-recognition" data-themes="vision deeplearning" aria-label="Traffic Sign Recognition, 2011">
+        <span class="th"><img src="assets/misc/traffic_signs.png" alt="Traffic Sign Recognition" loading="lazy" decoding="async"><span class="n-media">7</span></span>
+        <span class="in">
+          <span class="tg">Vision</span>
+          <span class="nm">Traffic Sign Recognition</span>
+          <span class="ds">ConvNets with skip connections, combining low- and high-level features for sign recognition.</span>
+          <span class="ft">2011 · IJCNN 2011</span>
+        </span>
+      </a>
+      <a class="card" href="#unsupervised-hierarchies" data-themes="ssl vision deeplearning" aria-label="Unsupervised Convolutional Feature Hierarchies, 2010">
+        <span class="th"><img src="assets/misc/unsupervised_filters.png" alt="Unsupervised Hierarchies" loading="lazy" decoding="async"><span class="n-media">6</span></span>
+        <span class="in">
+          <span class="tg">Latent Self-Supervision</span>
+          <span class="nm">Unsupervised Hierarchies</span>
+          <span class="ds">Unsupervised learning of sparse convolutional feature hierarchies that improved a supervised…</span>
+          <span class="ft">2010 · NIPS 2010</span>
+        </span>
+      </a>
+      <a class="card" href="#eblearn" data-themes="vision deeplearning" aria-label="EBLearn, 2009">
+        <span class="th"><img src="assets/nyu/faces.png" alt="EBLearn" loading="lazy" decoding="async"><span class="n-media">10</span></span>
+        <span class="in">
+          <span class="tg">Vision</span>
+          <span class="nm">EBLearn</span>
+          <span class="ds">An open C++ deep learning framework built on energy-based models.</span>
+          <span class="ft">2009 · ICTAI 2009</span>
+        </span>
+      </a>
+      <a class="card" href="#nyu-robotics-class" data-themes="robotics" aria-label="Teaching Assistant for NYU Robotics class, 2009">
+        <span class="th"><video data-src="assets/nyu/rovio.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="NYU Robotics Class"></video><span class="n-media">2</span></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">NYU Robotics Class</span>
+          <span class="ds">Teaching assistant for the NYU robotics course, building the student robot platforms.</span>
+          <span class="ft">2009 · 2009</span>
+        </span>
+      </a>
+      <a class="card" href="#lagr" data-themes="robotics" aria-label="LAGR: Learning Applied to Ground Robots, 2005">
+        <span class="th"><video data-src="assets/lagr/lagr_run_490x360.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="LAGR"></video></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">LAGR</span>
+          <span class="ds">The DARPA programme where ConvNets drove long-range off-road navigation, 2004-2008.</span>
+          <span class="ft">2005 · DARPA, 2004–2008</span>
+        </span>
+      </a>
+      <a class="card" href="#long-range-vision" data-themes="robotics vision" aria-label="Learning Long-Range Vision for Autonomous Off-Road Driving, 2009">
+        <span class="th"><video data-src="assets/lagr/lagr_naviguation480x360.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Long-Range Vision"></video><span class="n-media">20</span></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">Long-Range Vision</span>
+          <span class="ds">Self-supervised deep vision for long-range autonomous off-road driving.</span>
+          <span class="ft">2009 · JFR 2009</span>
+        </span>
+      </a>
+      <a class="card" href="#fast-slow" data-themes="robotics" aria-label="Collision-Free Off-Road Robot Navigation, 2009">
+        <span class="th"><video data-src="assets/lagr/lagr_dynamics3_490x360.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Fast &amp; Slow Navigation"></video><span class="n-media">15</span></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">Fast &amp; Slow Navigation</span>
+          <span class="ds">Navigation that decouples fast short-range reaction from slow long-range planning.</span>
+          <span class="ft">2009 · JFR 2009</span>
+        </span>
+      </a>
+      <a class="card" href="#maneuvers" data-themes="robotics" aria-label="Learning Maneuver Dictionaries for Ground Robot Planning, 2008">
+        <span class="th"><video data-src="assets/lagr/lagr_dynamics480x360.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Maneuver Dictionaries"></video><span class="n-media">9</span></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">Maneuver Dictionaries</span>
+          <span class="ds">Vehicle dynamics learned by recording driven trajectories instead of modelling them.</span>
+          <span class="ft">2008 · ISR 2008</span>
+        </span>
+      </a>
+      <a class="card" href="#mapping-planning" data-themes="robotics" aria-label="Mapping and Planning under Uncertainty in Mobile Robots with Long-Range Perception, 2008">
+        <span class="th"><video data-src="assets/lagr/lagr_mapping480x360.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="Mapping under Uncertainty"></video><span class="n-media">12</span></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">Mapping under Uncertainty</span>
+          <span class="ds">A hyperbolic-polar map built to absorb the imprecision of long-range vision.</span>
+          <span class="ft">2008 · IROS 2008</span>
+        </span>
+      </a>
+      <a class="card" href="#lagr-deep-learning" data-themes="robotics ssl deeplearning" aria-label="Deep Belief Net Learning in a Long-Range Vision System, 2008">
+        <span class="th"><img src="assets/lagr/long_range.png" alt="Deep Belief Net Vision" loading="lazy" decoding="async"><span class="n-media">11</span></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">Deep Belief Net Vision</span>
+          <span class="ds">Self-supervised long-range visual navigation with deep ConvNets.</span>
+          <span class="ft">2008 · IROS 2008</span>
+        </span>
+      </a>
+      <a class="card" href="#online-learning" data-themes="robotics ssl" aria-label="Online Learning for Offroad Robots, 2007">
+        <span class="th"><img src="assets/lagr/online_learning.png" alt="Online Learning" loading="lazy" decoding="async"><span class="n-media">7</span></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">Online Learning</span>
+          <span class="ds">Long-range vision adapted online, self-supervised by short-range stereo.</span>
+          <span class="ft">2007 · RSS 2007</span>
+        </span>
+      </a>
+      <a class="card" href="#eurobot" data-themes="robotics vision" aria-label="EUROBOT 2004 Competition, 2004">
+        <span class="th"><video data-src="assets/eurobot/robot_hangs_out2-loop.mp4" data-t="0.4" muted loop playsinline preload="none" aria-label="EUROBOT 2004"></video><span class="n-media">11</span></span>
+        <span class="in">
+          <span class="tg">Robotics</span>
+          <span class="nm">EUROBOT 2004</span>
+          <span class="ds">Vision-based robot behaviours for a robot-rugby competition.</span>
+          <span class="ft">2004 · 2004</span>
+        </span>
+      </a>
+    <p class="empty" id="empty" hidden>No projects in this thread.</p>
+  </main>
+
+  <footer class="colophon">
+    <span>Selected projects and publications — <a href="https://scholar.google.com/citations?user=0nPi5YYAAAAJ" target="_blank" rel="noopener">full list on Scholar</a>.</span>
+    <span>Click a card for the full record.</span>
+  </footer>
+
 </div>
-</dt-byline>
-</dt-article>
-<dt-appendix>
-<h2>Acknowledgments</h2>
-<p>This article was prepared using the <a href="https://distill.pub">Distill</a> <a href="https://github.com/distillpub/template">template</a>.</p>
-</dt-appendix>
-</dt-appendix>
+
+  <dialog class="detail" id="uma-chapter-2" aria-labelledby="uma-chapter-2-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Action · Robotics — 2026</p>
+        <h2 id="uma-chapter-2-t">UMA — Chapter 2: Embodied Latent World Models</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/uma/hello-uma.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://uma.bot" target="_blank" rel="noopener">UMA</a>
+        <a href="https://www.linkedin.com/posts/sermanet_were-selected-among-2-of-startups-for-sprinds-activity-7483883160016183297-0cwI" target="_blank" rel="noopener">SPRIND grant</a>
+        <a href="https://uma.bot" target="_blank" rel="noopener">We are hiring</a>
+        </div>
+        <p class="authors">UMA</p>
+        <p class="bd">Latent world models for humanoids and other robots: planning in latent space, so a robot can simulate trajectories before it moves.</p>
+        <p class="bd">Selected among 2% of startups — one of ten teams — for <a href="https://www.linkedin.com/posts/sermanet_were-selected-among-2-of-startups-for-sprinds-activity-7483883160016183297-0cwI">SPRIND's Next Frontier AI Challenge</a>, a €125M programme from the German Federal Agency for Disruptive Innovation backing teams building new AI paradigms. The grant funds this work.</p>
+        <p class="bd"><strong>We're hiring.</strong> Get in touch via <a href="https://uma.bot">uma.bot</a>.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="uma-chapter-1" aria-labelledby="uma-chapter-1-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Action · Robotics — 2026</p>
+        <h2 id="uma-chapter-1-t">UMA — Chapter 1: A full humanoid and embodied AI in nine months</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/uma/astro-waving.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/uma/anchor-task.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/uma/pouch-task.mp4" muted loop playsinline controls preload="none"></video>
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://uma.bot" target="_blank" rel="noopener">UMA</a>
+        <a href="https://www.linkedin.com/posts/sermanet_im-really-happy-to-share-that-were-launching-activity-7401280590869856256-xxBC" target="_blank" rel="noopener">Launch</a>
+        <a href="https://www.linkedin.com/posts/sermanet_unveiling-our-very-first-prototype-named-activity-7480617039133581314-eLdG" target="_blank" rel="noopener">Version 0</a>
+        <a href="https://www.linkedin.com/posts/sermanet_preview-of-umas-embodied-ai-to-be-useful-activity-7480615715742507009-NAt3" target="_blank" rel="noopener">Embodied AI</a>
+        <a href="https://fr.linkedin.com/posts/bogdan-bodnar-55a2a4145_le-fameux-test-de-stabilit%C3%A9-du-futur-robot-activity-7480215226446127104-znj3" target="_blank" rel="noopener">Stability test</a>
+        </div>
+        <p class="authors">UMA</p>
+        <p class="bd">We built a full humanoid and the embodied AI to drive it in just 9 months, with locomotion and precise manipulation for real-world tasks.</p>
+        <p class="bd">The first prototype, <b>Version 0</b>, integrates AI, software and hardware, all developed from the ground up by a small team and assembled in Paris — enough to validate the fundamentals in the lab, including the stability test.</p>
+        <p class="bd">The target is a factory floor, which sets the bar: a robot has to perform reliably for hours on end, and handle objects that are deformable, slippery, thin and fragile. The system retries when it makes a mistake and recovers from perturbations rather than failing outright. Being full stack is the point — co-developing the AI and the hardware in the same building allows fast iteration and hardware choices made to serve control and learning, and it means safety can be built in at every level rather than bolted on afterwards.</p>
+        <p class="bd">The approach follows from the research: scalable learning with minimal labelling, discovering capabilities bottom-up from cheap, continuous data collection rather than assigning tasks top-down and letting the data speak.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="scifi" aria-labelledby="scifi-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Safety — 2025</p>
+        <h2 id="scifi-t">SciFi-Benchmark: Leveraging Science Fiction To Improve Robot Behavior</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/scifi/scifi_teaser.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/scifi/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/scifi/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/scifi/fig6.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/scifi/fig10.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/scifi/fig16.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/scifi/fig17.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/scifi/fig18.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://scifi-benchmark.github.io/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/abs/2503.10706" target="_blank" rel="noopener">Paper</a>
+        <a href="https://www.tensorflow.org/datasets/catalog/asimov_dilemmas_scifi_val" target="_blank" rel="noopener">Data (val)</a>
+        <a href="https://www.tensorflow.org/datasets/catalog/asimov_dilemmas_scifi_train" target="_blank" rel="noopener">Data (train)</a>
+        <a href="https://github.com/scifi-benchmark/safety_cards" target="_blank" rel="noopener">Safety Cards</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2025SciFi.bib" target="_blank" rel="noopener">BibTeX</a>
+        <a href="https://x.com/psermanet/status/1902014690164903955" target="_blank" rel="noopener">Twitter</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Anirudha Majumdar, Vikas Sindhwani</p>
+        <p class="venue">2025</p>
+        <p class="bd">Q: How would AI-powered robots behave if dropped into Science Fiction literature?<br>A: 95.8% aligned with humans (Sci-Fi decisions are only 21.2% aligned).</p>
+        <p class="bd">Q: Can we generate useful robot constitutions 📜 from Sci-Fi?<br>A: Sci-Fi inspired constitutions yield some of the strongest alignment on realistic safety benchmarks.</p>
+        <p class="bd extended extended-first">A benchmark built by mining the key moments in 824 major works of science fiction — films, television, novels and popular science books — where an AI or a robot made a decision that mattered. An LLM's recollection of each moment is used to generate a question about a comparable situation, the decision the fictional agent actually made, and the alternatives it could have chosen. Alignment is then measured against human-voted answers.</p>
+        <p class="bd extended">The first finding inverts the usual worry: modern LLMs paired with a constitution align with human values 95.8% of the time, while the decisions actually taken in science fiction align only 21.2% of the time. The genre is a catalogue of what not to do, and that turns out to be useful. Generated constitutions raise alignment over the base model from 79.4% to 95.8%, and hold up under adversarial prompting, where the base model collapses from 23.3% to a constitution-guided 92.3%. Those sci-fi-derived constitutions also score among the top performers on the ASIMOV benchmark, which is built from real hospital injury reports and real scenes — so rules learned from fiction transfer to reality. The released dataset holds 9,056 questions and 53,384 answers.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="asimov" aria-labelledby="asimov-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Safety — 2025</p>
+        <h2 id="asimov-t">Generating Robot Constitutions &amp; Benchmarks for Semantic Safety</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/asimov/asimov_generation.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig6.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig7.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig9.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig10.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig11.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig12.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/asimov/fig21.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://asimov-benchmark.github.io/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/pdf/2503.08663" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/asimov-benchmark/code/blob/main/ASIMOV_Datasets.ipynb" target="_blank" rel="noopener">Data</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2025SciFi.bib" target="_blank" rel="noopener">BibTeX</a>
+        <a href="https://x.com/psermanet/status/1900203328526766429" target="_blank" rel="noopener">Twitter</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Anirudha Majumdar, Alex Irpan, Dmitry Kalashnikov, Vikas Sindhwani</p>
+        <p class="venue">2025</p>
+        <p class="bd">Q: How can we ensure robots behave properly at scale?<br>A: Robot constitutions 📜!<br>Q: How do we verify behavior in undesirable situations at scale?<br>A: Generation!</p>
+        <p class="bd">We release the ASIMOV Benchmark for Semantic Safety of robots. We generate difficult-to-capture undesirable situations using image generation. We also generate robot constitutions straight from images.</p>
+        <p class="bd extended extended-first">Robotics safety used to mean collision avoidance. Once vision-language models started controlling robots capable of physical contact, with all their known failure modes, semantic safety became urgent: not whether the robot bumps into you, but whether it understands that what it is about to do is wrong.</p>
+        <p class="bd extended">The paper contributes a benchmark and a method. The benchmark is generated at scale rather than collected by hand — undesirable situations are synthesised from real visual scenes and from real hospital injury reports, using text and image generation to reach the difficult cases that are hard to capture in the wild. The method automatically generates robot constitutions from that data, with a novel auto-amending process that introduces nuance into written rules and measurably increases agreement with human judgments of what is safe and desirable. The paper explores the trade-off between general and specific rules across constitutions of very different lengths, reaching a top alignment rate of 84.3% — beating both no-constitution baselines and human-written constitutions. It deliberately declines to propose one universal constitution, arguing that rules need to be customised to legal, cultural and administrative context, and that a constitution's value lies in being human-readable and modifiable.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="robovqa" aria-labelledby="robovqa-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Reasoning — 2023</p>
+        <h2 id="robovqa-t">RoboVQA: Multimodal Long-Horizon Reasoning for Robotics</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/robovqa/meet_robot.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/robovqa/meet_human.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/robovqa/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/robovqa/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/robovqa/fig6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/robovqa/fig7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/robovqa/fig9.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/robovqa/fig10.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/robovqa/fig17.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://robovqa.github.io/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/pdf/2311.00899.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="https://robovqa.github.io/" target="_blank" rel="noopener">Data</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2024RoboVQA.bib" target="_blank" rel="noopener">BibTeX</a>
+        <a href="https://twitter.com/psermanet/status/1722610200430190784" target="_blank" rel="noopener">Twitter</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Tianli Ding, Jeffrey Zhao, Fei Xia, Yuan Cao <a href="https://arxiv.org/pdf/2311.00899.pdf">et al.</a></p>
+        <p class="venue">ICRA 2024 · CoRL and NeurIPS 2023 workshops</p>
+        <p class="bd">Need help in the real world? RoboVQA can guide robots and humans through long-horizon tasks on a phone via Google Meet.</p>
+        <p class="bd">We propose scalable real-world data acquisition and augmentation strategies and release a <a href="http://robovqa.github.io">dataset</a> of 800k (video, question/answer) with robots &amp; humans doing various long-horizon tasks.</p>
+        <p class="bd">We train a small video model (380M) that outperforms large state of the art zero-shot models by ~2x and demonstrate that scalable strategies for acquiring new data remain critical.</p>
+        <p class="bd">We use a speech intervention mechanism that automatically quantifies progress (intervention rate), provides corrections to retrain on, and allows performing tasks to completion in supervised real-world deployment.</p>
+        <p class="bd extended extended-first">A bottom-up data collection scheme that is 2.2× higher throughput than conventional top-down, step-by-step collection. Rather than scripting narrow tasks, operators fulfil any user request across three entire office buildings, using several embodiments: a robot, a human, and a human holding a grasping tool.</p>
+        <p class="bd extended">Models trained on all embodiments outperform models trained on robot data alone — even when evaluated purely on robot episodes — and for a fixed budget it pays to mix cheap human collection with expensive robot collection. The released dataset holds 829,502 video-text pairs across 29,520 unique instructions. A single video-conditioned model, RoboVQA-VideoCoCa, handles grounded high-level reasoning across these settings with a cognitive intervention rate 46% below the zero-shot state-of-the-art VLM baseline, and can guide real robots through long-horizon tasks. Video conditioning matters: video VLMs beat single-image VLMs by an average 19% error reduction across all task types. The intervention mechanism doubles as the evaluation metric and as the thing that makes imperfect systems deployable under human oversight.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="rtx" aria-labelledby="rtx-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Action · Robotics — 2023</p>
+        <h2 id="rtx-t">Open X-Embodiment: Robotic Learning Datasets and RT-X Models</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="https://robotics-transformer-x.github.io/img/overview.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/rtx/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rtx/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rtx/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rtx/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rtx/fig5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://robotics-transformer-x.github.io/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/abs/2310.08864" target="_blank" rel="noopener">Paper</a>
+        <a href="https://robotics-transformer-x.github.io/citation.txt" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">A. Padalkar, et al.</p>
+        <p class="venue">CoRL 2023</p>
+        <p class="bd">A cross-institution effort pooling robot learning datasets across many embodiments, and the RT-X models trained on them.</p>
+        <p class="bd extended extended-first">Robotics conventionally trains a separate model per application, per robot, and often per environment. NLP and computer vision consolidated around general pretrained backbones years ago; this paper asks whether the same consolidation can happen for robot manipulation, and provides the data to find out.</p>
+        <p class="bd extended">Twenty-one institutions pooled demonstrations from 22 different robots into standardised formats — 527 skills across 160,266 tasks. Training a high-capacity model on that mixture produces RT-X, which exhibits positive transfer: individual robots get better by drawing on experience collected on entirely different platforms. The release is as much infrastructure as result, since the standardised dataset is what makes the question answerable by anyone else.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="rt2" aria-labelledby="rt2-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Action — 2023</p>
+        <h2 id="rt2-t">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/rt2/RT2_fig2.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/rt2/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rt2/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rt2/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rt2/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/rt2/fig7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rt2/fig8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rt2/fig9.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/rt2/fig10.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://robotics-transformer2.github.io/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/pdf/2307.15818.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="https://karolhausman.github.io/bibtex/rt2-2023arxiv.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">A. Brohan, N. Brown, J. Carbajal, Y. Chebotar, X. Chen, K. Choromanski, T. Ding, D. Driess, A. Dubey, C. Finn, P. Florence, C. Fu, M. Gonzalez Arenas, K. Gopalakrishnan, K. Han, K. Hausman, A. Herzog, J. Hsu, B. Ichter, A. Irpan, N. Joshi, R. Julian, D. Kalashnikov, Y. Kuang, I. Leal, L. Lee, T. E. Lee, S. Levine, Y. Lu, H. Michalewski, I. Mordatch, K. Pertsch, K. Rao, K. Reymann, M. Ryoo, G. Salazar, P. Sanketi, P. Sermanet, J. Singh, A. Singh, R. Soricut, H. Tran, V. Vanhoucke, Q. Vuong, A. Wahid, S. Welker, P. Wohlhart, J. Wu, F. Xia, T. Xiao, P. Xu, S. Xu, T. Yu, B. Zitkovich</p>
+        <p class="venue">CoRL 2023</p>
+        <p class="bd">Vision-language models trained on web-scale data are co-fine-tuned on robot trajectories, so that web knowledge transfers directly into closed-loop robotic control.</p>
+        <p class="bd extended extended-first">Vision-language models trained on internet-scale data are folded directly into end-to-end robot control. The recipe is deliberately simple: express robot actions as text tokens and put them into the training mixture exactly like natural language, then co-fine-tune a state-of-the-art VLM on both robot trajectories and web vision-language tasks such as visual question answering. Models built this way are what the paper names vision-language-action models.</p>
+        <p class="bd extended">Across roughly 6,000 evaluation trials, RT-2 shows capabilities that were never in the robot data. It generalises to novel objects, interprets commands absent from its trajectories — placing an object onto a particular number or icon — and does rudimentary reasoning, picking the smallest or largest object, or the one nearest another. Adding chain-of-thought reasoning extends this to multi-stage semantics: choosing a rock when asked for an improvised hammer, or an energy drink for someone who is tired. The web knowledge does not merely improve the policy; it changes what the policy can be asked to do.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="palme" aria-labelledby="palme-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Action · Reasoning — 2023</p>
+        <h2 id="palme-t">PaLM-E: An Embodied Multimodal Language Model</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/palme/palme.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/palme/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/palme/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/palme/fig5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/palme/fig7.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://palm-e.github.io/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/abs/2303.03378" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/driess2023palme.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Danny Driess, Fei Xia, Mehdi S. M. Sajjadi, Corey Lynch, Aakanksha Chowdhery, Brian Ichter, Ayzaan Wahid, Jonathan Tompson, Quan Vuong, Tianhe Yu, Wenlong Huang, Yevgen Chebotar, Pierre Sermanet, Daniel Duckworth, Sergey Levine, Vincent Vanhoucke, Karol Hausman, Marc Toussaint, Klaus Greff, Andy Zeng, Igor Mordatch, Pete Florence</p>
+        <p class="venue">ICML 2023</p>
+        <p class="bd">An embodied multimodal language model that injects continuous sensor observations directly into the language model's embedding space.</p>
+        <p class="bd extended extended-first">Large language models reason well and understand nothing about the room they are in. PaLM-E attacks that grounding gap by pushing real-world continuous sensor data straight into the language model, rather than translating the world into text first.</p>
+        <p class="bd extended">Inputs are multimodal sentences that interleave visual, continuous state-estimation and textual encodings, trained end to end alongside a pretrained LLM across sequential manipulation planning, visual question answering and captioning. A single model handles varied observation modalities on multiple embodiments, and shows positive transfer — it benefits from joint training across internet-scale language, vision, and vision-language data rather than being diluted by it. The largest version, PaLM-E-562B, is simultaneously a robotics model and a visual-language generalist with state-of-the-art performance on OK-VQA, and retains its general language ability as it scales.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="innermonologue" aria-labelledby="innermonologue-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Reasoning — 2022</p>
+        <h2 id="innermonologue-t">Inner Monologue: Embodied Reasoning through Planning with Language Models</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/inner-monologue/inner_monologue.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/innermonologue/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/innermonologue/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/innermonologue/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/innermonologue/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/innermonologue/fig8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/innermonologue/fig9.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://innermonologue.github.io/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/abs/2207.05608" target="_blank" rel="noopener">Paper</a>
+        <a href="https://www.youtube.com/watch?v=0sJjdxn5kcI" target="_blank" rel="noopener">Video</a>
+        <a href="https://karolhausman.github.io/bibtex/huang22inner.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Wenlong Huang*, Fei Xia*, Ted Xiao*, Harris Chan, Jacky Liang, Pete Florence, Andy Zeng, Jonathan Tompson, Igor Mordatch, Yevgen Chebotar, Pierre Sermanet, Noah Brown, Tomas Jackson, Linda Luu, Sergey Levine, Karol Hausman, Brian Ichter</p>
+        <p class="venue">CoRL 2022</p>
+        <p class="bd">Language models plan robot behavior while continuously incorporating grounded feedback from the environment — an inner monologue that replans as the world answers back.</p>
+        <p class="bd extended extended-first">Planning with a language model in an embodied setting is not just a question of which skills to invoke, but how and when — and those answers change in response to the agent's own earlier choices. This work asks how far an LLM can get by reasoning over feedback expressed in natural language, with no additional training at all.</p>
+        <p class="bd extended">Feedback comes from several sources: success detection, scene description, and human interaction. Fed back into the prompt, they let the model form what the paper calls an inner monologue — a running, closed-loop commentary that it replans against. Closed-loop language feedback significantly improves completion of high-level instructions across three domains: simulated tabletop rearrangement, the same task on real hardware, and long-horizon mobile manipulation in a real kitchen. The result is notable for what it does not require: no fine-tuning, no new architecture, just the environment talking back in words the model already understands.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="saycan" aria-labelledby="saycan-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Reasoning · Action — 2022</p>
+        <h2 id="saycan-t">SayCan: Do As I Can, Not As I Say — Grounding Language in Robotic Affordances</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/saycan/saycan.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/saycan/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/saycan/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/saycan/fig6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/saycan/fig8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/saycan/fig11.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/saycan/fig13.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://say-can.github.io/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://say-can.github.io/assets/palm_saycan.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="https://www.youtube.com/watch?v=ysFav0b472w" target="_blank" rel="noopener">Video</a>
+        <a href="https://karolhausman.github.io/bibtex/saycan22arxiv.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">M. Ahn, A. Brohan, N. Brown, Y. Chebotar, O. Cortes, B. David, C. Fu, Ch. Finn, K. Gopalakrishnan, K. Hausman, A. Herzog, D. Ho, J. Hsu, J. Ibarz, B. Ichter, A. Irpan, E. Jang, R. Jauregui Ruano, K. Jeffrey, S. Jesmonth, N. J Joshi, R. Julian, D. Kalashnikov, Y. Kuang, K.-H. Lee, S. Levine, Y. Lu, L. Luu, C. Parada, P. Pastor, J. Quiambao, K. Rao, J. Rettinghouse, D. Reyes, P. Sermanet, N. Sievers, Cl. Tan, A. Toshev, V. Vanhoucke, F. Xia, T. Xiao, P. Xu, S. Xu, M. Yan, A. Zeng (alphabetically listed)</p>
+        <p class="venue">CoRL 2022</p>
+        <p class="bd">A language model proposes what to do; a learned affordance function scores what the robot can actually do here and now. The product of the two grounds language in the robot's real capabilities.</p>
+        <p class="bd extended extended-first">A language model asked how to clean a spill will produce a reasonable narrative that a particular robot in a particular kitchen may be entirely unable to carry out. SayCan closes that gap by pairing what the model wants to say with what the robot can actually do.</p>
+        <p class="bd extended">The language model supplies high-level semantic knowledge about how to accomplish an abstract, temporally extended instruction; a library of pretrained low-level skills supplies the grounding, with each skill's value function scoring how likely it is to succeed from the current state. Multiplying the two — what is useful to say against what is feasible to do — constrains the model to propose actions that are both sensible and possible. The robot becomes the language model's hands and eyes. Evaluated on real-world tasks with a mobile manipulator, the method completes long-horizon natural language instructions, and the ablations show that the real-world grounding is what makes the difference rather than the language model alone.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="language-play" aria-labelledby="language-play-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Action — 2020</p>
+        <h2 id="language-play-t">Grounding Language in Play</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/langlfp/playlang_20200326-193259_13tasks_bt300k.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/language-play/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/language-play/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/language-play/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/language-play/fig7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/language-play/fig8.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/language-play/fig13.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/language-play/fig14.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/language-play/fig15.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://sermanet.github.io/language-play" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/pdf/2005.07648.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Lynch2020Language.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Corey Lynch and Pierre Sermanet</p>
+        <p class="venue"><a href="http://www.roboticsproceedings.org/rss17/p047.pdf">RSS 2021</a></p>
+        <p class="bd">We present a simple and scalable approach for controlling robots with natural language: play through teleoperation, then answer “how do I go from start to finish?” for random episodes. We can then type in commands in real time.</p>
+        <p class="bd">By hooking up our English-trained model with a pre-trained language embedding trained on lots of text and different languages, it not only improves control but also allows commanding the model in 16 languages.</p>
+        <p class="bd">Combining natural language with play provides a breadth of skills while having no tasks determined in advance. This yields flexible specification of tasks — we can compose tasks on the fly: “pick up the object”, then “put the object in the trash”.</p>
+        <p class="bd extended extended-first">Imitation learning usually needs each task specified by a task ID or a goal image, neither of which is practical in an open world. Instruction-following work allows language, but typically assumes structure in the observations, the actuators or the language itself that does not survive contact with robotics.</p>
+        <p class="bd extended">This work learns perception from pixels, natural language understanding, and multitask continuous control end to end as one network — and, unusually, can absorb unlabelled, unstructured demonstration data carrying no task or language labels at all. That combination dramatically improves language-conditioned performance while cutting language annotation to under 1% of the data. At test time a single policy performs a wide variety of manipulation skills in a 3D environment, specified only by typed descriptions: "open the drawer… now pick up the block… now press the green button". Pairing the text-conditioned policy with a large pretrained language model makes it robust to out-of-distribution synonym instructions without collecting a single new demonstration, and extends it to commands in 16 languages.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="play" aria-labelledby="play-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Action · Latent Self-Supervision — 2019</p>
+        <h2 id="play-t">Learning Latent Plans from Play</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/lmp/mp4/8tasks_cropped_640x180.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/play/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/play/fig2.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/play/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/play/fig5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/play/fig8.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/play/fig9.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/play/fig10.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/play/fig11.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/play/fig13.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://sermanet.github.io/learning-from-play" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/pdf/1903.01973.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Lynch2019Play.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Corey Lynch, Mohi Khansari, Ted Xiao, Vikash Kumar, Jonathan Tompson, Sergey Levine, Pierre Sermanet</p>
+        <p class="venue">CoRL 2019</p>
+        <p class="bd">How to scale up multi-task learning? Self-supervise plan representations from lots of cheap unlabeled play data — no RL was used.</p>
+        <p class="bd extended extended-first">Play is cheap and play is rich. It can be collected in quantity without segmenting tasks, labelling them, or resetting to an initial state, and it covers roughly four times more interaction space than task demonstrations gathered for the same amount of time. This paper turns that into a training signal.</p>
+        <p class="bd extended">Play-LMP self-supervises control on top of human teleoperated play, learning to organise play behaviours in a latent plan space and then reusing them at test time to reach specific goals. The shift is from a narrow, discrete set of tasks to the continuum of behaviours an environment actually affords. After self-supervising on unlabelled play alone, it substantially outperforms individual expert-trained policies on 18 difficult user-specified visual manipulation tasks. Two side effects are as interesting as the headline: play-supervised models are more robust to perturbation than their expert-trained counterparts, and they retry until they succeed. The agent also organises its latent plan space around functional tasks despite never having seen a task label.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="actionable-representations" aria-labelledby="actionable-representations-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Latent Self-Supervision — 2018</p>
+        <h2 id="actionable-representations-t">Self-Supervised Actionable Representations</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/mftcn/cheetah.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/mftcn/model.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/actionable-representations/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/actionable-representations/fig3.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://sites.google.com/view/actionablerepresentations/" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/abs/1808.00928" target="_blank" rel="noopener">Paper</a>
+        <a href="https://drive.google.com/file/d/1QkEnqApB7U7XvRBupfnysgdFMarhnwlP/view?usp=sharing" target="_blank" rel="noopener">Video</a>
+        <a href="https://docs.google.com/presentation/d/1okTa2eWg-BbjA7l1dHL8R_UWOmF5wSQ0HHm7A8NpvfM/edit?usp=sharing" target="_blank" rel="noopener">Slides</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Dwibedi2018Learning.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Debidatta Dwibedi, Jonathan Tompson, Corey Lynch, Pierre Sermanet</p>
+        <p class="venue">IROS 2018</p>
+        <p class="bd">We learn continuous control entirely from raw pixels.</p>
+        <p class="bd">We use a multi-frame TCN to self-supervise task-agnostic representations from vision only, using 2 slightly different views of the cheetah. Then using RL on top of our embeddings we learn the cheetah task almost as well as if we were using the true proprioceptive states.</p>
+        <p class="bd extended extended-first">An extension of Time-Contrastive Networks that embeds several frames jointly rather than one frame at a time. A single frame can encode where things are; a short stack of them encodes how fast they are moving, and the paper shows this captures both position and velocity attributes substantially more accurately.</p>
+        <p class="bd extended">The test is whether such self-supervised representations are good enough to act on. Agents observing themselves taking random actions, or watching other agents perform tasks, learn embeddings that support continuous control policies trained with PPO using only those embeddings as input. On the real-world Pouring dataset the multi-frame model cuts error by 39.4% on motion attributes and 11.1% on static attributes relative to the single-frame baseline — the gap being largest exactly where motion matters.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="tcn" aria-labelledby="tcn-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Latent Self-Supervision · Robotics — 2017</p>
+        <h2 id="tcn-t">Time-Contrastive Networks (TCN)</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/tcn/kuka_pouring_cropped960x540.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/tcn/pose_all_cropped960x540.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/tcn/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/tcn/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/tcn/fig6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/tcn/fig8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/tcn/fig9.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/tcn/fig10.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/tcn/fig12.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/tcn/fig21.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://sermanet.github.io/imitate" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/abs/1704.06888" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/tensorflow/models/tree/master/research/tcn" target="_blank" rel="noopener">Code</a>
+        <a href="https://sites.google.com/site/brainrobotdata/home/multiview-pouring" target="_blank" rel="noopener">Dataset</a>
+        <a href="https://www.youtube.com/watch?v=b1UTUQpxPSY" target="_blank" rel="noopener">Video</a>
+        <a href="https://docs.google.com/presentation/d/1EvWSbsFfnceBpN7yG1wnqM2LxySQ0Gi-wTx6QaoVekY/edit?usp=sharing" target="_blank" rel="noopener">Slides</a>
+        <a href="https://ai.googleblog.com/2017/07/teaching-robots-to-understand-semantic.html" target="_blank" rel="noopener">Blogpost</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2017TCN.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine</p>
+        <p class="venue">ICRA 2018</p>
+        <p class="bd">We propose a general self-supervised method for learning representations from raw unlabeled videos, and show that the representations are rich enough to perform robotic tasks.</p>
+        <p class="bd">We use the distance in our learned embedding space to a video demonstration as a reward. An RL algorithm can learn to perform a pouring task using this reward: the robot learned to pour in only 9 iterations from a single video demonstration, while never receiving any labels.</p>
+        <p class="bd">We also show that a robot can teach itself how to imitate people. By training a single TCN on videos of both humans and robots performing random motions, the model finds correspondences between humans and robots despite never being given any label correspondences.</p>
+        <p class="bd extended extended-first">A self-supervised approach that learns representations and robot behaviours entirely from unlabelled video recorded from multiple viewpoints. Imitating human behaviour requires a viewpoint-invariant representation capturing the relationship between end-effectors and the environment, object attributes, and body pose — none of which is available as a label.</p>
+        <p class="bd extended">The training signal is a metric loss over time and viewpoint: simultaneous views of the same instant are attracted in the embedding space, while temporal neighbours — which look similar but are functionally different — are repelled. The model therefore learns simultaneously what is common between different-looking images and what differs between similar-looking ones, discovering attributes that hold across viewpoint but change over time, and ignoring nuisance variables like occlusion, motion blur, lighting and background. The representation supports two robot imitation settings: mimicking human poses with no explicit correspondence between human and robot bodies, and serving as a reward function inside a reinforcement learning loop, where the robot learns to pour from a single video demonstration in nine iterations without ever receiving a label.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="perceptual" aria-labelledby="perceptual-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Latent Self-Supervision · Robotics — 2017</p>
+        <h2 id="perceptual-t">Unsupervised Perceptual Rewards</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/rewards/doors.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/rewards/rewards.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/perceptual/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/perceptual/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/perceptual/fig8.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/perceptual/fig10.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/perceptual/fig13.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://sermanet.github.io/rewards" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://arxiv.org/abs/1612.06699" target="_blank" rel="noopener">Paper</a>
+        <a href="https://sites.google.com/site/brainrobotdata/home/pouring-dataset" target="_blank" rel="noopener">Dataset</a>
+        <a href="https://youtu.be/7f7sdLMCItg" target="_blank" rel="noopener">Video</a>
+        <a href="https://ai.googleblog.com/2017/07/teaching-robots-to-understand-semantic.html" target="_blank" rel="noopener">Blogpost</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2017Rewards.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Kelvin Xu, Sergey Levine</p>
+        <p class="venue">RSS 2017</p>
+        <p class="bd">We propose learning unsupervised perceptual rewards that can be fed to an RL system, and show it is able to learn a robotic task such as door opening from a few human demonstrations.</p>
+        <p class="bd extended extended-first">Reward design and exploration time are arguably the two biggest obstacles to deploying reinforcement learning in the real world. Designing a reward often means hand engineering, and sometimes means bolting extra sensors onto the environment purely to detect whether the task succeeded. Worse, interesting tasks have implicit intermediate steps that a final-outcome reward says nothing about.</p>
+        <p class="bd extended">This work infers perceptual reward functions from a handful of demonstrations by exploiting the abstractions already present in a pretrained deep model. The method identifies a task's key intermediate steps from only a few demonstration sequences and automatically selects the features most discriminative for recognising each step, with no explicit specification of sub-goals. The resulting rewards are dense and smooth — the properties an RL agent actually needs — and are shown to drive learning of a real-world task such as door opening from a small number of human demonstrations.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="attention" aria-labelledby="attention-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Vision · Deep Learning — 2015</p>
+        <h2 id="attention-t">Visual Attention</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/misc/attention.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/attention/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/attention/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/attention/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/attention/fig5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/attention/fig6.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://arxiv.org/abs/1412.7054" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2015Attention.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Andrea Frome, Esteban Real</p>
+        <p class="venue">ICLR 2015 (workshop)</p>
+        <p class="bd">We demonstrate a foveated attention RNN that is able to perform fine-grained classification. Tracking naturally emerges from our foveated model when run on videos, even though it was only trained on still images.</p>
+        <p class="bd extended extended-first">An extension of recurrent attention models into a visually unconstrained setting: fine-grained categorisation on the Stanford Dogs dataset, with real clutter, occlusion, lighting and pose variation. Prior attention work had largely stayed on toy or constrained problems such as MNIST digits.</p>
+        <p class="bd extended">The RNN structure is retained, but the visual network is far more powerful and is pre-trained at large scale outside the attention loop. The model learns to direct high-resolution attention to the most discriminative regions with no spatial supervision — no bounding boxes, no part annotations — and discriminates dog breeds moderately well even when given only a low-resolution context image plus a few narrow, cheap glimpses at faces and fur patterns. It outperforms the GoogLeNet classification model on this task. The broader argument is architectural: attention models train end to end, unlike detection pipelines assembled from hand-engineered stages that discard information at every seam. Run on video, tracking emerges from a model trained only on stills.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="inception" aria-labelledby="inception-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Vision · Deep Learning — 2014</p>
+        <h2 id="inception-t">Inception / GoogLeNet</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/inception/googlenet_diagram.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/inception/ILSVRC2012_val_00021791.PNG" alt="" loading="lazy" decoding="async">
+        <img src="assets/inception/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/inception/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/inception/fig3.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Szegedy_Going_Deeper_With_2015_CVPR_paper.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/tensorflow/models/tree/master/research/inception" target="_blank" rel="noopener">Code</a>
+        <a href="http://www.image-net.org/challenges/LSVRC/2014/results" target="_blank" rel="noopener">ImageNet Results</a>
+        <a href="https://ai.googleblog.com/2014/09/building-deeper-understanding-of-images.html" target="_blank" rel="noopener">Blogpost</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Szegedy2015Inception.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, Andrew Rabinovich</p>
+        <p class="venue">CVPR 2015 · CVPR 2025 ten-year impact prize</p>
+        <p class="bd">A deep architecture for computer vision. Our model obtained 1st place for the classification and detection tasks in the 2014 ImageNet Challenge.</p>
+        <p class="bd extended extended-first">The architecture that won ImageNet 2014 classification and detection, and the reasoning behind it. The paper's stated concern is not accuracy alone but efficiency: with mobile and embedded computing gaining ground, power and memory use matter, so most experiments were held to a budget of roughly 1.5 billion multiply-adds at inference — a deliberate constraint intended to keep the result usable rather than academic.</p>
+        <p class="bd extended">"Deep" is meant in two senses: greater network depth, and a new level of organisation in the form of the Inception module, which computes 1×1, 3×3 and 5×5 convolutions plus pooling in parallel and concatenates them, letting the network choose its own filter scale at every stage rather than having it fixed by the designer. The dimensionality-reduction variant inserts 1×1 convolutions before the expensive filters, which is what keeps the computational budget in reach. The paper also credits the era's progress to the synergy of deep architectures with classical computer vision rather than to depth alone.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="dogs-vs-cats" aria-labelledby="dogs-vs-cats-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Vision · Deep Learning — 2014</p>
+        <h2 id="dogs-vs-cats-t">Dogs vs. Cats Kaggle challenge</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/nyu/cat_dogs.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://www.kaggle.com/c/dogs-vs-cats/leaderboard" target="_blank" rel="noopener">Leaderboard</a>
+        </div>
+        <p class="authors">Pierre Sermanet</p>
+        <p class="venue">2014</p>
+        <p class="bd">1st place in an image classification Kaggle challenge between dog and cat images. Most of the top entries are based on our OverFeat model.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="overfeat" aria-labelledby="overfeat-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Vision · Deep Learning — 2013</p>
+        <h2 id="overfeat-t">OverFeat</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/overfeat/ms_nofine_clean.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/bear.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/fig3.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/fig5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/fig6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/fig7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/fig8.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/overfeat/fig11.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://github.com/sermanet/OverFeat" target="_blank" rel="noopener">Code</a>
+        <a href="https://arxiv.org/abs/1312.6229" target="_blank" rel="noopener">Paper</a>
+        <a href="http://www.image-net.org/challenges/LSVRC/2013/results.php" target="_blank" rel="noopener">ImageNet Results</a>
+        <a href="http://www.image-net.org/challenges/LSVRC/2013/slides/overfeat_ilsvrc2013.pdf" target="_blank" rel="noopener">Slides</a>
+        <a href="https://machinelearning.apple.com/2017/11/16/face-detection.html" target="_blank" rel="noopener">Press</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2014OverFeat.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, David Eigen, Xiang Zhang, Michael Mathieu, Rob Fergus, Yann LeCun</p>
+        <p class="venue">ICLR 2014</p>
+        <p class="bd">This model obtained 1st place in the 2013 ImageNet object localization challenge. The model and pre-trained features were later released to the public.</p>
+        <p class="bd">OverFeat has been used by Apple for on-device face detection in iPhones: <a href="https://machinelearning.apple.com/2017/11/16/face-detection.html">blogpost</a>.</p>
+        <p class="bd extended extended-first">An integrated framework using a single ConvNet for classification, localization and detection at once. The central observation is that a multiscale sliding-window approach can be implemented efficiently inside a ConvNet itself, since the convolutional layers already share computation across overlapping windows — making dense evaluation affordable rather than prohibitive.</p>
+        <p class="bd extended">To this it adds a deep learning approach to localization that predicts object boundaries directly, and an unusual choice at inference: bounding boxes are accumulated rather than suppressed, so agreement between overlapping predictions raises detection confidence instead of discarding evidence. All three tasks are learned simultaneously in one shared network. The framework won the localization task of ILSVRC 2013 and was competitive on detection and classification; post-competition work set a new state of the art on detection. The released feature extractor, OverFeat, became one of the first widely used pretrained deep vision models — later used by Apple for on-device face detection in iPhones.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="pedestrian-detection" aria-labelledby="pedestrian-detection-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Vision · Deep Learning — 2013</p>
+        <h2 id="pedestrian-detection-t">Pedestrian Detection</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/pedestrians/pedestrians_broadway480x360.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/pedestrian-detection/fig2.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/pedestrian-detection/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/pedestrian-detection/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/pedestrian-detection/fig5.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2013/html/Sermanet_Pedestrian_Detection_with_2013_CVPR_paper.html" target="_blank" rel="noopener">Paper</a>
+        <a href="https://www.youtube.com/watch?v=uKU2pzpGUlM" target="_blank" rel="noopener">Video</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2013Pedestrian.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Koray Kavukcuoglu, Soumith Chintala, Yann LeCun</p>
+        <p class="venue">CVPR 2013</p>
+        <p class="bd">State of the art results on pedestrian detection datasets using deep ConvNets in the EBLearn framework.</p>
+        <p class="bd extended extended-first">State-of-the-art and competitive results across all the major pedestrian detection datasets with a single convolutional network, at a point when the field was still dominated by hand-crafted features.</p>
+        <p class="bd extended">Three departures from a standard ConvNet carry the result. Multi-stage features, with connections that skip layers, let global shape information be integrated with local distinctive motifs rather than the classifier seeing only the most abstract stage. And the filters at each stage are pre-trained with an unsupervised method based on convolutional sparse coding — the learned first-layer filters include not only oriented edge detectors but corner and junction detectors, features that would be tedious to design by hand. The system was built in the EBLearn framework.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="house-numbers" aria-labelledby="house-numbers-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Vision · Deep Learning — 2012</p>
+        <h2 id="house-numbers-t">Convolutional Neural Networks Applied to House Numbers Digit Classification</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/misc/house.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/house-numbers/fig2.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/house-numbers/fig3.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/house-numbers/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/house-numbers/fig5.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/house-numbers/fig6.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://arxiv.org/pdf/1204.3968.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2012Convolutional.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Soumith Chintala, Yann LeCun</p>
+        <p class="venue">ICPR 2012</p>
+        <p class="bd">State of the art results in house numbers classification using deep ConvNets.</p>
+        <p class="bd extended extended-first">Classifying digits from real-world house numbers — the SVHN dataset — with convolutional networks, at a time when most vision systems still relied on hand-designed features. The argument is that a ConvNet learns a feature set optimised for the task at hand instead of one chosen in advance.</p>
+        <p class="bd extended">Two departures from the standard architecture do the work. Multi-stage features feed the classifier the outputs of earlier stages as well as the last one, so local detail reaches the decision alongside global shape. And Lp pooling replaces the usual average or max pooling, with the paper analysing how the choice of p affects validation error. Together they establish a new state of the art of 94.85% on SVHN, a 45.2% relative error improvement. The source code and a tutorial were released through EBLearn.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="traffic-sign-recognition" aria-labelledby="traffic-sign-recognition-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Vision · Deep Learning — 2011</p>
+        <h2 id="traffic-sign-recognition-t">Traffic Sign Recognition</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/misc/traffic_signs.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/misc/convnet_skip_connections.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/traffic-sign-recognition/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/traffic-sign-recognition/fig2.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/traffic-sign-recognition/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/traffic-sign-recognition/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/traffic-sign-recognition/fig5.png" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="papers/sermanet-ijcnn-11.pdf">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2011Traffic.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Yann LeCun</p>
+        <p class="venue">IJCNN 2011</p>
+        <p class="bd">This deep model obtained 2nd place in a traffic sign recognition challenge using the EBLearn framework. It uses skip connections in deep ConvNets to better combine low-level and high-level learned features.</p>
+        <p class="bd extended extended-first">ConvNets applied to the GTSRB German traffic sign benchmark. Signs are rigid and designed to be visible, which makes the task sound constrained, but the dataset is full of real-world damage: viewpoint variation, saturation and low contrast, motion blur, occlusion, sun glare, faded colours, graffiti, stickers, and inputs as small as 15×15 pixels.</p>
+        <p class="bd extended">The architecture departs from a standard ConvNet by feeding the classifier the pooled first-stage features alongside the second-stage ones. The second stage carries global, invariant shape; the first carries local motifs with more precise detail; together they give the classifier several scales of receptive field. It also replaces the usual pointwise sigmoid with a rectified sigmoid followed by subtractive and divisive local normalisation, and trains on a jittered set five times the original size, perturbed in position, scale and rotation. The system placed second in phase I of the competition at 98.97%, above the 98.81% human benchmark and a hair behind the winner. Further experiments — a deeper classifier and, unexpectedly, dropping colour for grayscale — set a new record of 99.17%. Randomly-initialised features alone still reached 97.33%, which the paper uses as a cheap way to search architectures before committing to training.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="unsupervised-hierarchies" aria-labelledby="unsupervised-hierarchies-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Latent Self-Supervision · Vision · Deep Learning — 2010</p>
+        <h2 id="unsupervised-hierarchies-t">Unsupervised Convolutional Feature Hierarchies</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/misc/unsupervised_filters.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/unsupervised-hierarchies/fig1.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/unsupervised-hierarchies/fig2.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/unsupervised-hierarchies/fig3.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/unsupervised-hierarchies/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/unsupervised-hierarchies/fig5.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="http://papers.nips.cc/paper/4133-learning-convolutional-feature-hierarchies-for-visual-recognition.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="papers/kavukcuoglu-nips-10.pdf">Paper (mirror)</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Kavukcuoglu2010Unsupervised.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Koray Kavukcuoglu, Pierre Sermanet, Y-Lan Boureau, Karol Gregor, Michael Mathieu, Yann LeCun</p>
+        <p class="venue">NIPS 2010</p>
+        <p class="bd">An unsupervised method for learning multi-stage hierarchies of sparse convolutional features. One of the few instances of this period where unsupervised pretraining improved results in a supervised task.</p>
+        <p class="bd extended extended-first">Sparse coding had become a popular way to learn visual features, but it was almost always trained on isolated patches. Applying the resulting filters convolutionally then produces highly redundant codes, because every overlapping patch was encoded without reference to its neighbours. This paper trains convolutionally over large image windows instead, which removes that redundancy between neighbouring feature vectors and makes the representation more efficient.</p>
+        <p class="bd extended">Alongside the linear decoder that reconstructs the image from sparse features, the method trains a feed-forward encoder that predicts quasi-sparse features directly from the input, so inference at test time costs one pass rather than an optimisation. The change in training regime changes what gets learned: patch-based training rarely yields anything but oriented edge detectors, while convolutional training produces markedly more diverse filters — centre-surround, corner detectors, cross detectors and oriented gratings. Stacked into a multi-stage convolutional architecture — 64 features at the first stage, 256 at the second, connected through a sparse table amounting to 4,096 kernels, more dictionary elements than prior convolutional RBM or sparse coding work had attempted — these filters improve results across several recognition and detection tasks, including Caltech-101 and INRIA pedestrians.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="eblearn" aria-labelledby="eblearn-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Vision · Deep Learning — 2009</p>
+        <h2 id="eblearn-t">EBLearn</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/nyu/faces.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/nyu/eblearn.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/eblearn/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/eblearn/fig3.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/eblearn/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/eblearn/fig5.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/eblearn/fig6.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/eblearn/fig7.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/eblearn/fig8.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/eblearn/fig9.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="http://eblearn.sourceforge.net/" target="_blank" rel="noopener">Code</a>
+        <a href="papers/sermanet-ictai-09.pdf">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2009EBLearn.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Koray Kavukcuoglu, Yann LeCun — additional help from Soumith Chintala</p>
+        <p class="venue">ICTAI 2009</p>
+        <p class="bd">A C++ deep learning framework similar to Torch and used for multiple state of the art results in computer vision.</p>
+        <p class="bd extended extended-first">Energy-based learning offers a single framework for supervised and unsupervised training of probabilistic and non-probabilistic factor graphs. A model assigns a scalar energy to configurations of inputs, outputs and latent variables; inference finds the configuration that minimises that energy; learning shapes the energy surface so that correct outputs sit lower than all incorrect ones.</p>
+        <p class="bd extended">EBLearn is an open-source, cross-platform C++ library for building such models. It has two components: libidx, an efficient and flexible multi-dimensional tensor library, and libeblearn, an object-oriented library of trainable modules and learning algorithms with support for convolutional networks, image processing and graphical display. Machines are assembled from predefined modules and loss functions, with gradient-based learning implemented through semi-automatic differentiation of the assembled model. The paper works through how regression, classification, unsupervised algorithms and full vision architectures such as LeNet-7 all map onto the same formulation, and shows the library detecting objects with a trained detector.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="nyu-robotics-class" aria-labelledby="nyu-robotics-class-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics — 2009</p>
+        <h2 id="nyu-robotics-class-t">Teaching Assistant for NYU Robotics class</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/nyu/rovio.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/nyu/3pi.mp4" muted loop playsinline controls preload="none"></video>
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://cs.nyu.edu/~yann/2009s-V22-0480-001/index.html" target="_blank" rel="noopener">Class Page</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Yann LeCun</p>
+        <p class="venue">2009</p>
+        <p class="bd">Teaching assistant for the NYU robotics course, building small mobile robot platforms for student projects.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="lagr" aria-labelledby="lagr-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics — 2005</p>
+        <h2 id="lagr-t">LAGR: Learning Applied to Ground Robots</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/lagr/lagr_run_490x360.mp4" muted loop playsinline controls preload="none"></video>
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://cs.nyu.edu/~yann/research/lagr/index.html" target="_blank" rel="noopener">Project Page</a>
+        <a href="https://www.youtube.com/watch?v=lowcgokiRG8" target="_blank" rel="noopener">Video</a>
+        </div>
+        <p class="authors">Yann LeCun, Urs Muller, Pierre Sermanet, Marco Scoffier, Chris Crudelle, Beat Flepp, Ayse Erkan, Matt Grimes, Raia Hadsell, Koray Kavukcuoglu, Marc'Aurelio Ranzato, Jan Ben, Sumit Chopra, Jeff Han, Marc Peyote, Ilya Rosenberg, Yury Sulsky</p>
+        <p class="venue">DARPA, 2004–2008</p>
+        <p class="bd">A DARPA challenge where the NYU-NetScale team developed ConvNets for long-range off-road navigation from 2004 to 2008.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="long-range-vision" aria-labelledby="long-range-vision-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics · Vision — 2009</p>
+        <h2 id="long-range-vision-t">Learning Long-Range Vision for Autonomous Off-Road Driving</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/lagr/lagr_naviguation480x360.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/long-range-vision/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig7.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig8.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig9.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig10.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig11.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig12.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig14.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig16.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig17.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig18.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig20.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig23.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig24.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig25.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/long-range-vision/fig26.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="papers/hadsell-jfr-09.pdf">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2009Learning.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Raia Hadsell, Pierre Sermanet, Jan Ben, Ayse Erkan, Marco Scoffier, Koray Kavukcuoglu, Urs Muller, Yann LeCun</p>
+        <p class="venue">JFR 2009</p>
+        <p class="bd">An overview paper of our self-supervised deep learning vision model.</p>
+        <p class="bd extended extended-first">The journal-length account of the self-supervised long-range vision system. A deep hierarchical network extracts features from camera images; a realtime classifier trained on those features predicts traversability from 5 metres to beyond 100, far past the 12-metre limit of the stereo module that supervises it.</p>
+        <p class="bd extended">The paper credits the result to the quality of the training data generated on every frame: robust, visually consistent stereo labels; wide-context input windows normalised so objects appear at consistent scale regardless of distance; and a concise, discriminative feature representation. It covers the feature learning in detail — including unsupervised convolutional auto-encoder training and radial basis function features — along with the five-category labelling scheme, ground plane extraction, and the failure modes the labelling has to survive. Evaluation uses both a ground-truth dataset and field runs, where robots with long-range learning held to paths that the short-range system repeatedly lost, needing rescue from the undergrowth.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="fast-slow" aria-labelledby="fast-slow-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics — 2009</p>
+        <h2 id="fast-slow-t">Collision-Free Off-Road Robot Navigation</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/lagr/lagr_dynamics3_490x360.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/fast-slow/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig3.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig10.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig13.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig14.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig15.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig19.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig20.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig21.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig22.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig23.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig24.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig25.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/fast-slow/fig26.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="papers/sermanet-jfr-09.pdf">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2009Multirange.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Raia Hadsell, Marco Scoffier, Matt Grimes, Jan Ben, Ayse Erkan, Chris Crudele, Urs Muller, Yann LeCun</p>
+        <p class="venue">JFR 2009</p>
+        <p class="bd">An overview paper of our navigation system, designed to naturally handle errors and outputs coming out of a deep vision model. This model decouples the fast and short-range navigation from the slow and long-range navigation to achieve robustness.</p>
+        <p class="bd extended extended-first">The complete navigation architecture behind the LAGR system, and the argument for splitting it by range. Humans combine cues at several spatial resolutions and time scales: distant gazing sets the general direction and is refined slowly, while nearby obstacles demand constant attention and fast reaction. The system mirrors that.</p>
+        <p class="bd extended">A short-range perception loop runs at high frame rate on low-resolution images and handles local planning and obstacle avoidance; a long-range adaptive vision loop runs at lower frame rate on maximum-resolution images and handles strategic planning. Probabilistic traversability labels from both accumulate into a robot-centred hyperbolic-polar map with a 200-metre effective range. Short-range planning uses the recorded maneuver dictionary rather than a dynamical model. Localisation combines GPS, wheel odometry, an IMU and a fast, low-complexity rotational visual odometry module. The layers are deliberately independent, so each is insulated from the latency of the more complex ones above it: wheel commands at 20Hz, reactive planning at 5–10Hz, deliberative planning at 1Hz. The system beat both the reference baseline and its own configuration with long-range vision disabled, and was verified in independent government tests.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="maneuvers" aria-labelledby="maneuvers-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics — 2008</p>
+        <h2 id="maneuvers-t">Learning Maneuver Dictionaries for Ground Robot Planning</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/lagr/lagr_dynamics480x360.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/maneuvers/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/maneuvers/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/maneuvers/fig4.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/maneuvers/fig5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/maneuvers/fig6.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/maneuvers/fig7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/maneuvers/fig8.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/maneuvers/fig9.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="papers/sermanet-isr-08.pdf">Paper</a>
+        <a href="https://www.youtube.com/watch?v=kCF7Uo5vwJY" target="_blank" rel="noopener">Video</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Learning.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Marco Scoffier, Chris Crudele, Urs Muller, Yann LeCun</p>
+        <p class="venue">ISR 2008</p>
+        <p class="bd">Instead of computing the theoretical dynamics of a vehicle, we propose to simply record the observed dynamics while a human operator “plays” with the robot, essentially trying all possible moves. At test time, the model has a bank of observed possible trajectories for every state of the motors. Trajectories leading to collisions are discarded, while the fastest available trajectory is selected. While we observed many collisions using the baseline system, we did not observe collisions after introducing this model.</p>
+        <p class="bd extended extended-first">Vehicle dynamics are normally captured by a model whose parameters come from system identification or from the vehicle's specifications. Those models are accurate in theory but blind to differences between individual vehicles, awkward to adapt to new environments, and often need hand-crafted heuristics for cases like reversing. This work replaces the model with a recording.</p>
+        <p class="bd extended">While a human drives — or the robot drives itself — every traversed trajectory is stored in a bank indexed by the initial left and right wheel speeds and by where it ends on a 2.5m circle. Ten speed bins per wheel give 100 states, each holding around 100 trajectories reaching different angles. At planning time the current wheel speeds select the feasible set, trajectories crossing non-traversable cells are discarded, and the cheapest survivor is executed as a list of wheel commands, at almost no online computation cost. A bank only 15% full, extracted from two hours of human driving, already drove well; 18 hours of logs filled it to 64% and covered a wider range of situations. Collisions were frequent with the baseline system and were not observed once this one was in place.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="mapping-planning" aria-labelledby="mapping-planning-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics — 2008</p>
+        <h2 id="mapping-planning-t">Mapping and Planning under Uncertainty in Mobile Robots with Long-Range Perception</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/lagr/lagr_mapping480x360.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/lagr/lagr_mapping2_hyperbolic_540x320.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/mapping-planning/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig2.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig3.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig5.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig6.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig7.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig9.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/mapping-planning/fig10.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="papers/sermanet-iros-08.pdf">Paper</a>
+        <a href="https://www.youtube.com/watch?v=ByToYYTOhmk" target="_blank" rel="noopener">Video</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2008Mapping.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Pierre Sermanet, Raia Hadsell, Marco Scoffier, Urs Muller, Yann LeCun</p>
+        <p class="venue">IROS 2008</p>
+        <p class="bd">A hyperbolic-polar coordinate mapping system that is naturally suited to handle imprecisions in long-range visual navigation.</p>
+        <p class="bd extended extended-first">Self-supervised long-range vision can label obstacles and pathways a hundred metres out, but both the category and the range of distant regions carry considerable uncertainty. This paper builds a map that represents both, and accumulates evidence across frames rather than overwriting it.</p>
+        <p class="bd extended">A pixel covers a near-constant angular extent but a wildly varying span of distances — a few centimetres near the robot, effectively infinite near the horizon. The map geometry follows that: hyperbolic-polar, with constant 20cm radial resolution out to about 15m, then hyperbolically growing cells to 200m and beyond, so an effectively infinite radius fits in a finite grid. A robot-centred Cartesian map at the same resolution would have needed 500×500 cells. Every cell holds a histogram accumulating per-class evidence from the classifier's five categories, so the traversability decision is deferred to planning time and the policy can be made more conservative or more aggressive without rebuilding the map. Because the map is fixed to the local pose frame, recentring as the robot moves costs only a translation.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="lagr-deep-learning" aria-labelledby="lagr-deep-learning-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics · Latent Self-Supervision · Deep Learning — 2008</p>
+        <h2 id="lagr-deep-learning-t">Deep Belief Net Learning in a Long-Range Vision System</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/lagr/long_range.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig1.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig2.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig3.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig5.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig7.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig8.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig9.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/lagr-deep-learning/fig10.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="papers/hadsell-iros-08.pdf">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2008Deep.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Raia Hadsell, Ayse Erkan, Pierre Sermanet, Marco Scoffier, Urs Muller, Yann LeCun</p>
+        <p class="venue">IROS 2008</p>
+        <p class="bd">Self-supervised long-range visual navigation with deep ConvNets.</p>
+        <p class="bd extended extended-first">A deep belief network extracts features from the robot's camera images, and those features train a realtime classifier that predicts traversability all the way to the horizon, enabling strategic rather than merely reactive planning.</p>
+        <p class="bd extended">Three choices make the self-supervision work. Training windows are large enough to carry context, not just colour and texture. The stereo supervisor emits five visually distinct categories — super-ground, ground, footline, obstacle, super-obstacle — chosen so the labels stay consistent instead of noisy, since inconsistent supervision causes the learning to fail outright. And a horizon-levelled input pyramid normalises for distance, so similar obstacles appear at similar heights regardless of how far away they are. The classifier's output populates a hyperbolic-polar costmap on which the planner runs. The system was developed and tested on the DARPA LAGR platform, both standalone and inside the full navigation stack, where long-range vision produced measurably smoother and more far-sighted driving.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="online-learning" aria-labelledby="online-learning-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics · Latent Self-Supervision — 2007</p>
+        <h2 id="online-learning-t">Online Learning for Offroad Robots</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <img src="assets/lagr/online_learning.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/online-learning/fig2.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/online-learning/fig4.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/online-learning/fig5.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/online-learning/fig6.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/online-learning/fig7.png" alt="" loading="lazy" decoding="async">
+        <img src="assets/online-learning/fig9.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="papers/hadsell-rss-07.pdf">Paper</a>
+        <a href="https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2007Online.bib" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <p class="authors">Raia Hadsell, Pierre Sermanet, Ayse Naz Erkan, Jan Ben, Jefferson Han, Beat Flepp, Urs Muller, Yann LeCun</p>
+        <p class="venue">RSS 2007</p>
+        <p class="bd">Online adaptation of long-range vision by self-supervising with short-range stereo vision.</p>
+        <p class="bd extended extended-first">Stereo range estimates become unreliable past 10 to 12 metres, which leaves a robot driving in a self-imposed fog — entering dead ends and slowly discovering pathways a human would see immediately. This system trains a classifier online, on every frame, from the stereo module's sparse near-range traversability labels, then applies it to the entire scene.</p>
+        <p class="bd extended">Two ideas carry it. A distance-normalised image pyramid makes it practical to train on large, context-rich windows rather than colour and texture patches. And spatial label propagation: once stereo labels a location, that label is propagated back to every earlier view of the same target, so the classifier learns view-invariant classifications and can train on far-away views captured before any label was available. A ring buffer acts as short-term memory, keeping the discriminative training balanced and consistent. The result sees obstacles and paths at 30 to 40 metres, far beyond stereo range, and adapts quickly when the environment changes.</p>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="detail" id="eurobot" aria-labelledby="eurobot-t">
+    <div class="detail-head">
+      <div class="meta">
+        <p class="kicker">Robotics · Vision — 2004</p>
+        <h2 id="eurobot-t">EUROBOT 2004 Competition</h2>
+      </div>
+      <button class="detail-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="detail-body">
+      <div class="detail-media">
+        <video data-src="assets/eurobot/robot_hangs_out2.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/eurobot/robot_combo.jpg" alt="" loading="lazy" decoding="async">
+        <img src="assets/eurobot/robot_description.jpg" alt="" loading="lazy" decoding="async">
+        <video data-src="assets/eurobot/robot_final_behavior.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/eurobot/robot_wants_to_eat_red_balls.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/eurobot/robot_wants_to_eat_red_balls2.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/eurobot/robot_hangs_out.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/eurobot/videocam.mp4" muted loop playsinline controls preload="none"></video>
+        <video data-src="assets/eurobot/videocam2.mp4" muted loop playsinline controls preload="none"></video>
+        <img src="assets/eurobot/braitenberg.jpg" alt="" loading="lazy" decoding="async">
+        <video data-src="assets/eurobot/rules.mp4" muted loop playsinline controls preload="none"></video>
+      </div>
+      <div class="detail-text">
+        <div class="detail-links">
+        <a href="https://sermanet.github.io/eurobot" target="_blank" rel="noopener">Project Page</a>
+        </div>
+        <p class="authors">Computer vision, navigation and behaviors by Pierre Sermanet, Philippe Rambert, Jean-Baptiste Mouret. Entire team: <a href="http://www.evolutek.org/">Evolutek</a></p>
+        <p class="venue">2004</p>
+        <p class="bd">Vision-based behaviors in a robot-rugby challenge.</p>
+      </div>
+    </div>
+  </dialog>
+
+<script src="/designs/_shared/records.js?v=28f6663e" defer></script>
+<script src="/designs/signal/app.js?v=f5f30325" defer></script>
 </body>
-<script type="text/bibliography">
-</script>
-
-<script src="lib/blazy.js"></script>
-<script src="lib/video-optimizer.js"></script>
-<script>
-  // Initialize Blazy for images (non-video elements)
-  var bLazy = new Blazy({
-    selector: 'img.b-lazy, .b-lazy:not(video)', // Exclude videos from basic lazy loading
-    success: function(){
-      updateCounter();
-    }
-  });
-  
-  var imageLoaded = 0;
-  function updateCounter() {
-    imageLoaded++;
-    console.log("blazy image loaded: "+imageLoaded);
-  }
-  
-  // Video optimization settings
-  var videoOptimizer = new VideoOptimizer({
-    rootMargin: '50px', // Start loading videos 50px before they come into view
-    enablePlaceholder: false, // Disable placeholders to show videos immediately  
-    preferredFormats: ['webm', 'mp4'], // Try WebM first for better compression
-    fadeInDuration: 200,
-    retryAttempts: 2,
-    autoplay: true // Ensure autoplay is enabled by default
-  });
-  
-  // Optional: Add performance monitoring
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      var stats = videoOptimizer.getStats();
-      console.log('Video loading stats:', stats);
-    }, 2000);
-  });
-  
-  // Apply custom link styles after page loads
-  document.addEventListener('DOMContentLoaded', function() {
-    // Apply to all links on the page including project-link and link classes
-    const allLinks = document.querySelectorAll('a');
-    allLinks.forEach(function(link) {
-      link.style.color = '#0066cc';
-      link.style.textDecoration = 'none';
-      link.style.borderBottom = 'none';
-      
-      link.addEventListener('mouseenter', function() {
-        this.style.color = '#0052a3';
-        this.style.textDecoration = 'underline';
-      });
-      
-      link.addEventListener('mouseleave', function() {
-        this.style.color = '#0066cc';
-        this.style.textDecoration = 'none';
-      });
-    });
-    
-    // Make the top section font smaller
-    const topSection = document.querySelector('dt-article > dt-byline');
-    if (topSection) {
-      topSection.style.fontSize = '1.0em';
-      topSection.style.lineHeight = '1.2em';
-    }
-    
-                      // Set spacing for highlights table
-                  const highlightsTable = document.querySelector('.highlights-table');
-                  if (highlightsTable) {
-                    highlightsTable.style.lineHeight = '1.2em';
-                    highlightsTable.style.marginTop = '0.5em';
-                    highlightsTable.style.marginBottom = '1.5em';
-                  }
-
-                  // Set width for date column
-                  const dateCells = document.querySelectorAll('.highlight-date');
-                  dateCells.forEach(function(cell) {
-                    cell.style.width = '120px';
-                    cell.style.minWidth = '120px';
-                  });
-
-                  // Set font size for highlights table to match default text
-                  const highlightCells = document.querySelectorAll('.highlights-table td');
-                  highlightCells.forEach(function(cell) {
-                    cell.style.fontSize = 'inherit';
-                  });
-    
-    // Target the h3 title to reduce its margins
-    const highlightsTitle = document.querySelector('h3');
-    if (highlightsTitle && highlightsTitle.textContent.includes('Selected highlights')) {
-      highlightsTitle.style.marginTop = '0.2em';
-      highlightsTitle.style.marginBottom = '0.2em';
-    }
-
-    // Reduce white space above the h1 title
-    const h1Title = document.querySelector('h1');
-    if (h1Title) {
-      h1Title.style.marginTop = '0';
-      h1Title.style.paddingTop = '1em';
-    }
-
-    // Also reduce spacing from the dt-byline above the h1
-    const dtBylineAboveH1 = document.querySelector('dt-byline.l-page.transparent');
-    if (dtBylineAboveH1) {
-      dtBylineAboveH1.style.marginBottom = '0';
-      dtBylineAboveH1.style.paddingBottom = '0';
-      dtBylineAboveH1.style.marginTop = '0';
-      dtBylineAboveH1.style.paddingTop = '0';
-      dtBylineAboveH1.style.height = '0';
-      dtBylineAboveH1.style.minHeight = '0';
-    }
-
-
-  });
-</script>
+</html>

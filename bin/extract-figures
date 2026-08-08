@@ -1,0 +1,337 @@
+#!/usr/bin/env python3
+"""Extract figures from a two-column paper PDF.
+
+    bin/extract-figures papers/sermanet-isr-08.pdf --out /tmp/figs
+    bin/extract-figures papers/sermanet-isr-08.pdf --out assets/x --only 2,3,4,5
+
+Captions in these papers sit *below* their figure, so each figure is the band
+of page between the caption and whatever body text precedes it. We find the
+caption with pdftotext's word boxes, walk up to the last line of running text,
+render the page, crop that band, and trim the white margins.
+
+Emits a manifest.json alongside the images with each figure's caption, so the
+figures can be chosen on what they actually show.
+"""
+
+import argparse
+import json
+import os
+import re
+import subprocess
+import sys
+import tempfile
+from xml.etree import ElementTree
+
+from PIL import Image
+
+DPI = 300
+K = DPI / 72.0
+NS = '{http://www.w3.org/1999/xhtml}'
+CAPTION = re.compile(r'^(Fig\.?|Figure)$', re.I)
+
+
+# XML 1.0 forbids most control characters, but pdftotext emits whatever the
+# font's encoding produced — a single stray byte otherwise kills the whole parse.
+BAD_XML = re.compile(
+    '[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\U00010000-\U0010FFFF]')
+
+
+def words_by_page(pdf):
+    """[(page_w, page_h, [ (xMin,yMin,xMax,yMax,text), ... ]), ...]"""
+    xml = subprocess.run(['pdftotext', '-bbox', pdf, '-'],
+                         capture_output=True, text=True,
+                         errors='replace', check=True).stdout
+    root = ElementTree.fromstring(BAD_XML.sub('', xml))
+    pages = []
+    for page in root.iter(f'{NS}page'):
+        ws = []
+        for w in page.iter(f'{NS}word'):
+            ws.append((float(w.get('xMin')), float(w.get('yMin')),
+                       float(w.get('xMax')), float(w.get('yMax')), (w.text or '')))
+        pages.append((float(page.get('width')), float(page.get('height')), ws))
+    return pages
+
+
+def group_lines(words, tol=3.0, gutter=12.0):
+    """Group words into lines by vertical overlap, then split each line wherever
+    a horizontal gap exceeds `gutter`.
+
+    The split matters: in a two-column paper a left-column line and a
+    right-column line sit at the same height, and merging them makes every
+    caption look full-width and every column's text bleed into its neighbour.
+    Word spacing is ~3-5pt; the inter-column gutter is ~16pt."""
+    rows = []
+    for w in sorted(words, key=lambda w: (w[1], w[0])):
+        for row in rows:
+            if abs(row[0][1] - w[1]) <= tol:
+                row.append(w)
+                break
+        else:
+            rows.append([w])
+
+    out = []
+    for row in rows:
+        row.sort(key=lambda w: w[0])
+        run = [row[0]]
+        for prev, w in zip(row, row[1:]):
+            if w[0] - prev[2] > gutter:
+                out.append(run)
+                run = [w]
+            else:
+                run.append(w)
+        out.append(run)
+
+    lines = [{
+        'x0': min(w[0] for w in ln), 'x1': max(w[2] for w in ln),
+        'y0': min(w[1] for w in ln), 'y1': max(w[3] for w in ln),
+        'text': ' '.join(w[4] for w in ln),
+        'words': ln,
+    } for ln in out]
+    lines.sort(key=lambda l: l['y0'])
+    return lines
+
+
+def column_geometry(lines):
+    """(text_left, text_right, mid, single_column)
+
+    After gutter-splitting, a two-column page has almost no line straddling the
+    middle, while a single-column page (JFR, thesis style) has most lines doing
+    exactly that. Getting this wrong halves every wide figure."""
+    if not lines:
+        return 54.0, 558.0, 306.0, False
+    left = min(l['x0'] for l in lines)
+    right = max(l['x1'] for l in lines)
+    mid = (left + right) / 2.0
+    body = [l for l in lines if l['x1'] - l['x0'] > 0.15 * (right - left)]
+    if not body:
+        return left, right, mid, False
+    straddling = sum(1 for l in body if l['x0'] < mid - 10 and l['x1'] > mid + 10)
+    return left, right, mid, (straddling / len(body)) > 0.35
+
+
+def running_lines(pages_lines, page_h):
+    """Text repeated near the top or bottom of many pages: the running header
+    or footer. arXiv preprints often carry the paper title on every page, and
+    it otherwise gets cropped in above the figure."""
+    from collections import defaultdict
+    seen = defaultdict(set)
+    for pno, lines in enumerate(pages_lines):
+        for ln in lines:
+            t = ln['text'].strip()
+            if len(t) < 8:
+                continue
+            if ln['y0'] < 0.12 * page_h or ln['y1'] > 0.88 * page_h:
+                seen[t].add(pno)
+    return {t for t, pp in seen.items() if len(pp) >= 3}
+
+
+def find_captions(lines):
+    """Lines that begin a figure caption -> [(num, line_index)]"""
+    found = []
+    for i, ln in enumerate(lines):
+        ws = ln['words']
+        if len(ws) < 2:
+            continue
+        if CAPTION.match(ws[0][4].strip()):
+            m = re.match(r'^(\d+)', ws[1][4].strip().lstrip('.'))
+            if m:
+                found.append((int(m.group(1)), i))
+    return found
+
+
+def is_body_line(ln, col_x0, col_x1):
+    """Running text: starts at the column margin and fills most of its width."""
+    width = col_x1 - col_x0
+    starts_at_margin = abs(ln['x0'] - col_x0) < 0.03 * width
+    fills = (ln['x1'] - ln['x0']) > 0.72 * width
+    return starts_at_margin and fills
+
+
+def figure_box(lines, cap_index, page_w, page_h, geom, running=(), page_no=0):
+    """Region of the page holding the figure whose caption is at cap_index."""
+    left, right, mid, single_col = geom
+    cap = lines[cap_index]
+
+    # a genuinely full-width caption straddles the gutter; gutter-splitting in
+    # group_lines means a merged two-column row can no longer fake this
+    full_width = single_col or (cap['x0'] < mid - 8 and cap['x1'] > mid + 8)
+    if full_width:
+        col_x0, col_x1 = left, right
+    elif cap['x0'] < mid:
+        col_x0, col_x1 = left, mid - 4
+    else:
+        col_x0, col_x1 = mid + 4, right
+
+    above = []
+    for ln in lines[:cap_index]:
+        if ln['y1'] >= cap['y0']:
+            continue
+        if not full_width:
+            centre = (ln['x0'] + ln['x1']) / 2
+            if (centre < mid) != (col_x0 < mid):
+                continue
+        above.append(ln)
+
+    top = 40.0  # above the first text line; trimming removes the slack
+    anchor = None
+    for i, ln in enumerate(above):
+        if (is_body_line(ln, col_x0, col_x1)
+                or CAPTION.match(ln['words'][0][4].strip() or 'x')
+                or ln['text'].strip() in running):
+            anchor = i
+
+    if anchor is None and page_no == 1 and above:
+        # Page one opens with a title and author block, which is text but not
+        # running text, so nothing anchors the figure and the whole masthead
+        # gets cropped in above it. Any text above a page-1 figure bounds it.
+        top = above[-1]['y1'] + 2
+    elif anchor is not None:
+        # A paragraph's last line is short and so fails the fills-the-column
+        # test; keep consuming lines while they stay at running-text pitch, or
+        # the figure ends up with a stray line of prose on top of it.
+        pitch = sorted(l['y1'] - l['y0'] for l in above) or [10.0]
+        pitch = pitch[len(pitch) // 2]
+        end = anchor
+        while end + 1 < len(above) and above[end + 1]['y0'] - above[end]['y1'] < 1.8 * pitch:
+            end += 1
+        top = above[end]['y1'] + 2
+
+    bottom = cap['y0'] - 2
+    if bottom - top < 24:          # nothing but caption: figure is elsewhere
+        return None
+    return (col_x0 - 4, top, col_x1 + 4, bottom)
+
+
+def trim(im, thresh=248, pad=10):
+    g = im.convert('L')
+    w, h = g.size
+    px = g.load()
+    rb = lambda y: all(px[x, y] >= thresh for x in range(0, w, 2))
+    cb = lambda x: all(px[x, y] >= thresh for y in range(0, h, 2))
+    t = 0
+    while t < h - 1 and rb(t):
+        t += 1
+    b = h - 1
+    while b > t and rb(b):
+        b -= 1
+    l = 0
+    while l < w - 1 and cb(l):
+        l += 1
+    r = w - 1
+    while r > l and cb(r):
+        r -= 1
+    if b <= t or r <= l:
+        return None
+    return im.crop((max(0, l - pad), max(0, t - pad), min(w, r + 1 + pad), min(h, b + 1 + pad)))
+
+
+def strip_leading_text(im, thresh=248):
+    """Drop a stray line of prose sitting above the figure.
+
+    When a paragraph ends at the top of a column there is no full-width line to
+    anchor against, so its short last line ("of memory.") rides along. Such a
+    band is narrow and separated from the figure by a clear gap; real figure
+    content either spans most of the width or butts right up against it."""
+    g = im.convert('L')
+    w, h = g.size
+    px = g.load()
+    rows = [any(px[x, y] < thresh for x in range(0, w, 2)) for y in range(h)]
+    if not any(rows):
+        return im
+
+    start = rows.index(True)
+    end = start
+    while end + 1 < h and rows[end + 1]:
+        end += 1
+    gap = end
+    while gap + 1 < h and not rows[gap + 1]:
+        gap += 1
+
+    band_h = end - start + 1
+    gap_h = gap - end
+    cols = sum(1 for x in range(w) if any(px[x, y] < thresh for y in range(start, end + 1)))
+    if band_h <= 42 and gap_h >= 14 and cols < 0.45 * w and gap + 1 < h:
+        return im.crop((0, gap + 1, w, h))
+    return im
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('pdf')
+    ap.add_argument('--out', required=True)
+    ap.add_argument('--only', help='comma-separated figure numbers')
+    ap.add_argument('--width', type=int, default=900, help='max output width in px')
+    ap.add_argument('--prefix', default='fig')
+    args = ap.parse_args()
+
+    only = {int(x) for x in args.only.split(',')} if args.only else None
+    os.makedirs(args.out, exist_ok=True)
+
+    pages = words_by_page(args.pdf)
+    all_lines = [group_lines(w) for _, _, w in pages]
+    running = running_lines(all_lines, pages[0][1] if pages else 792.0)
+    manifest = []
+
+    with tempfile.TemporaryDirectory() as tmp:
+        for pno, (pw, ph, words) in enumerate(pages, start=1):
+            lines = all_lines[pno - 1]
+            caps = find_captions(lines)
+            caps = [(n, i) for n, i in caps if only is None or n in only]
+            if not caps:
+                continue
+
+            geom = column_geometry(lines)
+            subprocess.run(['pdftoppm', '-r', str(DPI), '-f', str(pno), '-l', str(pno),
+                            '-png', args.pdf, f'{tmp}/p'], check=True)
+            rendered = [f for f in os.listdir(tmp) if f.endswith('.png')]
+            if not rendered:
+                continue
+            page_img = Image.open(os.path.join(tmp, sorted(rendered)[-1]))
+
+            for num, idx in caps:
+                box = figure_box(lines, idx, pw, ph, geom, running, pno)
+                if box is None:
+                    continue
+                px_box = tuple(int(round(v * K)) for v in box)
+                px_box = (max(0, px_box[0]), max(0, px_box[1]),
+                          min(page_img.width, px_box[2]), min(page_img.height, px_box[3]))
+                if px_box[2] - px_box[0] < 40 or px_box[3] - px_box[1] < 40:
+                    continue
+                crop = trim(page_img.crop(px_box))
+                if crop is None:
+                    continue
+                crop = trim(strip_leading_text(crop)) or crop
+                if crop.width < 60 or crop.height < 40:
+                    continue
+                if crop.width > args.width:
+                    crop = crop.resize(
+                        (args.width, round(crop.height * args.width / crop.width)),
+                        Image.LANCZOS)
+                name = f'{args.prefix}{num}.png'
+                crop.convert('RGB').save(os.path.join(args.out, name), optimize=True)
+                # gutter-splitting can chop a caption's first line into runs, so
+                # rebuild the caption from everything just below it in-column
+                cap_y = lines[idx]['y0']
+                parts = [l for l in lines
+                         if cap_y <= l['y0'] <= cap_y + 46
+                         and l['x0'] >= box[0] - 6 and l['x1'] <= box[2] + 6]
+                parts.sort(key=lambda l: (round(l['y0']), l['x0']))
+                manifest.append({
+                    'figure': num, 'page': pno, 'file': name,
+                    'size': list(crop.size),
+                    'caption': ' '.join(p['text'] for p in parts)[:300],
+                })
+            for f in os.listdir(tmp):
+                os.remove(os.path.join(tmp, f))
+
+    manifest.sort(key=lambda m: m['figure'])
+    with open(os.path.join(args.out, 'manifest.json'), 'w') as fh:
+        json.dump(manifest, fh, indent=1)
+
+    for m in manifest:
+        print(f"  fig{m['figure']:<3} p{m['page']:<3} {m['size'][0]}x{m['size'][1]:<5} {m['caption'][:90]}")
+    print(f"{len(manifest)} figures -> {args.out}")
+
+
+if __name__ == '__main__':
+    sys.exit(main())

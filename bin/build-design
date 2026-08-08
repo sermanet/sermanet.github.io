@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+'use strict';
+
+/* Renders a design from data/site.json.
+ *
+ *   ./bin/build-design contact-sheet             -> contact-sheet.html
+ *   ./bin/build-design contact-sheet index.html  -> index.html
+ *
+ * Each design lives in designs/<name>/ and exports a render(site) function
+ * from render.js. Adding a design means adding a directory, not touching
+ * the content.
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const root = path.resolve(__dirname, '..');
+const name = process.argv[2];
+const out = process.argv[3] || `${name}.html`;
+
+if (!name) {
+  console.error('usage: bin/build-design <design> [output.html]');
+  console.error('available: ' + fs.readdirSync(path.join(root, 'designs')).join(', '));
+  process.exit(1);
+}
+
+const designDir = path.join(root, 'designs', name);
+if (!fs.existsSync(path.join(designDir, 'render.js'))) {
+  console.error(`no such design: ${name} (expected designs/${name}/render.js)`);
+  process.exit(1);
+}
+
+const site = JSON.parse(fs.readFileSync(path.join(root, 'data', 'site.json'), 'utf8'));
+const render = require(path.join(designDir, 'render.js'));
+const html = render(site);
+
+fs.writeFileSync(path.join(root, out), html);
+console.log(`${name} -> ${out}  (${site.projects.length} projects, ${(html.length / 1024).toFixed(1)} kB)`);

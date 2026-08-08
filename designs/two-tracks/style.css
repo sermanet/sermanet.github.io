@@ -1,0 +1,223 @@
+/* ------------------------------------------------------------------
+   Two Tracks — the page states the position structurally: UMA on one
+   track, twenty years of research on the other, running in parallel.
+   Two accents, one per track; they meet only in the closing line.
+   ------------------------------------------------------------------ */
+
+:root {
+  --pa:    #F5F4F0;
+  --sf:    #FFFFFF;
+  --ink:   #15161A;
+  --mut:   #64666E;
+  --faint: #8D8F96;
+  --rule:  #DAD7CE;
+  --bl:    #1F3A5F;   /* building */
+  --or:    #9A4708;   /* research */
+  --bl-sf: #EAEEF4;
+  --or-sf: #F6EDE3;
+
+  --serif: "Source Serif 4", "Iowan Old Style", Charter, "URW Bookman", Georgia, "Liberation Serif", serif;
+  --sans:  "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, "Liberation Sans", Arial, sans-serif;
+  --mono:  ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+
+  --pad: clamp(20px, 4vw, 44px);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--pa);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--bl); outline-offset: 2px; border-radius: 2px; }
+
+.shell { max-width: 1280px; margin: 0 auto; }
+
+.label {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+/* ---------------- head ---------------- */
+
+.top {
+  text-align: center;
+  padding: clamp(38px, 5.4vw, 66px) var(--pad) clamp(24px, 3vw, 34px);
+  border-bottom: 1px solid var(--rule);
+}
+.top h1 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(34px, 5.2vw, 54px); letter-spacing: -.022em;
+  line-height: 1.02; margin: 0 0 12px;
+}
+.top .sub {
+  margin: 0 auto; color: var(--mut); max-width: 48ch;
+  font-size: clamp(15px, 1.6vw, 16.5px);
+}
+.top .social { display: flex; gap: 8px 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+.top .social a {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--mut); padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.top .social a:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ---------------- the split ---------------- */
+
+.split { display: grid; grid-template-columns: 1fr 1px 1fr; }
+.gutter { background: var(--rule); }
+
+.col { padding: 26px var(--pad) 40px; min-width: 0; }
+.col.build { background: linear-gradient(180deg, var(--bl-sf), transparent 260px); }
+.col.research { background: linear-gradient(180deg, var(--or-sf), transparent 260px); }
+
+.col header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+.col header .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.build header .dot { background: var(--bl); }
+.research header .dot { background: var(--or); }
+.col header h2 { margin: 0; font-size: 10.5px; }
+.build header h2 { color: var(--bl); }
+.research header h2 { color: var(--or); }
+.col header .range { margin-left: auto; color: var(--faint); font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; }
+
+.col .lead {
+  font-family: var(--serif); font-size: clamp(20px, 2.4vw, 25px);
+  line-height: 1.22; letter-spacing: -.014em; margin: 14px 0 10px; text-wrap: balance;
+}
+.col .blurb { color: var(--mut); margin: 0 0 20px; font-size: 14.5px; max-width: 46ch; }
+
+.panel {
+  border: 1px solid var(--rule); border-radius: 3px; background: var(--sf);
+  padding: 16px 18px; margin-bottom: 18px;
+}
+.panel .k { font-family: var(--mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--bl); }
+.panel .t { font-size: 16px; font-weight: 620; margin: 8px 0 5px; letter-spacing: -.014em; }
+.panel .d { font-size: 13.5px; color: var(--mut); line-height: 1.5; margin: 0; }
+
+.item {
+  display: grid; grid-template-columns: 52px 1fr; gap: 14px;
+  padding: 11px 0; border-top: 1px solid var(--rule);
+}
+.item .y {
+  font-family: var(--mono); font-size: 11px; line-height: 1.75;
+  font-variant-numeric: tabular-nums; letter-spacing: .04em;
+}
+.build .item .y { color: var(--bl); }
+.research .item .y { color: var(--or); }
+/* items are <a> elements built from spans — blockify before sizing */
+.item .y, .item .t, .item .d { display: block; }
+.item .t { font-size: 14.5px; font-weight: 620; line-height: 1.3; margin: 0 0 2px; letter-spacing: -.01em; }
+.item .d { font-size: 13px; color: var(--mut); line-height: 1.48; margin: 0; }
+a.item:hover .t { color: var(--or); }
+.build a.item:hover .t { color: var(--bl); }
+
+.more {
+  display: inline-block; margin-top: 16px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; border-bottom: 1px solid currentColor; padding-bottom: 3px;
+}
+.build .more { color: var(--bl); }
+.research .more { color: var(--or); }
+
+.rest { margin-top: 4px; }
+.rest[hidden] { display: none; }
+
+/* ---------------- converge ---------------- */
+
+.join {
+  text-align: center; padding: 30px var(--pad) 44px;
+  border-top: 1px solid var(--rule);
+}
+.join .cv {
+  font-family: var(--serif); font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.4; max-width: 54ch; margin: 0 auto 10px; text-wrap: balance;
+}
+.join .note { color: var(--faint); font-size: 13px; margin: 0; }
+.join .note a { color: var(--mut); border-bottom: 1px solid var(--rule); }
+.join .note a:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ---------------- record dialog ---------------- */
+
+dialog.detail {
+  width: min(1000px, calc(100vw - 2 * var(--pad)));
+  max-height: calc(100vh - 2 * var(--pad));
+  padding: 0; border: 1px solid var(--rule); border-radius: 3px;
+  background: var(--sf); color: var(--ink); overflow: auto; overscroll-behavior: contain;
+}
+dialog.detail::backdrop { background: rgba(21, 22, 26, .46); }
+dialog.detail:target { display: block; position: static; margin: var(--pad) auto; max-height: none; }
+
+.detail-head {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: flex-start; gap: 18px;
+  padding: 20px 24px 14px;
+  background: linear-gradient(var(--sf) 78%, transparent);
+}
+.detail-head .meta { flex: 1; min-width: 0; }
+.detail-head .kicker {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--or); margin: 0 0 8px;
+}
+.detail-head h2 {
+  font-family: var(--serif); font-weight: 400; margin: 0;
+  font-size: clamp(21px, 2.6vw, 28px); letter-spacing: -.018em;
+  line-height: 1.16; text-wrap: balance;
+}
+.detail-close {
+  flex: none; width: 30px; height: 30px; border: 1px solid var(--rule);
+  border-radius: 2px; background: var(--sf); color: var(--mut);
+  font-size: 17px; line-height: 1; cursor: pointer;
+}
+.detail-close:hover { color: var(--ink); border-color: var(--faint); }
+
+.detail-body { padding: 0 24px 26px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; align-items: start; }
+@media (max-width: 780px) { .detail-body { grid-template-columns: 1fr; gap: 18px; } }
+
+.detail-media { display: grid; gap: 9px; min-width: 0; }
+.detail-media img, .detail-media video {
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--rule); border-radius: 2px; background: var(--pa);
+}
+
+.detail-text { min-width: 0; }
+.detail-text .authors { margin: 0 0 4px; font-size: 13.5px; color: var(--mut); line-height: 1.5; }
+.detail-text .venue {
+  margin: 0 0 16px; font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--faint);
+}
+.detail-text p.bd { margin: 0 0 11px; font-size: 15px; line-height: 1.62; max-width: 62ch; }
+.detail-text p.bd a, .detail-text .authors a, .detail-text .venue a { color: var(--or); border-bottom: 1px solid #E0CDB6; }
+
+.detail-text p.extended-first { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.detail-text p.extended { color: var(--mut); }
+
+.detail-links { display: flex; gap: 7px; flex-wrap: wrap; margin: 0 0 16px; }
+.detail-links a {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .11em;
+  text-transform: uppercase; color: var(--mut);
+  border: 1px solid var(--rule); border-radius: 2px; padding: 7px 10px;
+}
+.detail-links a:hover { color: var(--or); border-color: var(--or); }
+
+/* ---------------- narrow screens ----------------
+   The concept is two parallel tracks; stacking them loses the parallel.
+   So below 820px the tracks become two labelled bands with a shared rule
+   down the left, keeping the "two things at once" reading vertically. */
+
+@media (max-width: 820px) {
+  .split { grid-template-columns: 1fr; }
+  .gutter { height: 1px; }
+  .col { padding-left: calc(var(--pad) + 14px); position: relative; }
+  .col::before {
+    content: ""; position: absolute; left: var(--pad); top: 26px; bottom: 30px; width: 2px;
+  }
+  .col.build::before { background: var(--bl); }
+  .col.research::before { background: var(--or); }
+  .col header .range { margin-left: 12px; }
+}

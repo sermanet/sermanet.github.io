@@ -1,0 +1,188 @@
+#!/usr/bin/env node
+'use strict';
+
+/* Imports the UMA assets into the repo and wires them into data/site.json.
+ *
+ *   ./bin/import-uma [source-dir]
+ *
+ * Default source: ~/gdrive/companies/UMA/assets
+ *
+ * The images are copied as-is. The .mov files are transcoded to web-sized
+ * mp4 with ffmpeg — QuickTime containers are refused by most browsers, and
+ * the originals (22–84 MB) are far too heavy for a homepage. Nothing is
+ * written back to the source directory.
+ *
+ * Safe to re-run: existing outputs are skipped, and site.json is only ever
+ * pointed at files that actually exist.
+ */
+
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+const root = path.resolve(__dirname, '..');
+const outDir = path.join(root, 'assets', 'uma');
+const srcDir = process.argv[2] || path.join(os.homedir(), 'gdrive', 'companies', 'UMA', 'assets');
+
+/* Which project each asset belongs to, and in what order — media[0] becomes
+   that project's card thumbnail. The robot footage is Chapter 1 (the humanoid
+   that got built); Chapter 2 is the world-models work, which has no footage
+   yet and carries the identity image. */
+const ASSETS = [
+  { src: 'ASTRO_Waving_Final.mov', out: 'astro-waving.mp4', type: 'video', project: 'uma-chapter-1' },
+  { src: 'Anchor Task - FINAL.mov', out: 'anchor-task.mp4', type: 'video', project: 'uma-chapter-1' },
+  { src: 'Pouch Task - FINAL.mov', out: 'pouch-task.mp4', type: 'video', project: 'uma-chapter-1' },
+  { src: 'Hello UMA.png', out: 'hello-uma.png', type: 'image', project: 'uma-chapter-2' }
+];
+
+/* If Chapter 1's footage never converts, fall back to the identity image so
+   its card still has something to show. */
+const FALLBACK = { 'uma-chapter-1': 'uma-chapter-2' };
+
+/* 1280px wide is plenty for a card thumbnail and a dialog; CRF 26 keeps
+   these in single-digit MB. Audio is dropped — the clips play muted and
+   looping. faststart puts the index up front so playback can begin early. */
+/* Cards loop their clip on hover, so a minute-long file is pure waste there.
+   Alongside each full clip we cut a short, small loop for the thumbnail; the
+   record dialog still gets the whole thing. `from` shifts the excerpt when the
+   opening seconds aren't the interesting part. */
+const PREVIEW = { seconds: 8, width: 640, from: { 'anchor-task.mp4': 6, 'pouch-task.mp4': 6 } };
+
+const PREVIEW_ARGS = (input, output, start) => ([
+  '-hide_banner', '-loglevel', 'error', '-y',
+  '-ss', String(start), '-t', String(PREVIEW.seconds),
+  '-i', input,
+  '-vf', `scale='min(${PREVIEW.width},iw)':-2`,
+  '-c:v', 'libx264', '-crf', '30', '-preset', 'slow',
+  '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
+  '-an',
+  output
+]);
+
+const FFMPEG_ARGS = (input, output) => ([
+  '-hide_banner', '-loglevel', 'error', '-y',
+  '-i', input,
+  '-vf', "scale='min(1280,iw)':-2",
+  '-c:v', 'libx264', '-crf', '26', '-preset', 'slow',
+  '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
+  '-an',
+  output
+]);
+
+function has(cmd) {
+  return spawnSync('which', [cmd], { stdio: 'ignore' }).status === 0;
+}
+
+function mb(file) {
+  return (fs.statSync(file).size / 1048576).toFixed(1) + ' MB';
+}
+
+if (!fs.existsSync(srcDir)) {
+  console.error(`source directory not found: ${srcDir}`);
+  console.error('pass one explicitly: ./bin/import-uma /path/to/assets');
+  process.exit(1);
+}
+
+fs.mkdirSync(outDir, { recursive: true });
+
+const ffmpeg = has('ffmpeg');
+if (!ffmpeg) {
+  console.warn('! ffmpeg not found — images will be copied, videos skipped.');
+  console.warn('  run ~/infra/setup/install-ffmpeg.sh, then re-run this to add the clips.\n');
+}
+
+const landed = [];
+
+/* Cut the card loop from the already-transcoded clip. Runs whether the clip
+   was just produced or was left over from an earlier run, so re-running the
+   script backfills loops for anything imported before this existed. */
+function ensureLoop(clip, asset) {
+  if (!ffmpeg) return null;
+  const loopOut = clip.replace(/\.mp4$/, '-loop.mp4');
+  if (fs.existsSync(loopOut)) return path.relative(root, loopOut);
+
+  const start = PREVIEW.from[asset.out] || 0;
+  const r = spawnSync('ffmpeg', PREVIEW_ARGS(clip, loopOut, start), { stdio: ['ignore', 'ignore', 'inherit'] });
+  if (r.status !== 0) {
+    if (fs.existsSync(loopOut)) fs.unlinkSync(loopOut);
+    console.warn(`  ${path.basename(loopOut).padEnd(20)} loop FAILED, card will use the full clip`);
+    return null;
+  }
+  console.log(`  ${path.basename(loopOut).padEnd(20)} card loop, ${PREVIEW.seconds}s @ ${PREVIEW.width}px (${mb(loopOut)})`);
+  return path.relative(root, loopOut);
+}
+
+function record(asset, clipPath) {
+  const entry = { type: asset.type, src: path.relative(root, clipPath), project: asset.project };
+  if (asset.type === 'video') {
+    const preview = ensureLoop(clipPath, asset);
+    if (preview) entry.preview = preview;
+  }
+  landed.push(entry);
+}
+
+for (const a of ASSETS) {
+  const from = path.join(srcDir, a.src);
+  const to = path.join(outDir, a.out);
+
+  if (fs.existsSync(to)) {
+    console.log(`= ${a.out.padEnd(18)} already present (${mb(to)})`);
+    record(a, to);
+    continue;
+  }
+  if (!fs.existsSync(from)) {
+    console.warn(`? ${a.out.padEnd(18)} source missing, skipped (${a.src})`);
+    continue;
+  }
+
+  if (a.type === 'image') {
+    fs.copyFileSync(from, to);
+    console.log(`+ ${a.out.padEnd(18)} copied (${mb(to)})`);
+    record(a, to);
+    continue;
+  }
+
+  if (!ffmpeg) continue;
+
+  process.stdout.write(`… ${a.out.padEnd(18)} transcoding from ${mb(from)}`);
+  const r = spawnSync('ffmpeg', FFMPEG_ARGS(from, to), { stdio: ['ignore', 'ignore', 'inherit'] });
+  if (r.status !== 0) {
+    process.stdout.write(' — FAILED\n');
+    if (fs.existsSync(to)) fs.unlinkSync(to);
+    continue;
+  }
+  process.stdout.write(` -> ${mb(to)}\n`);
+  record(a, to);
+}
+
+if (!landed.length) {
+  console.error('\nnothing imported; site.json left unchanged.');
+  process.exit(1);
+}
+
+const sitePath = path.join(root, 'data', 'site.json');
+const site = JSON.parse(fs.readFileSync(sitePath, 'utf8'));
+
+const byProject = {};
+for (const m of landed) {
+  (byProject[m.project] ||= []).push(m.preview ? { type: m.type, src: m.src, preview: m.preview } : { type: m.type, src: m.src });
+}
+
+for (const [id, donor] of Object.entries(FALLBACK)) {
+  if (!byProject[id] && byProject[donor]) byProject[id] = [byProject[donor][0]];
+}
+
+let touched = 0;
+for (const [id, media] of Object.entries(byProject)) {
+  const proj = site.projects.find((p) => p.id === id);
+  if (!proj) { console.warn(`? no project '${id}' in site.json, skipped`); continue; }
+  proj.media = media;
+  touched++;
+  console.log(`  ${id}: ${media.length} media item${media.length === 1 ? '' : 's'} (thumbnail: ${media[0].src})`);
+}
+
+if (!touched) { console.error('\nno matching projects in site.json; left unchanged.'); process.exit(1); }
+
+fs.writeFileSync(sitePath, JSON.stringify(site, null, 2) + '\n');
+console.log('\nrebuild with: ./bin/build-design signal');
