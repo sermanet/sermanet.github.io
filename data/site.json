@@ -63,8 +63,8 @@
       }
     ],
     "analytics": {
-      "_note": "Sign up at goatcounter.com, then put your site code here (just the subdomain, e.g. \"sermanet\"). Empty = no analytics script is emitted.",
-      "goatcounter": ""
+      "_note": "GoatCounter site code or full count URL. Empty = no analytics script is emitted. Cookieless, no personal data, so no consent banner needed.",
+      "goatcounter": "https://sermanet.goatcounter.com/count"
     }
   },
   "themes": [
