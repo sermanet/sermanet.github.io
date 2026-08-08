@@ -63,8 +63,8 @@ ${B.THEME_BOOT}
       <a href="#feed">Research</a>
       <a href="${B.attr(profile.org.url)}" target="_blank" rel="noopener">${B.esc(profile.org.name)}</a>
 ${nav}
-    </nav>
 ${B.THEME_TOGGLE}
+    </nav>
   </div>
 
   <header class="hero">
