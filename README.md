@@ -99,13 +99,6 @@ Each project keeps its `id` from the old page as a URL fragment, so existing
 links like `sermanet.github.io/#robovqa`, `#tcn` or `#asimov` still resolve —
 they open that project's record directly.
 
-## Copy that isn't yours
-
-Almost everything in `data/site.json` came from the old `index.html` or from the
-papers themselves. One block is written from scratch: `profile.now` — the UMA
-blurb in Signal's "Currently" card and the Building track in Two Tracks. It is
-flagged with a `_note` in the file.
-
 ## History
 
 The site was previously a Distill article template (`draft.md` + `bin/make`).

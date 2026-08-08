@@ -11,11 +11,10 @@
     "citations": ">100k",
     "scholarUrl": "https://scholar.google.com/citations?user=0nPi5YYAAAAJ",
     "now": {
-      "_note": "Wording here is mine, not yours — plain on purpose. Edit freely.",
       "org": "UMA",
       "url": "https://uma.bot",
       "lead": "Co-founder &amp; Chief Scientist at UMA.",
-      "blurb": "Humanoids and the embodied AI that drives them.",
+      "blurb": "Building Embodied AI for Robots",
       "items": [
         {
           "label": "What we're building",
