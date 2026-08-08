@@ -40,6 +40,12 @@ writes layout and styling only.
 
 No npm dependencies — the build is plain Node.
 
+**Keep `.nojekyll` at the repo root.** GitHub Pages runs Jekyll by default, and
+Jekyll silently refuses to publish directories starting with an underscore — so
+without it `designs/_shared/` 404s and every interactive part of the site (video
+thumbnails, filtering, record dialogs, the theme toggle) dies quietly, with no
+console error.
+
 ### Preview locally
 
 ```bash
