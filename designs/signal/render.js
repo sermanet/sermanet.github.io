@@ -24,10 +24,9 @@ const DEFAULT_VIEW = 'full';
    default ever be the highlights again, it ships hidden, so the page never
    flashes the full feed before JS runs. */
 function card(project, themes) {
-  const extra = project.media.length > 1 ? `<span class="n-media">${project.media.length}</span>` : '';
   const full = project.highlight === false ? ` data-full${DEFAULT_VIEW === 'full' ? '' : ' hidden'}` : '';
   return `      <a class="card" href="#${B.attr(project.id)}" data-themes="${B.attr(project.themes.join(' '))}"${full} aria-label="${B.attr(B.plain(project.title))}, ${project.year}">
-        <span class="th">${B.thumb(project)}${extra}</span>
+        <span class="th">${B.thumb(project)}</span>
         <span class="in">
           <span class="tg">${B.esc(B.themeLabel(themes, project.themes[0]))}</span>
           <span class="nm">${project.short || project.title}</span>
