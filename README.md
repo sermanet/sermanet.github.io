@@ -67,6 +67,11 @@ Sign up, then put your site code in `profile.analytics.goatcounter` in
 GoatCounter sets no cookies and stores no personal data, so no consent banner is
 needed.
 
+The script is pinned to one GoatCounter release and its integrity hash
+(`GOATCOUNTER_JS` / `GOATCOUNTER_SRI` in `designs/_shared/build.js`), so a
+tampered copy is refused. To upgrade, take the new file and hash from
+[count.js versions](https://www.goatcounter.com/help/countjs-versions) and rebuild.
+
 ## Paper figures
 
 ```bash

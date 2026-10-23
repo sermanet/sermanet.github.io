@@ -123,7 +123,7 @@
     },
     {
       "year": "2014",
-      "body": "Winner of the <a href=\"http://www.kaggle.com/c/dogs-vs-cats/leaderboard\">Dogs vs Cats</a> and <a href=\"https://image-net.org/challenges/LSVRC/2014/\">2014 ImageNet</a> competitions. Joined Google Brain."
+      "body": "Winner of the <a href=\"https://www.kaggle.com/c/dogs-vs-cats/leaderboard\">Dogs vs Cats</a> and <a href=\"https://image-net.org/challenges/LSVRC/2014/\">2014 ImageNet</a> competitions. Joined Google Brain."
     },
     {
       "year": "2013",
@@ -930,7 +930,7 @@
       ],
       "body": [
         "Need help in the real world? RoboVQA can guide robots and humans through long-horizon tasks on a phone via Google Meet.",
-        "We propose scalable real-world data acquisition and augmentation strategies and release a <a href=\"http://robovqa.github.io\">dataset</a> of 800k (video, question/answer) with robots &amp; humans doing various long-horizon tasks.",
+        "We propose scalable real-world data acquisition and augmentation strategies and release a <a href=\"https://robovqa.github.io\">dataset</a> of 800k (video, question/answer) with robots &amp; humans doing various long-horizon tasks.",
         "We train a small video model (380M) that outperforms large state of the art zero-shot models by ~2x and demonstrate that scalable strategies for acquiring new data remain critical.",
         "We use a speech intervention mechanism that automatically quantifies progress (intervention rate), provides corrections to retrain on, and allows performing tasks to completion in supervised real-world deployment."
       ],
@@ -1654,7 +1654,7 @@
         "action"
       ],
       "authors": "Corey Lynch and Pierre Sermanet",
-      "venue": "<a href=\"http://www.roboticsproceedings.org/rss17/p047.pdf\">RSS 2021</a>",
+      "venue": "<a href=\"https://www.roboticsproceedings.org/rss17/p047.pdf\">RSS 2021</a>",
       "media": [
         {
           "type": "video",
@@ -2626,8 +2626,8 @@
           "href": "https://github.com/tensorflow/models/tree/master/research/inception"
         },
         {
-          "label": "ImageNet Results",
-          "href": "http://www.image-net.org/challenges/LSVRC/2014/results"
+          "label": "ImageNet Results (archived)",
+          "href": "https://web.archive.org/web/20150204152543/http://www.image-net.org/challenges/LSVRC/2014/results"
         },
         {
           "label": "Blogpost",
@@ -2799,11 +2799,11 @@
         },
         {
           "label": "ImageNet Results",
-          "href": "http://www.image-net.org/challenges/LSVRC/2013/results.php"
+          "href": "https://www.image-net.org/challenges/LSVRC/2013/results.php"
         },
         {
-          "label": "Slides",
-          "href": "http://www.image-net.org/challenges/LSVRC/2013/slides/overfeat_ilsvrc2013.pdf"
+          "label": "Slides (archived)",
+          "href": "https://web.archive.org/web/20160616191849/http://www.image-net.org/challenges/LSVRC/2013/slides/overfeat_ilsvrc2013.pdf"
         },
         {
           "label": "Press",
@@ -3081,7 +3081,7 @@
       "links": [
         {
           "label": "Paper",
-          "href": "http://papers.nips.cc/paper/4133-learning-convolutional-feature-hierarchies-for-visual-recognition.pdf"
+          "href": "https://papers.nips.cc/paper/4133-learning-convolutional-feature-hierarchies-for-visual-recognition.pdf"
         },
         {
           "label": "Paper (mirror)",
@@ -3229,7 +3229,7 @@
       "links": [
         {
           "label": "Code",
-          "href": "http://eblearn.sourceforge.net/"
+          "href": "https://eblearn.sourceforge.net/"
         },
         {
           "label": "Paper",
@@ -4042,7 +4042,7 @@
         "robotics",
         "vision"
       ],
-      "authors": "Computer vision, navigation and behaviors by Pierre Sermanet, Philippe Rambert, Jean-Baptiste Mouret. Entire team: <a href=\"http://www.evolutek.org/\">Evolutek</a>",
+      "authors": "Computer vision, navigation and behaviors by Pierre Sermanet, Philippe Rambert, Jean-Baptiste Mouret. Entire team: Evolutek",
       "venue": "2004",
       "media": [
         {

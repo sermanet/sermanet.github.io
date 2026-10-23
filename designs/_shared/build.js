@@ -134,12 +134,18 @@ function head(profile, fontsHref, themeColor) {
 
 /* Cookieless traffic counting. Renders nothing until profile.analytics.goatcounter
    is set, so the site never ships a dead beacon. GoatCounter stores no personal
-   data and sets no cookies, which is why no consent banner is needed. */
+   data and sets no cookies, which is why no consent banner is needed.
+   The script is pinned to one release and its integrity hash, so browsers
+   refuse it should gc.zgo.at ever serve anything else. To upgrade, take the
+   new file and hash from https://www.goatcounter.com/help/countjs-versions. */
+const GOATCOUNTER_JS = 'https://gc.zgo.at/count.v5.js';
+const GOATCOUNTER_SRI = 'sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ';
+
 function analytics(profile) {
   const code = profile.analytics && profile.analytics.goatcounter;
   if (!code) return '';
   const url = /^https?:/.test(code) ? code : `https://${code}.goatcounter.com/count`;
-  return `\n<script data-goatcounter="${attr(url)}" async src="https://gc.zgo.at/count.js"></script>`;
+  return `\n<script data-goatcounter="${attr(url)}" async src="${GOATCOUNTER_JS}" crossorigin="anonymous" integrity="${GOATCOUNTER_SRI}"></script>`;
 }
 
 /* Applies a stored theme choice before first paint, so a viewer who picked
