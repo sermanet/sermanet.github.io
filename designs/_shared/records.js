@@ -9,7 +9,10 @@
 window.SiteRecords = (function () {
   'use strict';
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Videos play on hover and when a record opens even under
+     prefers-reduced-motion: both start from something the viewer chose to do,
+     the clips are muted, and many work machines turn motion off by policy.
+     The CSS still honours it for interface animation. */
   var playing = null;
   var openDialog = null;
 
@@ -45,7 +48,6 @@ window.SiteRecords = (function () {
   /* ---------- hover playback: one stream at a time ---------- */
 
   function play(card) {
-    if (reduceMotion) return;
     var v = card.querySelector('video');
     if (!v) return;
     hydrate(v);
@@ -85,10 +87,8 @@ window.SiteRecords = (function () {
     openDialog = dlg;
     all('video[data-src]', dlg).forEach(function (v) {
       hydrate(v);
-      if (!reduceMotion) {
-        var p = v.play();
-        if (p && p.catch) p.catch(function () {});
-      }
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
     });
     if (updateHash !== false && location.hash !== '#' + id) {
       history.pushState(null, '', '#' + id);
@@ -194,7 +194,6 @@ window.SiteRecords = (function () {
   }
 
   return {
-    reduceMotion: reduceMotion,
     init: function (opts) {
       opts = opts || {};
       var cards = all(opts.cards || '.tile');
