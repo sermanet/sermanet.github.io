@@ -144,13 +144,20 @@ window.SiteRecords = (function () {
     var countEl = document.querySelector(opts.count);
     var emptyEl = document.querySelector(opts.empty);
     var active = 'all';
+    /* Highlights / full list. Cards marked data-full only show in the full
+       list. The design picks the starting view by rendering its button as
+       pressed; a design without the switch shows everything, as before. */
+    var views = opts.views ? all(opts.views) : [];
+    var pressed = views.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; })[0];
+    var view = pressed ? pressed.dataset.view : 'full';
 
     function apply(theme) {
       active = theme;
       var shown = 0;
       cards.forEach(function (card) {
         var themes = (card.dataset.themes || '').split(' ');
-        var match = theme === 'all' || themes.indexOf(theme) !== -1;
+        var inView = view === 'full' || !card.hasAttribute('data-full');
+        var match = inView && (theme === 'all' || themes.indexOf(theme) !== -1);
         card.hidden = !match;
         if (match) shown++;
         else stop(card);
@@ -158,13 +165,28 @@ window.SiteRecords = (function () {
       buttons.forEach(function (b) {
         b.setAttribute('aria-pressed', String(b.dataset.theme === theme));
       });
-      if (countEl) countEl.textContent = shown + (shown === 1 ? ' project' : ' projects');
+      views.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.view === view));
+      });
+      if (countEl) {
+        countEl.textContent = shown + (shown === 1 ? ' project' : ' projects');
+        // the view switch already shows the totals, so the count only earns
+        // its place once a theme narrows the feed
+        if (views.length) countEl.hidden = theme === 'all';
+      }
       if (emptyEl) emptyEl.hidden = shown > 0;
     }
 
     buttons.forEach(function (b) {
       b.addEventListener('click', function () {
         apply(b.dataset.theme === active ? 'all' : b.dataset.theme);
+      });
+    });
+
+    views.forEach(function (b) {
+      b.addEventListener('click', function () {
+        view = b.dataset.view;
+        apply(active);
       });
     });
 

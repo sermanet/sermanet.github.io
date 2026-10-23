@@ -6,7 +6,7 @@ The live site at <https://sermanet.github.io> is `index.html`, generated from
 ## Content
 
 Everything lives in **`data/site.json`** — profile, links, highlights, and the
-33 projects. Edit that file, rebuild, done. Nothing else needs touching to add a
+projects. Edit that file, rebuild, done. Nothing else needs touching to add a
 paper.
 
 Each project carries:
@@ -15,9 +15,15 @@ Each project carries:
   where it would just restate the opening description.
 - `body` — the description, in your words.
 - `extended` — a longer, abstract-length write-up rendered *below* the
-  description, never in place of it. Present for the 27 projects with a paper.
+  description, never in place of it. Present for the projects with a paper.
 - `media` — images and videos. A video may carry a `preview`: a short, small
   loop used for the card, so a thumbnail never streams a minute-long clip.
+- `highlight` — set to `false` to keep a project out of the **Highlights**
+  view; it then shows only under **Full list**, the default view. Leave it out
+  and the project is a highlight. Its record still opens from its `#id` link
+  either way.
+- `links` — a related patent goes in as a **Patent** link to its Google
+  Patents page, next to the paper's own links.
 
 ## Building
 
@@ -28,7 +34,7 @@ Each project carries:
 
 | Design | Description |
 | --- | --- |
-| `signal` | **Live.** Founder-facing feed. UMA leads; projects are filterable cards. Light and dark, with a theme toggle. |
+| `signal` | **Live.** Founder-facing feed. UMA leads; projects are filterable cards, the Full list by default with a switch to the Highlights. The default lives in `DEFAULT_VIEW` in `designs/signal/render.js`. Light and dark, with a theme toggle. |
 | `contact-sheet` | Media-first grid on a dark ground. Hover a tile to play it. |
 | `two-tracks` | Building and research as parallel columns, converging at the foot. |
 
@@ -77,8 +83,12 @@ page headers (arXiv preprints repeat the title on every page) plus the title
 block above a figure on page one. It is not perfect — a few figures come out
 over-captured. Review before installing; the manifest makes that quick.
 
-`papers/` holds local copies of papers that aren't reliably reachable online,
-mirrored alongside the official links.
+`papers/` holds a local copy of every paper on the site that has a reachable
+PDF, so the site doesn't depend on outside hosts. Each record links it as
+**Paper (mirror)** next to the official link. Names follow
+`<first-author>-<venue>-<yy>.pdf`. `papers/patents/` keeps copies of the patent
+PDFs that Google Patents serves (the newest filings have none yet); the records
+link the patents' Google Patents pages.
 
 ## UMA assets
 

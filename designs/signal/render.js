@@ -17,9 +17,16 @@ function summarise(project, max) {
   return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:.]$/, '') + '…';
 }
 
+/* The feed opens on the full list; the switch narrows it to the highlights. */
+const DEFAULT_VIEW = 'full';
+
+/* A project with `highlight: false` only shows in the full list. Should the
+   default ever be the highlights again, it ships hidden, so the page never
+   flashes the full feed before JS runs. */
 function card(project, themes) {
   const extra = project.media.length > 1 ? `<span class="n-media">${project.media.length}</span>` : '';
-  return `      <a class="card" href="#${B.attr(project.id)}" data-themes="${B.attr(project.themes.join(' '))}" aria-label="${B.attr(B.plain(project.title))}, ${project.year}">
+  const full = project.highlight === false ? ` data-full${DEFAULT_VIEW === 'full' ? '' : ' hidden'}` : '';
+  return `      <a class="card" href="#${B.attr(project.id)}" data-themes="${B.attr(project.themes.join(' '))}"${full} aria-label="${B.attr(B.plain(project.title))}, ${project.year}">
         <span class="th">${B.thumb(project)}${extra}</span>
         <span class="in">
           <span class="tg">${B.esc(B.themeLabel(themes, project.themes[0]))}</span>
@@ -37,6 +44,17 @@ module.exports = function render(site) {
   const chips = [{ id: 'all', label: 'All' }].concat(themes)
     .map((t) => `    <button type="button" data-theme="${B.attr(t.id)}" aria-pressed="${t.id === 'all'}">${B.esc(t.label)}</button>`)
     .join('\n');
+
+  /* Highlights versus the full list, which adds every other paper. The switch
+     only appears once some project has opted out of the highlights. */
+  const highlighted = projects.filter((p) => p.highlight !== false);
+  const shown = DEFAULT_VIEW === 'full' ? projects : highlighted;
+  const views = highlighted.length === projects.length ? '' : `    <div class="view" role="group" aria-label="Show">
+${[['highlights', 'Highlights', highlighted.length], ['full', 'Full list', projects.length]]
+    .map(([id, label, n]) => `      <button type="button" data-view="${id}" aria-pressed="${id === DEFAULT_VIEW}">${label} <span class="n">${n}</span></button>`)
+    .join('\n')}
+    </div>
+`;
 
   const rows = highlights.map(
     (h) => `        <div class="row"><div class="yr">${B.esc(h.year)}</div><div class="bd">${h.body}</div></div>`
@@ -73,7 +91,7 @@ ${B.THEME_TOGGLE}
       <p class="lede">${profile.role} at <a href="${B.attr(profile.org.url)}" target="_blank" rel="noopener"><strong>${B.esc(profile.org.name)}</strong></a>. ${profile.formerly}</p>
       <div class="cta">
         <a class="pri" href="${B.attr(now.url)}" target="_blank" rel="noopener">What we're building at ${B.esc(now.org)}</a>
-        <a href="#feed">Browse ${projects.length} projects</a>
+        <a href="#feed">Browse ${shown.length} projects</a>
       </div>
     </div>
     <aside class="now">
@@ -82,7 +100,7 @@ ${B.THEME_TOGGLE}
       <p class="d">${now.blurb}</p>
       <div class="stats">
         <div><div class="v"><a href="${B.attr(profile.scholarUrl)}" target="_blank" rel="noopener">${B.esc(profile.citations)}</a></div><div class="l">Citations</div></div>
-        <div><div class="v">${projects.length}</div><div class="l">Projects</div></div>
+        <div><div class="v">${shown.length}</div><div class="l">Projects</div></div>
         <div><div class="v">${B.esc(B.span(projects))}</div><div class="l">Span</div></div>
       </div>
     </aside>
@@ -98,9 +116,9 @@ ${rows}
   </section>
 
   <div class="chips" id="feed">
-    <span class="lbl">Filter</span>
+${views}    <span class="lbl">Filter</span>
 ${chips}
-    <span class="count" id="count">${projects.length} projects</span>
+    <span class="count" id="count"${views ? ' hidden' : ''}>${shown.length} projects</span>
   </div>
 
   <main class="feed">
@@ -109,7 +127,6 @@ ${projects.map((p) => card(p, themes)).join('\n')}
   </main>
 
   <footer class="colophon">
-    <span>Selected projects and publications — <a href="${B.attr(profile.scholarUrl)}" target="_blank" rel="noopener">full list on Scholar</a>.</span>
     <span>Click a card for the full record.</span>
   </footer>
 

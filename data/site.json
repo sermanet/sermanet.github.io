@@ -307,6 +307,10 @@
           "href": "https://arxiv.org/abs/2503.10706"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-scifi-25.pdf"
+        },
+        {
           "label": "Data (val)",
           "href": "https://www.tensorflow.org/datasets/catalog/asimov_dilemmas_scifi_val"
         },
@@ -404,8 +408,16 @@
           "href": "https://arxiv.org/pdf/2503.08663"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-asimov-25.pdf"
+        },
+        {
           "label": "Data",
           "href": "https://github.com/asimov-benchmark/code/blob/main/ASIMOV_Datasets.ipynb"
+        },
+        {
+          "label": "Patent",
+          "href": "https://patents.google.com/patent/US20260216879A1/en"
         },
         {
           "label": "BibTeX",
@@ -421,6 +433,451 @@
       "extended": [
         "Robotics safety used to mean collision avoidance. Once vision-language models started controlling robots capable of physical contact, with all their known failure modes, semantic safety became urgent: not whether the robot bumps into you, but whether it understands that what it is about to do is wrong.",
         "The paper contributes a benchmark and a method. The benchmark is generated at scale rather than collected by hand — undesirable situations are synthesised from real visual scenes and from real hospital injury reports, using text and image generation to reach the difficult cases that are hard to capture in the wild. The method automatically generates robot constitutions from that data, with a novel auto-amending process that introduces nuance into written rules and measurably increases agreement with human judgments of what is safe and desirable. The paper explores the trade-off between general and specific rules across constitutions of very different lengths, reaching a top alignment rate of 84.3% — beating both no-constitution baselines and human-written constitutions. It deliberately declines to propose one universal constitution, arguing that rules need to be customised to legal, cultural and administrative context, and that a constitution's value lies in being human-readable and modifiable."
+      ]
+    },
+    {
+      "id": "physical-danger",
+      "title": "Can AI Perceive Physical Danger and Intervene?",
+      "short": "Physical Danger",
+      "year": 2025,
+      "themes": [
+        "safety",
+        "reasoning"
+      ],
+      "authors": "Abhishek Jindal, Dmitry Kalashnikov, R. Alex Hofer, Oscar Chang, Divya Garikapati, Anirudha Majumdar, Pierre Sermanet, Vikas Sindhwani",
+      "venue": "arXiv 2025",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/physical-danger/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/physical-danger/fig2.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/physical-danger/fig4.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/physical-danger/fig8.png"
+        }
+      ],
+      "body": [
+        "Do frontier models know when an object is too heavy for a robot to pick up, or that a hot drink should be kept from a toddler? We release ASIMOV-2.0, a physical safety benchmark grounded in real hospital injury reports and robot safety standards, rendered as text, images and videos with generative models.",
+        "Today's models show a modality gap, an embodiment gap and a latency gap. Thinking helps, and post-training a Gemini Robotics-ER model to reason explicitly about its own physical constraints, from only 200 examples, gives the lowest constraint violation rate of all models we tested."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://asimov-benchmark.github.io/v2/"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2509.21651"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/jindal-arxiv-25.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Jindal2025Can.bib"
+        }
+      ],
+      "summary": "ASIMOV-2.0: can frontier models spot physical danger in text, images and video, and intervene?",
+      "extended": [
+        "Once AI acts physically, whether through a robot or an assistant on smart glasses, a mistake can cause immediate bodily harm, yet most safety evaluations remain text-only or limited to digital actions. Waiting for real accidents involving physical AI would be both slow and costly, so the benchmark is synthesised instead: a generator–critic loop built on Gemini 2.5 Pro turns 2023 emergency-room narratives from the US NEISS injury surveillance system, and a taxonomy of operational constraints inspired by ISO robot safety standards, into scenarios and candidate actions. Imagen and Veo 3 render them as photorealistic images and 5–10 second videos that slide from safe to unsafe. Every item is labelled by human raters and low-consensus items are dropped, leaving 319 text scenarios, 287 videos and 164 constraint–image pairs.",
+        "Evaluating the GPT-5, Claude and Gemini families as of September 2025 exposes three gaps. The strongest models identify the likely injury in a text scenario more than 90% of the time, but do markedly worse on video and on judging what an action will do. No model gets below a 30% violation rate when it must reason jointly about its embodiment's limits, physics and visual cues, with gripper geometry the hardest category. And smaller, faster models trail their larger siblings. Thinking lowers violations for every model, most of all the small ones. Post-training Gemini Robotics-ER 1.5 with supervised fine-tuning on structured reasoning traces, then reinforcement learning that penalises any point landing on a forbidden object, using just 200 training pairs, reaches a 31.6% violation rate — below every frontier model with thinking enabled — while cutting average thought length in half."
+      ]
+    },
+    {
+      "id": "gemini-2-5",
+      "title": "Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities",
+      "short": "Gemini 2.5",
+      "year": 2025,
+      "themes": [
+        "reasoning",
+        "deeplearning"
+      ],
+      "authors": "Gheorghe Comanici, Eric Bieber, Mike Schaekermann, Ice Pasupat, Noveen Sachdeva, …, Pierre Sermanet, … et al.",
+      "venue": "arXiv 2025",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/gemini-2-5/fig1.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/gemini-2-5/fig5.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/gemini-2-5/fig6.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/gemini-2-5/fig16.jpg"
+        }
+      ],
+      "body": [
+        "The technical report for the Gemini 2.X model family: Gemini 2.5 Pro and 2.5 Flash, alongside Gemini 2.0 Flash and Flash-Lite. Gemini 2.5 Pro is a thinking model with frontier coding and reasoning, long context and native multimodality, able to take in up to three hours of video.",
+        "Together the models cover the whole Pareto frontier of capability versus cost."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2507.06261"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/comanici-arxiv-25.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Comanici2025Gemini.bib"
+        }
+      ],
+      "summary": "The Gemini 2.X family: thinking models for reasoning, coding, long context and multimodality.",
+      "extended": [
+        "The Gemini 2.X generation is built from sparse mixture-of-experts transformers that natively take text, images, audio and video, handle more than a million tokens of context and call tools. Gemini 2.5 Pro and 2.5 Flash are thinking models, trained with reinforcement learning to spend extra inference-time compute before answering, with a thinking budget that lets users trade accuracy against cost; Gemini 2.0 Flash and Flash-Lite cover fast, low-cost use. The family is the first trained on TPUv5p, and the Flash-sized and smaller models are distilled from a larger teacher.",
+        "Gemini 2.5 Pro and 2.5 Flash gain 122 and 111 LMArena points over their 1.5 counterparts, with large jumps on coding and maths benchmarks such as LiveCodeBench, Aider Polyglot, SWE-bench Verified and AIME 2025, and accuracy that keeps rising with the thinking budget. Long context, vision and reasoning combine into agentic use: driven by an agent harness, Gemini 2.5 Pro finished Pokémon Blue, its second, fully autonomous run taking 406.5 hours, about half as long as the first. The report ends with safety and frontier-safety evaluations: 2.5 Pro shows clear capability gains in some areas but reaches none of the Critical Capability Levels."
+      ]
+    },
+    {
+      "id": "gemini-robotics",
+      "title": "Gemini Robotics: Bringing AI into the Physical World",
+      "short": "Gemini Robotics",
+      "year": 2025,
+      "themes": [
+        "action",
+        "reasoning"
+      ],
+      "authors": "Gemini Robotics Team, Saminda Abeyruwan, Joshua Ainslie, Jean-Baptiste Alayrac, Montserrat Gonzalez Arenas, …, Pierre Sermanet, … et al.",
+      "venue": "arXiv 2025",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/gemini-robotics/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/gemini-robotics/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/gemini-robotics/fig15.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/gemini-robotics/fig27.jpg"
+        }
+      ],
+      "body": [
+        "A family of AI models for robotics built on Gemini 2.0. Gemini Robotics is a vision-language-action model that controls robots directly, with smooth, reactive and dexterous manipulation and open-vocabulary instruction following in unseen scenes. Gemini Robotics-ER extends Gemini's embodied reasoning: detection, pointing, trajectories, grasps and 3D understanding.",
+        "With fine-tuning, the model specialises to long-horizon dexterous tasks like folding an origami fox, learns new tasks from 100 demonstrations, and adapts to a bi-arm Franka robot and the Apollo humanoid."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2503.20020"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/geminirobotics-arxiv-25.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/GeminiRobotics2025Gemini.bib"
+        }
+      ],
+      "summary": "Gemini 2.0 brought into the physical world: a VLA model and an embodied reasoning model.",
+      "extended": [
+        "Large multimodal models generalise remarkably well in the digital world; robots need that breadth plus a grasp of geometry, time and contact physics. The report starts from the embodied reasoning Gemini 2.0 already has, measured with ERQA, a new open benchmark of 400 multiple-choice questions. Gemini Robotics-ER strengthens those skills — 2D and 3D object detection, pointing, trajectory and grasp prediction, multi-view correspondence — and can control a robot zero-shot by writing robot code, succeeding on 53% of simulated manipulation tasks against 27% for Gemini 2.0 Flash, or few-shot from ten in-context demonstrations, reaching 65% in simulation and on real robots.",
+        "Gemini Robotics is the vision-language-action model built on top: a distilled backbone in the cloud paired with a local action decoder on the robot, for about 250 ms end-to-end latency and 50 Hz effective control. Trained on thousands of hours of teleoperated ALOHA 2 demonstrations gathered over 12 months, mixed with web, code and multimodal data, it consistently beats the baselines on an 85-task benchmark of visual, instruction and action generalisation. Fine-tuned specialists solve long-horizon dexterous tasks with 79% average success, including a lunch-box packing task over two minutes long, completed every time; at most 100 demonstrations bring 7 of 8 new tasks above 70% success; and the model adapts to a bi-arm Franka and to Apptronik's Apollo humanoid. A safety section introduces the ASIMOV datasets and uses constitutions and safety post-training to improve semantic action safety."
+      ]
+    },
+    {
+      "id": "predictive-red-teaming",
+      "title": "Predictive Red Teaming: Breaking Policies Without Breaking Robots",
+      "short": "Predictive Red Teaming",
+      "year": 2025,
+      "themes": [
+        "safety",
+        "action"
+      ],
+      "authors": "Anirudha Majumdar, Mohit Sharma, Dmitry Kalashnikov, Sumeet Singh, Pierre Sermanet, Vikas Sindhwani",
+      "venue": "arXiv 2025",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/predictive-red-teaming/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/predictive-red-teaming/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/predictive-red-teaming/fig5.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/predictive-red-teaming/fig6.png"
+        }
+      ],
+      "body": [
+        "Visuomotor policies break in surprising ways when the lighting, background or distractors change, and finding out usually takes hours of hardware evaluation. We predict those failures without running the robot: generative image editing simulates each change on nominal camera images, and an anomaly detector in the policy's own embedding space turns the edits into a predicted success rate.",
+        "In more than 500 real-robot trials covering twelve off-nominal conditions, the predictions track real success rates closely, and collecting data where they point boosts performance 2–7×."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://predictive-red-team.github.io/"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2502.06575"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/majumdar-arxiv-25.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Majumdar2025Predictive.bib"
+        }
+      ],
+      "summary": "Predicting where a robot policy will fail, using image editing instead of hardware trials.",
+      "extended": [
+        "Policies trained by imitation can be strikingly brittle to lighting, distractors and object placement, and which factors matter depends unpredictably on training details: a grasping policy at about 65% nominal success falls to about 10% when the table is raised a few centimetres, yet barely notices a person standing close by. The paper formalises predictive red teaming — ranking environmental factors by how much they hurt a given policy and estimating its absolute success under each, without any hardware evaluation in those off-nominal conditions.",
+        "RoboART does it in two steps. Imagen 3 edits held-out nominal observations from every camera following a language prompt — recolour the table, add a person, change the light — with a Gemini VLM critic picking the most faithful of four candidates. A policy-specific anomaly detector then measures how far each edited observation sits from training observations in the policy's embedding space, with a threshold calibrated by conformal prediction, and the anomaly rate becomes the predicted failure rate. On two diffusion policies with very different architectures, checked against 500+ real trials over twelve factors, predicted and true rankings reach Spearman correlations of 0.8 and 0.7, and predicted success rates are off by 0.10 and 0.19 on average. Co-fine-tuning on about an hour of new data from each of the three conditions predicted to be worst improves those conditions 2–7×, and lifts other lighting and background conditions 2–5× without any data from them."
+      ]
+    },
+    {
+      "id": "repnet-note",
+      "title": "A Short Note on Evaluating RepNet for Temporal Repetition Counting in Videos",
+      "short": "RepNet Evaluation Note",
+      "year": 2024,
+      "themes": [
+        "vision"
+      ],
+      "authors": "Debidatta Dwibedi, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, Andrew Zisserman",
+      "venue": "arXiv 2024",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/repnet/fig6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/repnet/fig2.png"
+        }
+      ],
+      "body": [
+        "Several recent papers report that RepNet can barely count repetitions on newer benchmarks. Those numbers come from a modified version of the model. We re-evaluate the original RepNet on Countix, UCFRep and RepCount-A, where it remains competitive with much larger recent models, and release the evaluation code and checkpoint."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2411.08878"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/dwibedi-arxiv-24.pdf"
+        },
+        {
+          "label": "Code",
+          "href": "https://github.com/google-research/google-research/tree/master/repnet"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Dwibedi2024Short.bib"
+        }
+      ],
+      "summary": "Setting the record straight on RepNet: fair evaluation, released code and checkpoint.",
+      "extended": [
+        "RepNet, a class-agnostic video repetition counter from 2020, has been cited in several later papers as scoring close to zero off-by-one accuracy on UCFRep and RepCount. The note traces those figures to TransRAC, which evaluated a modified RepNet whose last layer had been changed to handle more than 32 repetitions; later papers reused the numbers under RepNet's name. The original model needs no such change: its multi-speed evaluation, playing the video at 1× to 5× speed, stretches the longest period it can predict from 32 to 160 frames. The note also points out that the TransRAC code adds 0.1 to the denominator of the mean absolute error, unlike the metric used in earlier work, and reports which convention each number uses.",
+        "Evaluated as designed, the original RepNet holds up well. On Countix it outperforms more recent methods such as ESCounts; on UCFRep it reaches 0.733 off-by-one accuracy against 0.324 for TransRAC; and on RepCount-A, whose videos contain gaps between repetitions, only ESCounts does better — a model trained on RepCount-A and run at 224×224, while RepNet never saw that dataset and processes 112×112 frames. With code and checkpoint released, the note leaves the field a pointed question: what have larger, newer backbones actually added to repetition counting?"
+      ]
+    },
+    {
+      "id": "vid2robot",
+      "title": "Vid2Robot: End-to-end Video-conditioned Policy Learning with Cross-Attention Transformers",
+      "short": "Vid2Robot",
+      "year": 2024,
+      "themes": [
+        "action"
+      ],
+      "authors": "Vidhi Jain, Maria Attarian, Nikhil J Joshi, Ayzaan Wahid, Danny Driess, …, Pierre Sermanet, … et al.",
+      "venue": "RSS 2024",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/vid2robot/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/vid2robot/fig3.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/vid2robot/fig5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/vid2robot/fig6.png"
+        }
+      ],
+      "body": [
+        "Can a robot learn a task just by watching a person do it? Vid2Robot is an end-to-end policy that takes a video of a human performing a manipulation task and performs the same task in its own environment, despite the different body and scene.",
+        "It improves over BC-Z by more than 20% with human prompt videos, and can transfer a motion seen on one object to a different object in front of the robot."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://vid2robot.github.io/"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2403.12943"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/jain-rss-24.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Jain2024Vid2Robot.bib"
+        }
+      ],
+      "summary": "A robot policy that watches a human demonstration video and performs the same task itself.",
+      "extended": [
+        "Multi-task robot policies are usually told what to do in text, but some skills are far easier to show than to describe, and people learn them by watching each other. Imitating from video is hard, though: the robot has to infer the intent behind someone else's movements across a different body, viewpoint and environment. Vid2Robot learns this end to end from paired data — a prompt video and a robot trajectory performing the same task — drawn from three sources: existing robot episodes paired with one another, human demonstrations recorded afterwards to match robot episodes, and human and robot demonstrations recorded in the same workspace, about 100k robot videos and 10k human videos in all.",
+        "A shared image encoder and perceiver resamplers turn the prompt video and the robot's recent observations into tokens; cross-attention lets the robot state pick out what matters in the prompt, and a cross-attention transformer decodes the actions. Auxiliary losses — temporal cycle-consistency and contrastive alignment between prompt and robot videos, and a video–text contrastive loss — shape the shared representation. On real robots, Vid2Robot beats BC-Z by about 20% when prompted with human videos and is comparable with robot videos, with the biggest gain at grasping (65% versus 45%). It also shows cross-object motion transfer: shown a coke can being placed upright, it places other objects upright, succeeding 34% of the time in this setting against 17% for BC-Z."
+      ]
+    },
+    {
+      "id": "rt-h",
+      "title": "RT-H: Action Hierarchies Using Language",
+      "short": "RT-H",
+      "year": 2024,
+      "themes": [
+        "action",
+        "reasoning"
+      ],
+      "authors": "Suneel Belkhale, Tianli Ding, Ted Xiao, Pierre Sermanet, Quon Vuong, Jonathan Tompson, Yevgen Chebotar, Debidatta Dwibedi, Dorsa Sadigh",
+      "venue": "<a href=\"https://www.roboticsproceedings.org/rss20/p049.html\">RSS 2024</a>",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/rt-h/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/rt-h/fig2.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/rt-h/fig3.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/rt-h/fig4.jpg"
+        }
+      ],
+      "body": [
+        "Language can say not only what to do but how: “move arm forward”, “rotate arm right”. RT-H first predicts these language motions, then the robot's actions conditioned on them, so that tasks which look very different can share structure.",
+        "Because the hierarchy is in words, a person can correct the robot mid-task simply by telling it which motion to make, and RT-H learns from those corrections more efficiently than from teleoperated ones."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://rt-hierarchy.github.io/"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2403.01823"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/belkhale-arxiv-24.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Belkhale2024RTH.bib"
+        }
+      ],
+      "summary": "Robot actions routed through language motions like “move arm forward”, correctable in words.",
+      "extended": [
+        "Language-conditioned policies share data between tasks whose descriptions are alike, such as “pick coke can” and “pick an apple”, but as tasks diverge semantically — picking a can versus pouring a cup — that sharing breaks down and each task needs far more demonstrations. RT-H inserts a finer layer of language between task and action: language motions such as “move arm forward” or “close gripper”, extracted automatically from robot proprioception into a library of more than 2,500 motions with no manual labelling. A single vision-language model, co-trained on internet-scale data as in RT-2, answers two queries at each step: which language motion to make, then which action to take given that motion, the task and the image.",
+        "On a diverse multi-task dataset with eight challenging evaluation tasks, the hierarchy outperforms RT-2 by 15% on average. The intermediate layer doubles as an interface: during execution a person can override the predicted language motion, and RT-H interprets the correction in the context of the scene. Training on just 30 such correction episodes per task raises average success from 40% to 63%, while RT-2 trained on teleoperated corrections with IWR drops from 25% to 13%. RT-H also generalises better to new scenes and to novel objects (65% versus 55% on pick and move), and with a few well-timed corrections it completes tasks it has never seen."
+      ]
+    },
+    {
+      "id": "autort",
+      "title": "AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents",
+      "short": "AutoRT",
+      "year": 2024,
+      "themes": [
+        "robotics",
+        "reasoning"
+      ],
+      "authors": "Michael Ahn, Debidatta Dwibedi, Chelsea Finn, Montse Gonzalez Arenas, Keerthana Gopalakrishnan, …, Pierre Sermanet, … et al.",
+      "venue": "ICRA 2024 workshop (VLMNM)",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/autort/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/autort/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/autort/fig3.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/autort/fig6.jpg"
+        }
+      ],
+      "body": [
+        "Foundation models orchestrating a fleet of robots in the wild. A VLM describes what each robot sees, an LLM proposes diverse tasks to try there and filters them against a robot constitution of safety and embodiment rules, and each accepted task goes to an autonomous policy or a human teleoperator.",
+        "Over 7 months in 4 office buildings, with more than 20 robots running at once, AutoRT collected 77,000 real robot episodes, each person supervising 3 to 5 robots."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://auto-rt.github.io/"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2401.12963"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/ahn-icraw-24.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Ahn2024AutoRT.bib"
+        }
+      ],
+      "summary": "Foundation models directing a fleet of 20+ robots in the wild, guided by a robot constitution.",
+      "extended": [
+        "Embodied foundation models are short of data grounded in the physical world, and robot data is usually collected in controlled labs on tasks fixed in advance. AutoRT scales collection to unseen, populated office spaces with little human supervision. Each robot explores, a VLM describes the scene and its objects, and an LLM proposes tasks to perform there. A second LLM step then checks each proposal against a robot constitution — foundational rules adapted from Asimov's three laws, safety rules such as staying away from humans, animals and sharp or fragile objects, and embodiment rules such as payload limits and having a single arm — and routes accepted tasks to a scripted policy, RT-2 or a human teleoperator, depending on how many people are available.",
+        "Deployed for 7 months across 4 buildings on 53 robots, with a peak of more than 20 running simultaneously, AutoRT gathered 77,000 episodes spanning over 6,650 unique instructions, with each person supervising 3 to 5 mobile manipulators. Its generated instructions are more diverse in language-embedding space than the hand-designed task sets of Language Table, BC-Z and RT-1, and steering generation with a high-level objective raises task relevance from 27% for templated language to 61%. In deliberately adversarial scenes the constitution does the heavy lifting: with constitutional prompting at both generation and filtering, 83% of proposed tasks are safe, against 18% with minimal prompts and no filter. Co-fine-tuning RT-1 on the data improves it on picking from different heights (0% to 12.5%) and on wiping (10% to 30%)."
       ]
     },
     {
@@ -485,6 +942,10 @@
         {
           "label": "Paper",
           "href": "https://arxiv.org/pdf/2311.00899.pdf"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-icra-24.pdf"
         },
         {
           "label": "Data",
@@ -554,6 +1015,10 @@
         {
           "label": "Paper",
           "href": "https://arxiv.org/abs/2310.08864"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/oxe-corl-23.pdf"
         },
         {
           "label": "BibTeX",
@@ -627,6 +1092,10 @@
           "href": "https://arxiv.org/pdf/2307.15818.pdf"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/brohan-corl-23.pdf"
+        },
+        {
           "label": "BibTeX",
           "href": "https://karolhausman.github.io/bibtex/rt2-2023arxiv.bib"
         }
@@ -684,6 +1153,10 @@
           "href": "https://arxiv.org/abs/2303.03378"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/driess-icml-23.pdf"
+        },
+        {
           "label": "BibTeX",
           "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/driess2023palme.bib"
         }
@@ -692,6 +1165,121 @@
       "extended": [
         "Large language models reason well and understand nothing about the room they are in. PaLM-E attacks that grounding gap by pushing real-world continuous sensor data straight into the language model, rather than translating the world into text first.",
         "Inputs are multimodal sentences that interleave visual, continuous state-estimation and textual encodings, trained end to end alongside a pretrained LLM across sequential manipulation planning, visual question answering and captioning. A single model handles varied observation modalities on multiple embodiments, and shows positive transfer — it benefits from joint training across internet-scale language, vision, and vision-language data rather than being diluted by it. The largest version, PaLM-E-562B, is simultaneously a robotics model and a visual-language generalist with state-of-the-art performance on OK-VQA, and retains its general language ability as it scales."
+      ]
+    },
+    {
+      "id": "video-language-planning",
+      "title": "Video Language Planning",
+      "short": "Video Language Planning",
+      "year": 2023,
+      "themes": [
+        "reasoning",
+        "action"
+      ],
+      "authors": "Yilun Du, Mengjiao Yang, Pete Florence, Fei Xia, Ayzaan Wahid, …, Pierre Sermanet, … et al.",
+      "venue": "ICLR 2024",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/video-language-planning/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/video-language-planning/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/video-language-planning/fig5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/video-language-planning/fig10.jpg"
+        }
+      ],
+      "body": [
+        "Video Language Planning (VLP) plans long-horizon tasks in the space of both language and generated video: a vision-language model proposes the next steps and judges progress, while a text-to-video model imagines what each step would look like.",
+        "The result is a detailed multimodal plan — a long video with language subgoals — that goal-conditioned policies turn into actions on real robots, from rearranging blocks to bi-arm dexterous manipulation."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://video-language-planning.github.io/"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2310.10625"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/du-iclr-24.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Du2024Video.bib"
+        }
+      ],
+      "summary": "Long-horizon robot plans searched in generated video and language, then executed by policies.",
+      "extended": [
+        "Language models can lay out step-by-step plans, but text alone cannot capture shapes, physics or how objects move, and vision-language models trained on static captioning data struggle with dynamics. Text-to-video models learned from Internet video do capture motion, yet only over short clips. VLP combines the two in a tree search. A fine-tuned PaLM-E acts as the policy, proposing candidate next actions in text, and again as the heuristic, estimating how far each state is from the goal; a text-to-video model acts as the dynamics model, rolling out each candidate as video. The most promising branches are expanded recursively into plans hundreds of frames long, which a goal-conditioned policy then executes frame by frame, replanning as it goes.",
+        "Plan quality grows with the search budget: on the make-a-line task, widening beams and branches raised the share of fully correct video plans from 4% to 56%. In simulation, 98% of VLP plans for grouping blocks by colour were correct, against 4% for UniPi and 42% without the heuristic. In closed-loop execution of tasks around 1,500 steps long, VLP completed 64% of episodes moving all blocks to an area and 92% grouping them by colour, while PaLM-E, RT-2, LAVA and UniPi baselines stayed at or below 26%. The same approach produces consistent four-camera plans for a 14-DoF bi-manual ALOHA, runs on a 7-DoF mobile manipulator and, co-trained on Internet-scale data, generalizes to new objects, lighting and tasks."
+      ]
+    },
+    {
+      "id": "robotic-table-tennis",
+      "title": "Robotic Table Tennis: A Case Study into a High Speed Learning System",
+      "short": "Robotic Table Tennis",
+      "year": 2023,
+      "themes": [
+        "robotics"
+      ],
+      "authors": "David B. D'Ambrosio, Jonathan Abelian, Saminda Abeyruwan, Michael Ahn, Alex Bewley, …, Pierre Sermanet, … et al.",
+      "venue": "RSS 2023",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/robotic-table-tennis/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/robotic-table-tennis/fig2.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/robotic-table-tennis/fig5.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/robotic-table-tennis/fig16.jpg"
+        }
+      ],
+      "body": [
+        "A deep-dive into the system behind our robotic table tennis work: an industrial arm on a two-axis gantry, 125 Hz ball perception, a safety simulator in the control loop, one interface shared by simulation and the real robot, and automatic ball collection so the robot can train and be evaluated for hours without a human.",
+        "We document the design decisions that rarely make it into papers, and test them with studies on latency, perception noise, simulator parameters and action spaces."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2309.03315"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/dambrosio-rss-23.pdf"
+        },
+        {
+          "label": "Video",
+          "href": "https://youtu.be/uFcnWjB42I0"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/DAmbrosio2023Robotic.bib"
+        }
+      ],
+      "summary": "The full design of a high-speed table tennis robot, and the studies behind each choice.",
+      "extended": [
+        "Table tennis leaves a robot fractions of a second to sense, decide and move: amateurs already hit the ball at up to 9 m/s. The system built for it, previously shown to sustain hundreds of cooperative rallies with a human and to return balls to chosen targets, pairs an ABB 6-DoF arm with a Festo 2-DoF linear gantry. Around them sit a purpose-built perception stack running at 125 Hz, latency-critical control in C++ with research code in Python, a PyBullet simulator that both trains policies for zero-shot transfer and filters every real command for collisions, and a ball thrower with automatic collection so experiments run unattended.",
+        "Ablations measure which details matter. Modelling latency is critical: policies trained with the measured latency transferred zero-shot with an average score of 1.83 out of 2, against 1.33 for the next best setting at half that latency. Policies tolerate zero-mean observation noise and broader ball distributions, but a 4 cm bias in ball observations cut reward by 36%; physical parameters matter too, with a 2% higher ball restitution coefficient costing 25% of performance and an 8% higher table coefficient costing 36%. Acting and observing in task space trains faster than joint space and carries over to a different arm with a simple manual offset, and the same stack was reused for catching thrown balls, reaching 85–90% success."
       ]
     },
     {
@@ -745,6 +1333,10 @@
         {
           "label": "Paper",
           "href": "https://arxiv.org/abs/2207.05608"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/huang-corl-22.pdf"
         },
         {
           "label": "Video",
@@ -815,6 +1407,10 @@
           "href": "https://say-can.github.io/assets/palm_saycan.pdf"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/ahn-corl-22.pdf"
+        },
+        {
           "label": "Video",
           "href": "https://www.youtube.com/watch?v=ysFav0b472w"
         },
@@ -827,6 +1423,226 @@
       "extended": [
         "A language model asked how to clean a spill will produce a reasonable narrative that a particular robot in a particular kitchen may be entirely unable to carry out. SayCan closes that gap by pairing what the model wants to say with what the robot can actually do.",
         "The language model supplies high-level semantic knowledge about how to accomplish an abstract, temporally extended instruction; a library of pretrained low-level skills supplies the grounding, with each skill's value function scoring how likely it is to succeed from the current state. Multiplying the two — what is useful to say against what is feasible to do — constrains the model to propose actions that are both sensible and possible. The robot becomes the language model's hands and eyes. Evaluated on real-world tasks with a mobile manipulator, the method completes long-horizon natural language instructions, and the ablations show that the real-world grounding is what makes the difference rather than the language model alone."
+      ]
+    },
+    {
+      "id": "object-aware-visuomotor",
+      "title": "Visuomotor Control in Multi-Object Scenes Using Object-Aware Representations",
+      "short": "Object-Aware Visuomotor Control",
+      "year": 2022,
+      "themes": [
+        "ssl",
+        "action"
+      ],
+      "authors": "Negin Heravi, Ayzaan Wahid, Corey Lynch, Pete Florence, Travis Armstrong, Jonathan Tompson, Pierre Sermanet, Jeannette Bohg, Debidatta Dwibedi",
+      "venue": "ICRA 2023",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/object-aware-visuomotor/fig4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/object-aware-visuomotor/fig1.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/object-aware-visuomotor/fig5.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/object-aware-visuomotor/fig6.png"
+        }
+      ],
+      "body": [
+        "Self-supervised representations for robots are usually object-agnostic, and miss most of what is happening in a cluttered scene. We learn object-aware ones instead: Slot Attention, trained only on videos of a robot interacting with its environment, discovers the blocks, the arm and the end-effector without any labels.",
+        "Frozen, these features make multi-object goal-conditioned policies more sample-efficient, and localize objects better than object-agnostic alternatives."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://sites.google.com/view/slots4robots"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2205.06333"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/heravi-icra-23.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Heravi2023Visuomotor.bib"
+        }
+      ],
+      "summary": "Slot-based self-supervised features that find every object, for data-efficient control.",
+      "extended": [
+        "General-purpose robots need representations that carry over between tasks, but supervised features require a labelled dataset for each one, and self-supervised methods such as MoCo tend to encode only a few salient objects. In a scene with many blocks, a pole and a robot arm, that is not enough. This work pretrains a Slot Attention model on unlabelled interaction videos, freezes it, and uses its per-pixel features and object masks in two downstream settings: predicting the location of every object and of the end-effector, and learning multi-object goal-conditioned pushing policies with implicit behavioural cloning (IBC).",
+        "For localization, the slot-based model beats MoCo and an autoencoder in every setting, and the gap is widest in scenes with several blocks. For policy learning with 1,000 demonstrations, it raises task success by 20% over raw RGB and outperforms an autoencoder trained with the same reconstruction loss but no slot prior, showing that the object prior is what helps; the advantage shrinks as more demonstrations become available. On real robot videos the model separates blocks, arm, end-effector and pole without labels, and combining slots with RGB cut action-prediction error by 13.6% relative to RGB alone when training on 55 demonstrations."
+      ]
+    },
+    {
+      "id": "dial",
+      "title": "Robotic Skill Acquisition via Instruction Augmentation with Vision-Language Models",
+      "short": "Instruction Augmentation (DIAL)",
+      "year": 2022,
+      "themes": [
+        "action",
+        "reasoning"
+      ],
+      "authors": "Ted Xiao, Harris Chan, Pierre Sermanet, Ayzaan Wahid, Anthony Brohan, Karol Hausman, Sergey Levine, Jonathan Tompson",
+      "venue": "RSS 2023",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/dial/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/dial/fig4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/dial/fig5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/dial/fig6.jpg"
+        }
+      ],
+      "body": [
+        "Robot demonstrations are expensive to label with rich language. DIAL fine-tunes CLIP on a small crowd-labelled set, then uses it to relabel a much larger dataset with new instructions — spatial references, colours, alternative phrasings — that were never in the original task list.",
+        "Policies trained on the augmented data follow novel instructions they were never taught, such as picking the can on the left of the table."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://instructionaugmentation.github.io"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2211.11736"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/xiao-rss-23.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Xiao2023Robotic.bib"
+        }
+      ],
+      "summary": "CLIP relabels robot demonstrations with new instructions, so policies learn unseen commands.",
+      "extended": [
+        "Language-conditioned robot policies are limited by the instructions attached to their training data: templated commands written for specific tasks, or costly hindsight descriptions from human annotators. Yet one demonstration often shows several behaviours at once — picking the leftmost can is also picking a coke can, and a first step toward clearing the table. Data-driven Instruction Augmentation for Language-conditioned control (DIAL) uses a pretrained vision-language model to surface them. CLIP is fine-tuned contrastively on 2,800 crowd-annotated trajectories, then scores candidate instructions, drawn from crowd-sourced labels and GPT-3 proposals, against the first and last frames of 80,000 teleoperated demonstrations, of which only 3.5% had crowd-sourced descriptions. The best matches become extra training labels for an RT-1 behaviour-cloning policy.",
+        "Across more than 1,300 real-world evaluations on 60 instructions absent from every training set, the policy trained with 38,516 DIAL-relabelled episodes succeeded 60.0% of the time, against 42.5% for the same policy trained on the original data, with the largest gain on spatial instructions (68.0% vs 46.0%). Augmentation that ignores the image (noise on language embeddings, word-level synonyms, GPT-3 rephrasings) did worse than no augmentation on spatial and rephrased tasks. Policies also proved tolerant of imperfect labels: relabelling more aggressively adds data but lowers label accuracy, and a moderate confidence threshold gave the best balance."
+      ]
+    },
+    {
+      "id": "goalseye",
+      "title": "GoalsEye: Learning High Speed Precision Table Tennis on a Physical Robot",
+      "short": "GoalsEye",
+      "year": 2022,
+      "themes": [
+        "robotics",
+        "action"
+      ],
+      "authors": "Tianli Ding, Laura Graesser, Saminda Abeyruwan, David B. D'Ambrosio, Anish Shankar, Pierre Sermanet, Pannag R. Sanketi, Corey Lynch",
+      "venue": "IROS 2022",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/goalseye/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/goalseye/fig2.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/goalseye/fig5.png"
+        }
+      ],
+      "body": [
+        "Can a robot learn to land a table tennis ball on a chosen spot, directly on hardware? GoalsEye does it with iterative imitation: start from a small set of undirected demonstrations, relabel every attempt with where the ball actually landed, and keep practicing on self-chosen goals.",
+        "There is no reward design and no sim-to-real transfer: a few hours of real-world practice are enough to match or beat amateur humans at hitting targets."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://sites.google.com/view/goals-eye"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2210.03662"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/ding-iros-22.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Ding2022GoalsEye.bib"
+        }
+      ],
+      "summary": "A table tennis robot that learns to hit targets by practicing on goals it sets itself.",
+      "extended": [
+        "Goal-conditioned control on a real robot is hard to obtain with reinforcement learning, where reward design, safe exploration and hyperparameter tuning all get in the way, while plain imitation needs curated demonstrations and never improves on them. Precision table tennis is a demanding test: an 8-DoF arm and gantry, commanded at 20 Hz, must return a ball fired at about 7 m/s to an arbitrary target on the other side of the table. GoalsEye combines goal-conditioned behavioural cloning on hindsight-relabelled data with self-supervised practice: the robot gives itself random goals, attempts them with its current policy, and adds every attempt, failures included, to a growing training set.",
+        "Starting from 27 demonstrations and about 2.5 hours of real play, the policy landed 61% of balls within 30 cm of five evaluation goals and 41% within 20 cm. Ten amateur players from a robotics lab averaged 14% within 20 cm, the best of them 36%; at 30 cm the robot was about twice as accurate as the average player and comparable to the best one. Simulation studies show that a modest bootstrap dataset drastically speeds up self-practice. In a later, harder setup with balls launched from varied positions, about 15 hours of training reached 40% within 30 cm, against 11% for imitation of the demonstrations alone."
+      ]
+    },
+    {
+      "id": "nnclr",
+      "title": "With a Little Help from My Friends: Nearest-Neighbor Contrastive Learning of Visual Representations",
+      "short": "NNCLR",
+      "year": 2021,
+      "themes": [
+        "ssl",
+        "vision"
+      ],
+      "authors": "Debidatta Dwibedi, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, Andrew Zisserman",
+      "venue": "ICCV 2021",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/nnclr/fig5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/nnclr/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/nnclr/fig8.jpg"
+        }
+      ],
+      "body": [
+        "Contrastive learning usually treats two augmented views of the same image as positives. NNCLR uses the nearest neighbour of an image among recent embeddings instead, so positives come from other images with similar content — real semantic variation that augmentations cannot invent.",
+        "This simple change outperformed previous self-supervised methods on ImageNet and in transfer, and makes learning much less dependent on hand-designed augmentations."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2104.14548"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/dwibedi-iccv-21.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Dwibedi2021With.bib"
+        }
+      ],
+      "summary": "Contrastive learning that takes nearest neighbours from the dataset as positives.",
+      "extended": [
+        "Instance-discrimination methods such as SimCLR and BYOL learn by making an encoder invariant to random crops, colour changes and other transformations of a single image. Augmentations cannot produce a new viewpoint, a deformed object or another member of the same class, so the burden of generalization falls on the augmentation pipeline. NNCLR keeps a queue of embeddings from past batches as a support set and, for each image, replaces the second view with its nearest neighbour in that set as the positive in the contrastive loss. Where memory banks and queues usually supply negatives, this support set supplies positives drawn from other samples, without resorting to clustering.",
+        "With a ResNet-50, ImageNet linear evaluation rises from 71.7% to 75.6% top-1, ahead of previous state-of-the-art methods, and with only 1% of the labels semi-supervised accuracy goes from 53.8% to 56.5%. The features beat state-of-the-art self-supervised methods, and even supervised ImageNet pre-training, on 8 of 12 transfer datasets. Trained with random crops as the only augmentation, NNCLR still reaches 73.3%, a relative drop of just 2.1% from its full-augmentation result, whereas SimCLR and BYOL lose far more once colour jitter and blur are removed."
       ]
     },
     {
@@ -892,6 +1708,14 @@
           "href": "https://arxiv.org/pdf/2005.07648.pdf"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/lynch-rss-21.pdf"
+        },
+        {
+          "label": "Patent",
+          "href": "https://patents.google.com/patent/US12528186B2/en"
+        },
+        {
           "label": "BibTeX",
           "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Lynch2020Language.bib"
         }
@@ -901,6 +1725,229 @@
       "extended": [
         "Imitation learning usually needs each task specified by a task ID or a goal image, neither of which is practical in an open world. Instruction-following work allows language, but typically assumes structure in the observations, the actuators or the language itself that does not survive contact with robotics.",
         "This work learns perception from pixels, natural language understanding, and multitask continuous control end to end as one network — and, unusually, can absorb unlabelled, unstructured demonstration data carrying no task or language labels at all. That combination dramatically improves language-conditioned performance while cutting language annotation to under 1% of the data. At test time a single policy performs a wide variety of manipulation skills in a 3D environment, specified only by typed descriptions: \"open the drawer… now pick up the block… now press the green button\". Pairing the text-conditioned policy with a large pretrained language model makes it robust to out-of-distribution synonym instructions without collecting a single new demonstration, and extends it to commands in 16 languages."
+      ]
+    },
+    {
+      "id": "belt",
+      "title": "Broadly-Exploring, Local-Policy Trees for Long-Horizon Task Planning",
+      "short": "BELT",
+      "year": 2020,
+      "themes": [
+        "action",
+        "robotics"
+      ],
+      "authors": "Brian Ichter, Pierre Sermanet, Corey Lynch",
+      "venue": "arXiv 2020",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/belt/fig1.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/belt/fig2.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/belt/fig3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/belt/fig5.jpg"
+        }
+      ],
+      "body": [
+        "Classical planners like RRT explore large state spaces well but break down with complex dynamics; learned policies handle rich interaction but only over short horizons. BELT merges the two: an RRT-style tree whose edges are short tasks executed by a goal-conditioned policy learned from play.",
+        "A task-conditioned model predicts where each task ends, so the tree can grow far ahead and find long, sequential plans that the same policy then executes."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2010.06491"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/ichter-arxiv-20.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Ichter2020Broadly.bib"
+        }
+      ],
+      "summary": "RRT-style tree search whose edges are learned short-horizon skills, for long-horizon plans.",
+      "extended": [
+        "Long-horizon manipulation requires reasoning over which subtasks to perform and in what order, in high-dimensional states with complex dynamics. Rapidly-exploring random trees search such spaces efficiently but struggle with stochastic dynamics and with the narrow passages that interacting with objects creates, while learned policies cope with contact and rich observations but only over short horizons. Broadly-Exploring, Local-policy Trees (BELT) runs an RRT-inspired search in which each new edge is a task, here a goal state sampled from demonstration data, rolled out by a task-conditioned policy trained on teleoperated play (Play-LMP). A learned task-conditioned model predicts the outcome of a whole task at once rather than step by step, which keeps errors from compounding and lets the tree plan far ahead.",
+        "In a simulated tabletop playground with a drawer, a sliding door, a block and three buttons, BELT was evaluated on 925 chains of four subtasks drawn from 18 short-horizon skills, each checked by a success detector over the whole trajectory. With the learned task model it found plans for 66% of the chains, and 82% when planning with the simulator itself; those plans then executed successfully almost as often as an oracle policy handed the four tasks in order. A cross-entropy-method planner and a policy given a single goal state solved few chains, and planning with a step-by-step action model returned a plan for every chain but only 8% of them were feasible."
+      ]
+    },
+    {
+      "id": "repnet",
+      "title": "Counting Out Time: Class Agnostic Video Repetition Counting in the Wild",
+      "short": "RepNet: Counting Out Time",
+      "year": 2020,
+      "themes": [
+        "vision",
+        "ssl"
+      ],
+      "authors": "Debidatta Dwibedi, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, Andrew Zisserman",
+      "venue": "CVPR 2020",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/repnet/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/repnet/fig2.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/repnet/fig6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/repnet/fig8.jpg"
+        }
+      ],
+      "body": [
+        "RepNet counts how many times an action repeats in a video, whatever the action: jumping jacks, slicing an onion, a bouncing ball, even a beating heart.",
+        "The model has to predict the period from a temporal self-similarity matrix alone, and it is trained on synthetic repetitions made by looping clips from unlabelled videos. We also release Countix, a real-world repetition counting dataset about 90 times larger than the previous largest one."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://sites.google.com/view/repnet"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2006.15418"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/dwibedi-cvpr-20.pdf"
+        },
+        {
+          "label": "Patent",
+          "href": "https://patents.google.com/patent/US12469290B2/en"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Dwibedi2020Counting.bib"
+        }
+      ],
+      "summary": "Class-agnostic counting of repeated actions in video, through a self-similarity bottleneck.",
+      "extended": [
+        "Repetition is everywhere in video, from exercise and music to manufacturing and biological rhythms, yet periodic video understanding has lagged far behind action recognition, largely for want of a large labelled dataset. The aim here is one model that estimates the period of any repeated action, including kinds never seen in training: it counts the repetitions and also says, frame by frame, whether the frame is part of a repetition at all.",
+        "RepNet embeds each frame, builds a temporal self-similarity matrix from those embeddings, and predicts per-frame period length and periodicity from that matrix only. Squeezing 512 feature channels down to a single one makes the model class-agnostic and interpretable, and helps it transfer from synthetic to real footage. Training videos are synthesised from unlabelled Kinetics clips by repeating a random sub-sequence with varying periods and counts, with camera-motion augmentations that change smoothly over time. Trained this way, RepNet beats the previous state of the art on PERTUBE periodicity detection (F1 of 0.820 against 0.770) and on QUVA repetition counting (mean absolute count error of 0.104 against 0.232). The paper also introduces Countix, crowd-sourced repetition segments and counts from Kinetics, and shows uses such as detecting changes in speed and retrieving matching moments across periods."
+      ]
+    },
+    {
+      "id": "learning-to-play",
+      "title": "Learning to Play by Imitating Humans",
+      "short": "Learning to Play by Imitating Humans",
+      "year": 2020,
+      "themes": [
+        "action"
+      ],
+      "authors": "Rostam Dinyari, Pierre Sermanet, Corey Lynch",
+      "venue": "arXiv 2020",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/learning-to-play/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/learning-to-play/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/learning-to-play/fig3.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/learning-to-play/fig5.png"
+        }
+      ],
+      "body": [
+        "Can a robot learn to play like a person, and then generate play data on its own? We train a behavioural cloning policy on 32 minutes of human teleoperated play and let it run, producing 10 hours of autonomous play: see a <a href=\"https://learning-to-play.github.io/videos/undirected_play1.mp4\">robot imitating human play</a>.",
+        "A goal-conditioned policy trained on human and cloned play together outperforms one trained on human play alone across 18 manipulation tasks in simulation, at 74.6% average success against 65.6%."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2006.06874"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/dinyari-arxiv-20.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Dinyari2020Learning.bib"
+        }
+      ],
+      "summary": "A robot that imitates human play to generate its own training data, autonomously.",
+      "extended": [
+        "Acquiring many skills has usually meant collecting many expert demonstrations per task, or engineering a reward function for each. Teleoperated play, where an operator freely explores an environment with no task in mind, is cheaper and covers far more of the state space: relabelled into goal-reaching examples, it trains a single goal-conditioned policy that outperforms policies trained on per-task expert demonstrations. Play still needs a human at the controls, though. This work asks whether a robot can learn to play from a small amount of human play, then produce much more of it unattended.",
+        "A high-capacity recurrent behavioural cloning policy, Play-BC, is trained on 32 minutes of human play in a simulated tabletop environment. It is then repeatedly reset to start states drawn from the play data and unrolled to generate hours of cloned play: opening doors and drawers, pressing buttons, picking up blocks. Adding 10 hours of this data to the human play lifts the average success of a Learning-from-Play policy on 18 user-specified tasks from 65.6% to 74.6%, whereas adding random exploration of the same duration makes it worse. Cloning policies with more capacity and longer cloned episodes both help, and the cloned data keeps reaching new quantised states for tens of hours, if more slowly than a human operator does."
+      ]
+    },
+    {
+      "id": "motion2vec",
+      "title": "Motion2Vec: Semi-Supervised Representation Learning from Surgical Videos",
+      "short": "Motion2Vec",
+      "year": 2020,
+      "themes": [
+        "ssl",
+        "robotics"
+      ],
+      "authors": "Ajay Kumar Tanwani, Pierre Sermanet, Andy Yan, Raghav Anand, Mariano Phielipp, Ken Goldberg",
+      "venue": "ICRA 2020",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/motion2vec/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/motion2vec/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/motion2vec/fig5.png"
+        }
+      ],
+      "body": [
+        "Motion2Vec learns a motion-centric embedding of surgical videos, in which frames from the same action segment, such as needle insertion or needle hand-off, sit close together.",
+        "With only a small set of labelled segments, it segments suturing videos from the public JIGSAWS dataset with 85.5% accuracy, and the same embeddings drive pose imitation on da Vinci robot arms with 0.94 cm position error."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://sites.google.com/view/motion2vec"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/2006.00545"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/tanwani-icra-20.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Tanwani2020Motion2Vec.bib"
+        }
+      ],
+      "summary": "Surgical videos embedded by action segment, to segment and imitate suturing motions.",
+      "extended": [
+        "Imitating manipulation from video needs representations that capture what the demonstrator is doing, while staying invariant to lighting, background, viewpoint and the size of objects. Surgical suturing makes a good test case: it breaks down into temporally connected action segments, from needle insertion to needle extraction and hand-off, but labelling those segments by hand is slow, so the representation should be learned with as little supervision as possible.",
+        "Motion2Vec trains a Siamese network with a metric-learning loss that pulls together frames from the same action segment and pushes away frames sampled from other segments, while respecting temporal order. After this pre-training, a recurrent network segments the embedded sequences, and its inferences on unlabelled videos become pseudo-labels fed back to refine the embedding, so a small labelled subset is enough to align the space semantically. On JIGSAWS suturing it reaches 85.5% segmentation accuracy, above the 83.3% and 81.4% previously reported and ahead of baselines including TCC, single-view TCN, HMM, HSMM and CRF; with 25% or more of the demonstrations labelled, it also beats the unsupervised alternatives. Decoding end-effector poses for the dual-arm da Vinci robot from the embeddings, with one model per surgeon, gives 0.94 cm position error per observation on the test set."
       ]
     },
     {
@@ -969,6 +2016,14 @@
           "href": "https://arxiv.org/pdf/1903.01973.pdf"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/lynch-corl-19.pdf"
+        },
+        {
+          "label": "Patent",
+          "href": "https://patents.google.com/patent/US20220076099A1/en"
+        },
+        {
           "label": "BibTeX",
           "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Lynch2019Play.bib"
         }
@@ -977,6 +2032,180 @@
       "extended": [
         "Play is cheap and play is rich. It can be collected in quantity without segmenting tasks, labelling them, or resetting to an initial state, and it covers roughly four times more interaction space than task demonstrations gathered for the same amount of time. This paper turns that into a training signal.",
         "Play-LMP self-supervises control on top of human teleoperated play, learning to organise play behaviours in a latent plan space and then reusing them at test time to reach specific goals. The shift is from a narrow, discrete set of tasks to the continuum of behaviours an environment actually affords. After self-supervising on unlabelled play alone, it substantially outperforms individual expert-trained policies on 18 difficult user-specified visual manipulation tasks. Two side effects are as interesting as the headline: play-supervised models are more robust to perturbation than their expert-trained counterparts, and they retry until they succeed. The agent also organises its latent plan space around functional tasks despite never having seen a task label."
+      ]
+    },
+    {
+      "id": "ocn",
+      "title": "Online Object Representations with Contrastive Learning",
+      "short": "Object-Contrastive Networks",
+      "year": 2019,
+      "themes": [
+        "ssl",
+        "vision"
+      ],
+      "authors": "Sören Pirk, Mohi Khansari, Yunfei Bai, Corey Lynch, Pierre Sermanet",
+      "venue": "ICRA 2020",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/ocn/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/ocn/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/ocn/fig9.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/ocn/fig10.jpg"
+        }
+      ],
+      "body": [
+        "Object-Contrastive Networks (OCN) learn object representations from monocular video without any labels. Each object detected in one frame is pulled towards its nearest neighbour in another frame and pushed away from the rest, and attributes such as colour, shape and function emerge.",
+        "Trained online, OCN improves the longer it looks at a scene: object identification error converges to 2.2% while an offline ResNet50 baseline stays at 52.4%. A robot that collects its own data can then point to objects similar to one placed in front of it. Published at ICRA 2020 as <a href=\"https://doi.org/10.1109/ICRA40945.2020.9196567\">Online Learning of Object Representations by Appearance Space Feature Alignment</a>."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://online-objects.github.io/"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/1906.04312"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/pirk-arxiv-19.pdf"
+        },
+        {
+          "label": "Patent",
+          "href": "https://patents.google.com/patent/US20210334599A1/en"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Pirk2019Online.bib"
+        }
+      ],
+      "summary": "Object attributes self-supervised from video, improving online the longer a robot looks.",
+      "extended": [
+        "A robot deployed in the real world keeps meeting objects it has never seen. Recognising a particular instance, and inferring its general properties, should not depend on human labels, which are expensive to collect and confine the representation to a fixed, discrete set of classes. This work self-supervises object representations in situated settings, from monocular video and an off-the-shelf objectness detector only, with no depth, tracking or known correspondences between views.",
+        "OCN embeds the objects detected in two random frames of a scene and trains with an n-pairs metric loss: each object's nearest neighbour in the other frame acts as its positive, and every other object as a negative. Given a limited set of objects, correct correspondences emerge on their own, even though no positive pairs are ever provided. Adapting online to a new 200-second video, the model reaches about 2% identification error after 80 seconds, a 25x reduction against the supervised offline baseline. In a loop free of human supervision, a robot collects multi-view data of a table, trains OCN on it, and points to the object most similar to a query, with 72% recognition accuracy over 5 classes and 89% on the binary is-container attribute. The embedding also organises objects by visual and semantic properties: a cup lands near other containers, such as bowls."
+      ]
+    },
+    {
+      "id": "tcc",
+      "title": "Temporal Cycle-Consistency Learning",
+      "short": "Temporal Cycle-Consistency",
+      "year": 2019,
+      "themes": [
+        "ssl",
+        "vision"
+      ],
+      "authors": "Debidatta Dwibedi, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, Andrew Zisserman",
+      "venue": "CVPR 2019",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/tcc/fig2.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/tcc/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/tcc/fig3.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/tcc/fig6.jpg"
+        }
+      ],
+      "body": [
+        "Temporal cycle-consistency (TCC) learns per-frame video embeddings by finding correspondences across time between videos of the same action: if a frame's nearest neighbour in another video leads back to that same frame, the two are aligned.",
+        "Once trained, videos align by simple nearest-neighbour matching. That enables few-shot classification of action phases, synchronised playback of several videos, transfer of sounds and labels between them, and anomaly detection."
+      ],
+      "links": [
+        {
+          "label": "Project Page",
+          "href": "https://sites.google.com/view/temporal-cycle-consistency"
+        },
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/1904.07846"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/dwibedi-cvpr-19.pdf"
+        },
+        {
+          "label": "Patent",
+          "href": "https://patents.google.com/patent/US20220004883A1/en"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Dwibedi2019Temporal.bib"
+        }
+      ],
+      "summary": "Self-supervised video embeddings learned by aligning videos of the same action in time.",
+      "extended": [
+        "Videos of the same process, such as pouring a drink or pitching a baseball, share key moments despite changes in viewpoint, scale, container, style and speed. Those correspondences across time could link raw video to higher-level temporal structure such as the phases of an action. The paper's argument is that looking for correspondences is itself a rich self-supervised signal, well suited to fine-grained temporal understanding of video.",
+        "TCC is a differentiable cycle-consistency loss. A frame embedded from one video is matched to its soft nearest neighbour in a second video, which is then matched back, and the network is trained so the cycle returns to where it started; no labels or explicit correspondences are needed. For evaluation, the Pouring and Penn Action datasets were densely labelled with action phases. With a single labelled video, TCC features perform about as well on phase classification as supervised learning with around 50, and TCC complements other self-supervised methods such as Shuffle and Learn and Time-Contrastive Networks: combining it with TCN gives the best fine-tuning results. Because frames align by nearest neighbours, the embeddings also support fine-grained retrieval, transfer of synchronised modalities such as sound or semantic labels, synchronised playback and anomaly detection."
+      ]
+    },
+    {
+      "id": "wasserstein-dependency",
+      "title": "Wasserstein Dependency Measure for Representation Learning",
+      "short": "Wasserstein Dependency Measure",
+      "year": 2019,
+      "themes": [
+        "ssl",
+        "deeplearning"
+      ],
+      "authors": "Sherjil Ozair, Corey Lynch, Yoshua Bengio, Aaron van den Oord, Sergey Levine, Pierre Sermanet",
+      "venue": "NeurIPS 2019",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/wasserstein-dependency/fig2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/wasserstein-dependency/fig1.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/wasserstein-dependency/fig4.png"
+        }
+      ],
+      "body": [
+        "Self-supervised objectives that maximise mutual information tend to learn incomplete representations, capturing only a few of the factors of variation in the data. We show this happens in practice and propose a fix: measure dependency with the Wasserstein distance instead of the KL divergence.",
+        "A practical version, Wasserstein predictive coding (WPC), enforces Lipschitz continuity with tools from the GAN literature and learns more complete representations than contrastive predictive coding (CPC)."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://arxiv.org/abs/1903.11780"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/ozair-neurips-19.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Ozair2019Wasserstein.bib"
+        }
+      ],
+      "summary": "Wasserstein distance in place of KL divergence, for more complete self-supervised features.",
+      "extended": [
+        "Mutual information maximisation underpins many unsupervised representation learning methods, with state-of-the-art results in object recognition, speech recognition and reinforcement learning. It has a fundamental limit, though: the number of samples needed to bound mutual information tightly from below grows exponentially with the mutual information itself. Where views share a lot of information, as in video understanding or reinforcement learning, these estimators overfit and settle for representations that capture only a few factors of variation, which serve downstream tasks poorly.",
+        "The Wasserstein dependency measure is the Wasserstein distance between the joint distribution of two variables and the product of their marginals, used in place of the KL divergence that defines mutual information. The intuition: a powerful encoder can exaggerate a single small difference between unpaired samples and stop there, whereas a Lipschitz encoder keeps distances between representations bounded by distances between inputs, so it must represent more of the data. Wasserstein predictive coding approximates this by adding a gradient penalty to a contrastive estimator. On datasets designed to have high mutual information, including SpatialMultiOmniglot, StackedMultiOmniglot, MultiviewShapes3D and SplitCelebA, WPC consistently does better than CPC: it degrades more gracefully as mutual information grows, is less sensitive to minibatch size, and keeps its lead across dataset sizes and with both fully connected and convolutional encoders."
       ]
     },
     {
@@ -1021,6 +2250,10 @@
           "href": "https://arxiv.org/abs/1808.00928"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/dwibedi-iros-18.pdf"
+        },
+        {
           "label": "Video",
           "href": "https://drive.google.com/file/d/1QkEnqApB7U7XvRBupfnysgdFMarhnwlP/view?usp=sharing"
         },
@@ -1037,6 +2270,55 @@
       "extended": [
         "An extension of Time-Contrastive Networks that embeds several frames jointly rather than one frame at a time. A single frame can encode where things are; a short stack of them encodes how fast they are moving, and the paper shows this captures both position and velocity attributes substantially more accurately.",
         "The test is whether such self-supervised representations are good enough to act on. Agents observing themselves taking random actions, or watching other agents perform tasks, learn embeddings that support continuous control policies trained with PPO using only those embeddings as input. On the real-world Pouring dataset the multi-frame model cuts error by 39.4% on motion attributes and 11.1% on static attributes relative to the single-frame baseline — the gap being largest exactly where motion matters."
+      ]
+    },
+    {
+      "id": "conv-gru-temporal-reasoning",
+      "title": "Temporal Reasoning in Videos using Convolutional Gated Recurrent Units",
+      "short": "Temporal Reasoning with ConvGRUs",
+      "year": 2018,
+      "themes": [
+        "vision"
+      ],
+      "authors": "Debidatta Dwibedi, Pierre Sermanet, Jonathan Tompson",
+      "venue": "CVPR 2018 workshop",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/conv-gru-temporal-reasoning/fig3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/conv-gru-temporal-reasoning/fig2.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/conv-gru-temporal-reasoning/fig4.jpg"
+        }
+      ],
+      "body": [
+        "On many action recognition benchmarks the order of frames barely matters. On 20BN Something-Something, where fine-grained human-object interactions call for temporal reasoning, a convolutional GRU on top of ImageNet features gives a significant boost over averaging features over time.",
+        "Looking inside, the hidden states of the recurrent units encode meaningful state transitions, such as objects going from closed to open."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://openaccess.thecvf.com/content_cvpr_2018_workshops/w19/html/Dwibedi_Temporal_Reasoning_in_CVPR_2018_paper.html"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/dwibedi-cvprw-18.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Dwibedi2018Temporal.bib"
+        }
+      ],
+      "summary": "Recurrent video models whose hidden states track object state changes when order matters.",
+      "extended": [
+        "Deep models have pushed action recognition forward, yet on datasets such as Kinetics and UCF101 they do well even with shuffled or reversed frames, often by spotting a telling object or scene rather than following the action. The 20BN Something-Something dataset, with 174 classes of fine-grained, object-agnostic interactions such as opening versus closing something, cannot be solved that way. Understanding such interactions matters for robotics too, where skills could one day be transferred to robots by watching people handle everyday objects.",
+        "The model passes frames through an ImageNet-pretrained InceptionV3, aggregates the features over time with a gated recurrent unit, in standard or convolutional form, and classifies from the final hidden state. On the Something-Something validation set the ConvGRU reaches 43.7% top-1 accuracy, against 20.5% for spatio-temporal averaging and 33.0% for the multi-scale Temporal Relation Network, and 39.6% on the test set. On Kinetics, where temporal order matters less, the recurrent models trail simple averaging slightly. Nearest-neighbour retrieval in the GRU hidden state shows what it has learned: frames from different videos of the same class line up by stage of the action, the same state is shared across objects, so open boxes, dishwashers, books, drawers and bags cluster together, and some classes show several transitions as objects are roughly tracked."
       ]
     },
     {
@@ -1107,6 +2389,10 @@
           "href": "https://arxiv.org/abs/1704.06888"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-icra-18.pdf"
+        },
+        {
           "label": "Code",
           "href": "https://github.com/tensorflow/models/tree/master/research/tcn"
         },
@@ -1125,6 +2411,14 @@
         {
           "label": "Blogpost",
           "href": "https://ai.googleblog.com/2017/07/teaching-robots-to-understand-semantic.html"
+        },
+        {
+          "label": "Patent",
+          "href": "https://patents.google.com/patent/US11453121B2/en"
+        },
+        {
+          "label": "Patent (rewards)",
+          "href": "https://patents.google.com/patent/US12240117B2/en"
         },
         {
           "label": "BibTeX",
@@ -1192,6 +2486,10 @@
           "href": "https://arxiv.org/abs/1612.06699"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-rss-17.pdf"
+        },
+        {
           "label": "Dataset",
           "href": "https://sites.google.com/site/brainrobotdata/home/pouring-dataset"
         },
@@ -1202,6 +2500,10 @@
         {
           "label": "Blogpost",
           "href": "https://ai.googleblog.com/2017/07/teaching-robots-to-understand-semantic.html"
+        },
+        {
+          "label": "Patent",
+          "href": "https://patents.google.com/patent/US20190332920A1/en"
         },
         {
           "label": "BibTeX",
@@ -1260,6 +2562,10 @@
           "href": "https://arxiv.org/abs/1412.7054"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-iclrw-15.pdf"
+        },
+        {
           "label": "BibTeX",
           "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2015Attention.bib"
         }
@@ -1312,6 +2618,10 @@
           "href": "https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Szegedy_Going_Deeper_With_2015_CVPR_paper.pdf"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/szegedy-cvpr-15.pdf"
+        },
+        {
           "label": "Code",
           "href": "https://github.com/tensorflow/models/tree/master/research/inception"
         },
@@ -1362,6 +2672,60 @@
         }
       ],
       "summary": "First place in the Kaggle dog-versus-cat image classification challenge."
+    },
+    {
+      "id": "phd-thesis",
+      "title": "A Deep Learning Pipeline for Image Understanding and Acoustic Modeling",
+      "short": "PhD Thesis",
+      "year": 2014,
+      "themes": [
+        "deeplearning",
+        "vision"
+      ],
+      "authors": "Pierre Sermanet (advisor: Yann LeCun)",
+      "venue": "PhD thesis, New York University, 2014",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/phd-thesis/fig1-3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/phd-thesis/fig1-2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/phd-thesis/fig1-4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/phd-thesis/fig4-11.jpg"
+        }
+      ],
+      "body": [
+        "PhD thesis at New York University, advised by Yann LeCun. It unifies feature learning, recognition, localization and detection in a single ConvNet pipeline, and carries that pipeline from images to speech.",
+        "It brings the traffic sign, pedestrian detection and OverFeat work together in one account, and applies the same framework to acoustic modelling on IARPA Babel speech data."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://search.proquest.com/openview/67ff072338d50aefe0739fe9470ccae2/1"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-phd-14.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2014Deep.bib"
+        }
+      ],
+      "summary": "One ConvNet pipeline for classification, localization and detection, from images to speech.",
+      "extended": [
+        "Making sense of audio or video from raw signals is a high-dimensional problem, with noise, viewpoint, deformation and lighting all varying, and the thesis argues it can only be tackled efficiently by learning from data. It builds one deep learning pipeline on Convolutional Networks and applies it to tasks of increasing difficulty, each a sub-task of the next: classification, localization and detection. On ImageNet 2013, features learned for classification are reused for the other two: a regression network learns to predict object bounding boxes, and many predictions made densely across positions and scales are accumulated and fused instead of being pruned by non-maximum suppression. The approach won the ILSVRC13 localization task with 29.9% top-5 error; after the competition it reached 13.6% classification error and, having ranked third in detection with 19.4% mAP, set a new detection state of the art at 24.3%.",
+        "The same framework carries over to speech by treating 40 log-mel frequency bands over a 41-frame window as an image. A ConvNet acoustic model for IARPA Babel Cantonese, trained first on class-balanced data, without delta channels and with dropout on three fully connected layers, reaches a cross-entropy of 1.51 and 35.85% sub-phone error on validation data, against 1.73 and 37.78% for the IBM baseline on its held-out set, which the thesis notes tends to be the more optimistic. The thesis also collects a set of ConvNet practices: multi-stage features fed to the classifier, which took traffic sign recognition past human accuracy at 98.98% in the GTSRB competition and later to 99.17%; Lp pooling, preprocessing and local contrast normalisation, nonlinearities and momentum; architecture search with random weights; and unsupervised convolutional sparse coding, which together with multi-stage features cut INRIA pedestrian detection error from 26.05% to 11.05%. It closes by proposing to apply the localization approach to speech, predicting where each sub-phone sits in time."
+      ]
     },
     {
       "id": "overfeat",
@@ -1430,6 +2794,10 @@
           "href": "https://arxiv.org/abs/1312.6229"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-iclr-14.pdf"
+        },
+        {
           "label": "ImageNet Results",
           "href": "http://www.image-net.org/challenges/LSVRC/2013/results.php"
         },
@@ -1495,6 +2863,10 @@
           "href": "https://www.cv-foundation.org/openaccess/content_cvpr_2013/html/Sermanet_Pedestrian_Detection_with_2013_CVPR_paper.html"
         },
         {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-cvpr-13.pdf"
+        },
+        {
           "label": "Video",
           "href": "https://www.youtube.com/watch?v=uKU2pzpGUlM"
         },
@@ -1553,6 +2925,10 @@
         {
           "label": "Paper",
           "href": "https://arxiv.org/pdf/1204.3968.pdf"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-icpr-12.pdf"
         },
         {
           "label": "BibTeX",
@@ -1626,6 +3002,42 @@
       ]
     },
     {
+      "id": "traffic-pedestrians-snowbird",
+      "title": "Traffic Signs and Pedestrians Vision with Multi-Scale Convolutional Networks",
+      "short": "Traffic Signs &amp; Pedestrians",
+      "year": 2011,
+      "themes": [
+        "vision",
+        "deeplearning"
+      ],
+      "authors": "Pierre Sermanet, Koray Kavukcuoglu, Yann LeCun",
+      "venue": "Snowbird Learning Workshop 2011",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/misc/convnet_skip_connections.png"
+        }
+      ],
+      "body": [
+        "A workshop abstract applying multi-scale ConvNets, whose classifier sees first-stage features alongside second-stage ones, to both traffic sign classification and pedestrian detection."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=0nPi5YYAAAAJ&citation_for_view=0nPi5YYAAAAJ:WF5omc3nYNoC"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2011TrafficPedestrians.bib"
+        }
+      ],
+      "summary": "Multi-scale ConvNets applied to traffic sign classification and pedestrian detection.",
+      "extended": [
+        "ConvNets, multi-stage architectures inspired by biology, learn their invariant features at every level from data and tune them to the task, whereas many popular vision pipelines of the time used hand-crafted features such as HOG or SIFT. This abstract changes the traditional architecture so that the classifier receives first-stage features as well as second-stage ones, and applies the resulting multi-scale ConvNets to traffic sign classification and pedestrian detection, establishing new accuracy records, above human performance in the case of traffic signs."
+      ]
+    },
+    {
       "id": "unsupervised-hierarchies",
       "title": "Unsupervised Convolutional Feature Hierarchies",
       "short": "Unsupervised Hierarchies",
@@ -1684,6 +3096,78 @@
       "extended": [
         "Sparse coding had become a popular way to learn visual features, but it was almost always trained on isolated patches. Applying the resulting filters convolutionally then produces highly redundant codes, because every overlapping patch was encoded without reference to its neighbours. This paper trains convolutionally over large image windows instead, which removes that redundancy between neighbouring feature vectors and makes the representation more efficient.",
         "Alongside the linear decoder that reconstructs the image from sparse features, the method trains a feed-forward encoder that predicts quasi-sparse features directly from the input, so inference at test time costs one pass rather than an optimisation. The change in training regime changes what gets learned: patch-based training rarely yields anything but oriented edge detectors, while convolutional training produces markedly more diverse filters — centre-surround, corner detectors, cross detectors and oriented gratings. Stacked into a multi-stage convolutional architecture — 64 features at the first stage, 256 at the second, connected through a sparse table amounting to 4,096 kernels, more dictionary elements than prior convolutional RBM or sparse coding work had attempted — these filters improve results across several recognition and detection tasks, including Caltech-101 and INRIA pedestrians."
+      ]
+    },
+    {
+      "id": "adaptive-visual-navigation",
+      "title": "Fully Adaptive Visual Navigation for Autonomous Vehicles",
+      "short": "Fully Adaptive Visual Navigation",
+      "year": 2010,
+      "themes": [
+        "robotics",
+        "vision"
+      ],
+      "authors": "Marco Scoffier, Urs Muller, Yann LeCun, Pierre Sermanet, Benoit Corda, Clement Farabet",
+      "venue": "27th Army Science Conference, 2010",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/lagr/lagrbot2.jpg"
+        }
+      ],
+      "body": [
+        "Adaptivity and machine learning as the route to robust ground-vehicle navigation: less sensitive to sensor quality and calibration, workable with low-cost cameras rather than LIDAR, and portable from one vehicle to another."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://www.researchgate.net/publication/267420328_FULLY_ADAPTIVE_VISUAL_NAVIGATION_FOR_AUTONOMOUS_VEHICLES"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Scoffier2010Fully.bib"
+        }
+      ],
+      "summary": "Learning-based navigation that tolerates cheap cameras and moves across vehicle platforms.",
+      "extended": [
+        "Autonomous ground vehicles must react to changing environments and operate in areas they have never seen. This paper argues that adaptivity and machine learning make such navigation robust: a system that learns is less sensitive to sensor quality and calibration, can run on cheap, low-power cameras, leans less on active sensors such as LIDAR, and carries over more easily between small and large hardware platforms. It illustrates the argument with an obstacle avoidance example."
+      ]
+    },
+    {
+      "id": "invariant-feature-strategies",
+      "title": "Strategies for Learning Hierarchies of Invariant Features",
+      "short": "Hierarchies of Invariant Features",
+      "year": 2010,
+      "themes": [
+        "deeplearning",
+        "vision"
+      ],
+      "authors": "Yann LeCun, Pierre Sermanet, Y-Lan Boureau, Clément Farabet, Jason Rolfe, Karol Gregor, Arthur Szlam",
+      "venue": "Abstract (undated)",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/misc/unsupervised_filters.png"
+        }
+      ],
+      "body": [
+        "An abstract from Yann LeCun's group on learning multi-stage hierarchies of increasingly global, invariant and abstract features, for perception, from vision to audition."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=0nPi5YYAAAAJ&citation_for_view=0nPi5YYAAAAJ:LkGwnXOMwfcC"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/LeCun2010Strategies.bib"
+        }
+      ],
+      "summary": "Learning multi-stage hierarchies of increasingly invariant features for vision and audition.",
+      "extended": [
+        "Vision, audition and other perceptual tasks hinge on good internal representations, and the abstract casts learning them automatically, by biologically plausible procedures or otherwise, as the next major challenge for machine learning, computer vision and computational neuroscience alike. Both theory and experiments point to multi-stage hierarchies, each stage more global, more invariant and more abstract than the one before, as the best representation of the perceptual world; the question it takes up is how to design deep learning methods that learn them."
       ]
     },
     {
@@ -2260,6 +3744,42 @@
       ]
     },
     {
+      "id": "autonomous-long-range-learning",
+      "title": "Autonomous Learning for Long Range Vision in Mobile Robots",
+      "short": "Autonomous Long-Range Learning",
+      "year": 2008,
+      "themes": [
+        "robotics",
+        "ssl"
+      ],
+      "authors": "Raia Hadsell, Pierre Sermanet, Ayse Erkan, Koray Kavukcuoglu, Urs Muller, Yann LeCun",
+      "venue": "Abstract (undated)",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/lagr/long_range.png"
+        }
+      ],
+      "body": [
+        "An abstract on our long-range vision system: self-supervised realtime learning on top of compact features from a trained deep belief net, classifying obstacles and traversable areas 200 metres or more away."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://www.researchgate.net/publication/241750139_Autonomous_Learning_for_Long_Range_Vision_in_Mobile_Robots"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2008Autonomous.bib"
+        }
+      ],
+      "summary": "Self-supervised learning on deep belief net features, classifying terrain 200 metres away.",
+      "extended": [
+        "Vision-based autonomous navigation through complicated outdoor environments remains extremely hard and far from solved, and the abstract starts from the shortcomings of stereo vision. It describes a long-range vision system that combines a self-supervised realtime learning strategy with a trained deep belief net providing compact feature representations, and that accurately classifies obstacles and traversable areas 200 metres or more away, a step toward human-level autonomous driving."
+      ]
+    },
+    {
       "id": "online-learning",
       "title": "Online Learning for Offroad Robots",
       "short": "Online Learning",
@@ -2317,6 +3837,200 @@
       "extended": [
         "Stereo range estimates become unreliable past 10 to 12 metres, which leaves a robot driving in a self-imposed fog — entering dead ends and slowly discovering pathways a human would see immediately. This system trains a classifier online, on every frame, from the stereo module's sparse near-range traversability labels, then applies it to the entire scene.",
         "Two ideas carry it. A distance-normalised image pyramid makes it practical to train on large, context-rich windows rather than colour and texture patches. And spatial label propagation: once stereo labels a location, that label is propagated back to every earlier view of the same target, so the classifier learns view-invariant classifications and can train on far-away views captured before any label was available. A ring buffer acts as short-term memory, keeping the discriminative training balanced and consistent. The result sees obstacles and paths at 30 to 40 metres, far beyond stereo range, and adapts quickly when the environment changes."
+      ]
+    },
+    {
+      "id": "speed-range-dilemmas",
+      "title": "Speed-Range Dilemmas for Vision-Based Navigation in Unstructured Terrain",
+      "short": "Speed-Range Dilemmas",
+      "year": 2007,
+      "themes": [
+        "robotics"
+      ],
+      "authors": "Pierre Sermanet, Raia Hadsell, Jan Ben, Ayse Naz Erkan, Beat Flepp, Urs Muller, Yann LeCun",
+      "venue": "IFAC IAV 2007",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/speed-range-dilemmas/fig4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/speed-range-dilemmas/fig3.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/speed-range-dilemmas/fig5.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/speed-range-dilemmas/fig6.jpg"
+        }
+      ],
+      "body": [
+        "An early version of our multi-range navigation architecture. Field tests showed that collisions grow with the length of the control loop, so a fast, low-resolution stereo module takes care of obstacle avoidance while a slower, higher-resolution module looks further ahead for strategic planning, each running at its own pace."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "http://yann.lecun.com/exdb/publis/pdf/sermanet-07.pdf"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/sermanet-ifac-07.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Sermanet2007Speed.bib"
+        }
+      ],
+      "summary": "Fast, low-latency obstacle avoidance decoupled from slow long-range vision on the LAGR robot.",
+      "extended": [
+        "Vision-based off-road robots have a limited compute budget, and spending it on higher-resolution images and longer-range obstacle detection lengthens the delay between image capture and wheel commands. The paper first measures that cost on the LAGR platform: on a fixed course in a picnic area, the control-loop period was artificially raised from 360ms to 960ms, and collisions per run rose roughly in proportion, with the slowest setting crashing into obstacles again and again.",
+        "The proposed fix runs two obstacle detectors as independent processes, much as a person walking down a street glances far ahead only now and then but stays constantly aware of what is close by. FAST-OD maps a 5-metre radius from 160x120 stereo images at about 4Hz and 300ms latency while sharing the CPU; FAR-OD processes 320x240 images at 0.5 to 1Hz to see further (in these experiments a higher-resolution stereo module stands in for the learned long-range vision still under development). Planning casts rays in the fast map to place candidate waypoints, extends them through the far map and picks the cheapest, after shifting and rotating the older far map to the robot's current pose. On a test pairing a reactivity challenge with a hay-bale cul-de-sac deeper than the fast module's range, FAST-OD alone never crashed but always entered the cul-de-sac, the two modules in series avoided it but crashed often, and the two in parallel reached the goal fastest: 19 seconds, against 26.2 and 32.1."
+      ]
+    },
+    {
+      "id": "adaptive-long-range-vision",
+      "title": "Adaptive Long Range Vision in Unstructured Terrain",
+      "short": "Adaptive Long Range Vision",
+      "year": 2007,
+      "themes": [
+        "robotics",
+        "ssl"
+      ],
+      "authors": "Ayse Erkan, Raia Hadsell, Pierre Sermanet, Jan Ben, Urs Muller, Yann LeCun",
+      "venue": "IROS 2007",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/adaptive-long-range-vision/fig8.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/adaptive-long-range-vision/fig1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/adaptive-long-range-vision/fig4.png"
+        },
+        {
+          "type": "image",
+          "src": "assets/adaptive-long-range-vision/fig7.jpg"
+        }
+      ],
+      "body": [
+        "Self-supervised long-range vision that adapts online to new terrain. A convolutional feature extractor trained offline feeds a classifier retrained on every frame from stereo labels, recognising paths, man-made structures and natural obstacles up to 30 metres away."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "http://yann.lecun.com/exdb/publis/pdf/erkan-iros-07.pdf"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/erkan-iros-07.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Erkan2007Adaptive.bib"
+        }
+      ],
+      "summary": "Self-supervised long-range vision that adapts to new terrain online, seeing out to 30 metres.",
+      "extended": [
+        "Stereo is generally accurate only to 10 or 12 metres, while camera images carry information far beyond that, and outdoor terrain and lighting vary too much for fixed templates or classifiers trained offline on hand-labelled data. This paper presents a probabilistic, self-supervised long-range obstacle detector for the LAGR robot that carries near-range stereo knowledge out to 30 metres and adapts to unseen terrain after only a few frames, with no human labelling at any stage.",
+        "Each 320x240 stereo image is levelled to the horizon and cut into a distance-normalised pyramid of 24 bands, from 0.5 to 30 metres, so that a tree at 10 metres and a similar one at 30 appear at the same scale. A convolutional network, the only component trained offline, on 600,000 windows from 130 logs, turns each window into a 240-dimensional feature vector. Online, stereo labels (ground, obstacle or blocked) accumulate in a quadtree indexed by world position, and their ratios become soft labels for a logistic regression trained on every frame by minimising KL divergence; a full cycle takes 291ms, for 2 to 3 frames per second. The system classifies 85% of windows correctly in offline tests over the logs. Against hand-labelled ground truth from 16 logs, the rate of missed and false obstacle foot lines falls from 52.7% without online learning to 46.9% with binary labels and 39.9% with soft labels. The paper also shows the cost of too high a learning rate: the classifier adapts but forgets, and its far-range error ends up worse than with no online training at all."
+      ]
+    },
+    {
+      "id": "multi-range-vision",
+      "title": "A Multi-Range Vision Strategy for Autonomous Offroad Navigation",
+      "short": "Multi-Range Vision Strategy",
+      "year": 2007,
+      "themes": [
+        "robotics",
+        "vision"
+      ],
+      "authors": "Raia Hadsell, Ayse Erkan, Pierre Sermanet, Jan Ben, Koray Kavukcuoglu, Urs Muller, Yann LeCun",
+      "venue": "RA 2007",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/multi-range-vision/fig4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/multi-range-vision/fig7.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/multi-range-vision/fig3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "assets/multi-range-vision/fig6.jpg"
+        }
+      ],
+      "body": [
+        "Our multi-range navigation architecture with learned long-range vision in the loop. The long-range module sees paths and dead ends up to 30 metres away through self-supervised online learning, while a fast short-range stereo module keeps the robot reactive within 5 metres."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "http://yann.lecun.com/exdb/publis/pdf/hadsell-ra-07.pdf"
+        },
+        {
+          "label": "Paper (mirror)",
+          "href": "papers/hadsell-ra-07.pdf"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2007Multirange.bib"
+        }
+      ],
+      "summary": "Learned long-range vision paired with fast short-range stereo, spotting dead ends 30 metres out.",
+      "extended": [
+        "Sophisticated vision helps in complicated terrain but lengthens the delay between image capture and actuation, and a slower control loop makes the robot less reactive. Stereo alone is unreliable beyond 10 or 12 metres, so a robot that relies on it drives as if in a self-imposed fog, entering dead ends and finding paths late. This paper runs two obstacle detectors as independent processes: FAST-OD, a short-range stereo module on 160x120 images covering 5 metres, which gets priority on the CPU, and FAR-OD, a learning-based module that sees up to 30 metres. The planner picks desirable trajectories in the far map and lets the near map constrain the final choice.",
+        "FAR-OD levels the horizon and builds a distance-normalised pyramid of 24 bands, so objects keep a consistent height regardless of distance, then labels windows from stereo as ground, obstacle or blocked, accumulating the labels in a spatially indexed quadtree. A convolutional network trained offline on 31,600 stereo-labelled images from 158 logs reduces each window to 240 features, and a logistic regression with 723 parameters is trained on every frame from a class-balanced ring buffer, training and classification together taking under 100ms. On a field course with a dead end, the short-range system alone entered the dead end on every run, while the full system, initialised by a brief drive, never entered it and never crashed, cutting the average time to the finish from 97.84 to 53.08 seconds. On a second course along a scrub border, time fell from 180.77 to 133.8 seconds and crashes per run from 1.3 to none."
+      ]
+    },
+    {
+      "id": "online-obstacle-detection-snowbird",
+      "title": "On-line Learning of Long-Range Obstacle Detection for Off-Road Robots",
+      "short": "Online Long-Range Obstacle Detection",
+      "year": 2006,
+      "themes": [
+        "robotics",
+        "ssl"
+      ],
+      "authors": "Raia Hadsell, Pierre Sermanet, Jan Ben, Jeff Han, Sumit Chopra, Marc'Aurelio Ranzato, Yury Sulsky, Beat Flepp, Urs Muller, Yann LeCun",
+      "venue": "Snowbird Learning Workshop 2006",
+      "highlight": false,
+      "media": [
+        {
+          "type": "image",
+          "src": "assets/lagr/online_learning.png"
+        }
+      ],
+      "body": [
+        "An early workshop abstract from our off-road robot work, on learning long-range obstacle detection on-line, beyond what stereo-based traversability maps can see."
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "href": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=0nPi5YYAAAAJ&citation_for_view=0nPi5YYAAAAJ:W7OEmFMy1HYC"
+        },
+        {
+          "label": "BibTeX",
+          "href": "https://github.com/sermanet/sermanet.github.io/blob/master/assets/bib/Hadsell2006Online.bib"
+        }
+      ],
+      "summary": "Learning long-range obstacle detection on-line, beyond the reach of stereo traversability maps.",
+      "extended": [
+        "The abstract starts from the standard approach to vision-based off-road driving: a stereo matching algorithm turns a pair of camera images into a point cloud giving the most visible pixels an XYZ position relative to the robot, heuristics such as counting the points above the ground plane in each map cell turn that into a traversability map, and maps from successive frames are assembled into a global map where path finding runs. Its subject, as the title says, is learning long-range obstacle detection for off-road robots on-line, while the robot drives."
       ]
     },
     {

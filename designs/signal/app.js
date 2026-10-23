@@ -2,7 +2,7 @@
 SiteRecords.init({
   cards: '.card',
   hoverPlay: true,
-  filters: { buttons: '.chips button', count: '#count', empty: '#empty' }
+  filters: { buttons: '.chips button[data-theme]', views: '.chips .view button', count: '#count', empty: '#empty' }
 });
 
 /* Theme: system -> light -> dark -> system. The page already follows the OS

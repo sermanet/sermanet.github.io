@@ -192,6 +192,15 @@ a { color: inherit; text-decoration: none; }
 .chips button[aria-pressed="true"] { background: var(--acc-sf); border-color: var(--acc-ln); color: var(--acc); font-weight: 600; }
 .chips .count { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--faint); font-variant-numeric: tabular-nums; }
 
+/* Highlights / full list: a two-way switch ahead of the theme chips. */
+.chips .view {
+  display: inline-flex; gap: 2px; padding: 2px; margin-right: 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--sf2);
+}
+.chips .view button { border: 0; background: transparent; padding: 5px 13px; }
+.chips .view button[aria-pressed="true"] { background: var(--sf); color: var(--ink); box-shadow: var(--shadow); }
+.chips .view .n { font-family: var(--mono); font-size: 11px; color: var(--faint); margin-left: 2px; font-variant-numeric: tabular-nums; }
+
 /* ---------------- feed ---------------- */
 
 .feed {
